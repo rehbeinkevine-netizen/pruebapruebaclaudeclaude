@@ -215,6 +215,21 @@ blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-siz
 .says{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .says span{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.2;border:1px solid var(--line-paper);border-radius:999px;padding:4px 14px 6px}
 .anchors{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+/* carreras */
+.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--ink);margin-top:28px}
+.tl{position:relative;padding:20px 18px 0 0;min-width:0}
+.tl::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.tl b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;letter-spacing:-.02em;margin-bottom:.3em}
+.tl span{display:block;font-size:14.5px;line-height:1.45}
+.split{display:flex;gap:2px;margin-top:14px;min-height:64px}
+.split>div{display:flex;flex-direction:column;justify-content:flex-end;gap:2px;padding:10px 12px;font-size:13px;line-height:1.25;min-width:0;cursor:default}
+.split>div b{font-family:var(--mono);font-weight:500;font-size:12px}
+.split .s1{flex:40;background:var(--ink);color:var(--paper);border-radius:4px 0 0 4px}
+.split .s2{flex:32.5;background:#5f5f5c;color:var(--paper)}
+.split .s3{flex:27.5;border:1px solid var(--ink);border-radius:0 4px 4px 0}
+.career-cols{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.career-cols ul{list-style:none;margin:.6em 0 0;padding:0;display:grid;gap:4px;font-size:14.5px;line-height:1.4}
+.career-cols li::before{content:"· ";opacity:.5}
 .intro-note{font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin:1em 0 0;opacity:.75}
 
 /* switch afuera/adentro */
@@ -319,7 +334,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .anchors{grid-template-columns:minmax(0,1fr)!important}
+  .anchors,.career-cols{grid-template-columns:minmax(0,1fr)!important}
+  .timeline{grid-template-columns:minmax(0,1fr);border-top:0;border-left:1px solid var(--ink);gap:22px;padding-top:4px}
+  .tl{padding:0 0 0 20px}
+  .tl::before{top:.9rem;left:-5px}
   .ph.sm{grid-column:span 12}
   .pillar .proof,.facts,.glossary,.people,.tensions,.qs,.mirror{grid-template-columns:minmax(0,1fr)}
   .term{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -406,6 +424,43 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="fact"><span class="n"><span data-count="51">51</span>%</span><p>Alumnos con algún tipo de beca o apoyo. La mitad del campus no paga la colegiatura completa.</p><p class="src">Informe anual 2025</p></div>
       <div class="fact"><span class="n"><span data-count="0.7" data-dec="1">0.7</span>%</span><p>Aceptación de Líderes del Mañana, la beca del 100%: 245 de 34,000 solicitudes.</p><p class="src">El Economista, 18/08/2026</p></div>
     </div>
+
+    <h3 style="margin-top:clamp(56px,8vw,96px)">Las carreras</h3>
+    <p class="pos-quote" data-breathe style="max-width:22ch"><span>Ingeniería y negocios, desde el primer día.</span></p>
+    <p class="muted" style="max-width:62ch;margin:1em 0 0">El Tec no publica cifras detalladas de matrícula por carrera. Este mapa combina tres lecturas: las carreras con más trayectoria, las de mayor demanda observada y las que la propia institución marca como de alta selectividad. Las tres apuntan al mismo núcleo.</p>
+
+    <div class="timeline">
+      <div class="tl"><b>1943</b><span>Abre con dos escuelas: Ingeniería Industrial (química, eléctrica, mecánica y administración) y Estudios Contables.</span></div>
+      <div class="tl"><b>1946</b><span>Primer título profesional, de un Ingeniero Industrial Químico. Ese año nace Arquitectura.</span></div>
+      <div class="tl"><b>1969</b><span>Ingeniería en Sistemas Computacionales. El Tec la presenta como la primera carrera de computación de México y América Latina.</span></div>
+      <div class="tl"><b>2023</b><span>Ingeniería Química cumple 80 años, con más de 7 mil egresados.</span></div>
+      <div class="tl"><b>2026</b><span>Arquitectura cumple 80 años, con más de 14 mil egresados.</span></div>
+    </div>
+
+    <div class="cols" style="margin-top:clamp(48px,7vw,80px)">
+      <div class="c-7">
+        <h3>Cómo se reparte la demanda</h3>
+        <div class="split" role="img" aria-label="Aproximadamente 40% ingenierías, entre 30% y 35% negocios, el resto arquitectura, diseño y otras.">
+          <div class="s1" data-tip="Ingenierías · ~40% · mecatrónica, industrial, sistemas y software"><b>~40%</b>Ingenierías</div>
+          <div class="s2" data-tip="Negocios · 30–35% · administración, finanzas, negocios internacionales, mercadotecnia"><b>30–35%</b>Negocios</div>
+          <div class="s3" data-tip="Resto · arquitectura, diseño y otras"><b>Resto</b>Arquitectura, diseño y otras</div>
+        </div>
+        <p class="src">Aproximación reportada por directivos de campus regionales. No es una cifra oficial del sistema.</p>
+      </div>
+      <div class="c-5">
+        <div class="facts" style="grid-template-columns:minmax(0,1fr);margin-top:0">
+          <div class="fact"><span class="n"><span data-count="66.6" data-dec="1">66.6</span>%</span><p>tasa de aceptación acumulada de Medicina en el ENARM (2021–2025), la más alta entre las universidades comparadas.</p></div>
+          <div class="fact"><span class="n">Top <span data-count="100">100</span></span><p>mundial en varias disciplinas de QS by Subject 2025: Administración y Negocios, Mercadotecnia, y Arte y Diseño.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tribes career-cols" style="margin-top:clamp(40px,6vw,64px)">
+      <div class="tribe"><em>Más trayectoria</em><b>Las fundadoras</b><span>Las ingenierías de origen y la primera carrera de computación del país.</span><ul><li>Ingeniería Química</li><li>Ingeniería Industrial</li><li>Ingeniería Mecánica</li><li>Arquitectura</li><li>Sistemas Computacionales</li></ul></div>
+      <div class="tribe"><em>Más demanda</em><b>Las más buscadas</b><span>Según listados de medios y el patrón que describen los campus.</span><ul><li>Tecnologías Computacionales</li><li>Ingeniería Industrial y de Sistemas</li><li>Mecatrónica</li><li>Negocios Internacionales</li><li>Mercadotecnia y Finanzas</li><li>Medicina</li></ul></div>
+      <div class="tribe"><em>Más selectividad</em><b>Cupo limitado</b><span>Las que el sitio de admisiones marca con alta selectividad.</span><ul><li>Médico Cirujano</li><li>Negocios en inglés (BBA, BFI, BM)</li><li>Arquitectura</li><li>Biomédica</li><li>Biotecnología y Nanotecnología (según campus)</li></ul></div>
+    </div>
+    <p class="src">Conecta Tec (aniversarios de Ingeniería Química y Arquitectura) · admisiones.tec.mx · prensa regional · comparativo ENARM 2021–2025 · QS World University Rankings by Subject 2025</p>
 
     <h3 style="margin-top:clamp(56px,8vw,96px)">El idioma de la casa</h3>
     <dl class="glossary">
