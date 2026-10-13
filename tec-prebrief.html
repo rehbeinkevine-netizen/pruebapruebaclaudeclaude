@@ -200,6 +200,21 @@ blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-siz
 .tribe em{display:block;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:.6em}
 .like-row .bar.hi{background:var(--paper)}
 .like-row .bar.lo{background:rgba(241,241,239,.45)}
+/* fotos */
+.gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(10px,1.4vw,18px);margin-top:clamp(40px,6vw,72px)}
+.ph{position:relative;overflow:hidden;margin:0;background:var(--smoke);min-width:0}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(calc(1 - var(--c,0))) contrast(1.06);
+  transform:scale(1.12) translateY(calc((var(--py,.5) - .5) * -7%));will-change:transform,filter}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#f1f1ef;background:linear-gradient(rgba(12,12,13,0),rgba(12,12,13,.62))}
+.ph.big{grid-column:span 8;grid-row:span 2;min-height:clamp(320px,42vw,620px)}
+.ph.sm{grid-column:span 4;min-height:0}
+/* posicionamiento */
+.pos-quote{margin-top:18px;font-family:var(--serif);font-style:italic;font-size:clamp(2.1rem,5.2vw,4.6rem);line-height:1.02;letter-spacing:-.015em;max-width:20ch;text-wrap:balance}
+.pos-quote cite{display:block;line-height:1.5;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.08em;margin-top:1.1em;opacity:.7;max-width:60ch}
+.says{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.says span{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.2;border:1px solid var(--line-paper);border-radius:999px;padding:4px 14px 6px}
+.anchors{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 .intro-note{font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin:1em 0 0;opacity:.75}
 
 /* switch afuera/adentro */
@@ -298,10 +313,14 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ranks{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tribes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ph.big{grid-column:span 12;grid-row:auto;min-height:0;aspect-ratio:4/3}
+  .ph.sm{grid-column:span 6;aspect-ratio:3/2;max-width:100%}
   .sources{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:640px){
   body{font-size:16px}
+  .anchors{grid-template-columns:minmax(0,1fr)!important}
+  .ph.sm{grid-column:span 12}
   .pillar .proof,.facts,.glossary,.people,.tensions,.qs,.mirror{grid-template-columns:minmax(0,1fr)}
   .term{grid-template-columns:minmax(0,1fr);gap:4px}
   .list li{grid-template-columns:minmax(0,1fr);gap:6px}
@@ -373,6 +392,12 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
     </div>
 
+    <div class="gallery">
+      <figure class="ph big" data-photo><img src="img/campus-monterrey.jpg" alt="Vista aérea del Campus Monterrey con el Cerro de la Silla al fondo" loading="lazy"><figcaption>Campus Monterrey, con el Cerro de la Silla al fondo</figcaption></figure>
+      <figure class="ph sm" data-photo><img src="img/campus-interior.jpg" alt="Estudiantes caminando entre edificios de vidrio y escaleras de un campus del Tec" loading="lazy"><figcaption>Arquitectura de campus</figcaption></figure>
+      <figure class="ph sm" data-photo><img src="img/teus.jpg" alt="Teus, la mascota borrego del Tec, con playera azul que dice TEC frente a un edificio del campus" loading="lazy" style="object-position:30% 40%"><figcaption>Teus, la mascota de los Borregos</figcaption></figure>
+    </div>
+
     <div class="facts">
       <div class="fact"><span class="n" data-count="1943" data-plain>1943</span><p>Año de fundación, en Monterrey.</p></div>
       <div class="fact"><span class="n">~<span data-count="90">90</span> mil</span><p>Alumnos entre PrepaTec, licenciatura y posgrado.</p><p class="src">Rector J. P. Murra, ago 2025</p></div>
@@ -391,6 +416,38 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="term"><dt>Semana i</dt><dd>Una semana de retos fuera del aula. En redes aparece a veces como broma sobre el prestigio.</dd></div>
       <div class="term"><dt>Regreso a Casa</dt><dd>El rito anual de egresados. Más de 1,800 volvieron a sus campus entre oct y dic de 2025.</dd></div>
     </dl>
+
+    <h3 style="margin-top:clamp(64px,9vw,120px)">Cómo se posiciona hoy</h3>
+    <blockquote class="pos-quote" data-breathe><span>“Transformar la vida de las personas y las comunidades a través de la educación.”</span><cite>Propósito del Grupo Educativo Tecnológico de Monterrey (Tec, TecSalud y Tecmilenio). El resto del discurso gira alrededor de esta frase.</cite></blockquote>
+
+    <dl class="glossary" style="margin-top:clamp(32px,5vw,56px)">
+      <div class="term"><dt>Misión</dt><dd>“Somos la universidad de excelencia centrada en la innovación, que impulsa a una comunidad a imaginar, investigar, emprender, construir y liderar soluciones que transforman la realidad.”</dd></div>
+      <div class="term"><dt>Visión</dt><dd>“Ser la mejor universidad del mundo de habla hispana.”</dd></div>
+      <div class="term"><dt>Visión 2030</dt><dd>“Liderazgo, innovación y emprendimiento para el florecimiento humano.”</dd></div>
+      <div class="term"><dt>Prestigio</dt><dd>“Incrementar el prestigio global del Tecnológico de Monterrey como la mejor universidad de América Latina.” (eje Rumbo al 2030)</dd></div>
+      <div class="term"><dt>En redes</dt><dd>“Somos una plataforma de transformación donde se imagina y se concreta lo extraordinario. […] Aquí nos preguntamos: ‘¿Por qué no?’.”</dd></div>
+      <div class="term"><dt>Rector</dt><dd>“Nos consolidamos como una universidad de clase mundial, capaz de atraer y desarrollar talento excepcional.” David Garza sobre QS LatAm 2027, oct 2026.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:clamp(40px,6vw,64px)">Cómo lo dicen en el día a día</h3>
+    <div class="says">
+      <span>Construye tu futuro HOY</span><span>Vivir el Tec</span><span>Modelo que te desafía</span><span>La ciencia con soluciones accionables</span><span>Despertar tus ganas de transformar el mundo</span><span>El futuro no solo se imagina: se construye todos los días</span><span>#LoHacemosParaMéxico</span><span>Nos llena de orgullo lo que somos. Nos mueve lo que podemos hacer por México.</span>
+    </div>
+
+    <h3 style="margin-top:clamp(40px,6vw,64px)">Las tres anclas del discurso oficial</h3>
+    <div class="tribes anchors">
+      <div class="tribe"><em>01</em><b>Excelencia y ranking</b><span>Mejor universidad de México y 4ª de América Latina en QS regional, ocho años seguidos como #1 del país.</span></div>
+      <div class="tribe"><em>02</em><b>Empleabilidad</b><span>#1 de México y de América Latina en el ranking de empleabilidad GEURS.</span></div>
+      <div class="tribe"><em>03</em><b>La persona al centro</b><span>Florecimiento humano, bienestar, sentido humano y “tu mejor versión”.</span></div>
+    </div>
+
+    <div class="cols" style="margin-top:clamp(40px,6vw,64px)">
+      <p class="callout c-7" style="margin-top:0">El discurso oficial habla de transformación. La red EXATEC, Borregos y la exigencia del promedio casi no aparecen en él.</p>
+      <div class="prose c-5" style="align-self:end">
+        <p>El posicionamiento es coherente con la Visión 2030, pero amplio: varias universidades privadas grandes podrían usar frases parecidas. Lo que distingue al Tec aparece más en la experiencia de alumnos y egresados (la red, el filtro y el resultado laboral) que en el copy institucional.</p>
+        <p class="src">tec.mx · Rumbo al 2030 · perfiles oficiales en Instagram, Facebook y X · comunicado QS LatAm, oct 2026</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -920,6 +977,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   var breathe=[].slice.call(document.querySelectorAll('[data-breathe]'));
   var wides=[].slice.call(document.querySelectorAll('[data-wide]'));
   var drifts=[].slice.call(document.querySelectorAll('[data-drift]'));
+  var photos=[].slice.call(document.querySelectorAll('[data-photo]'));
   var secs=[].slice.call(document.querySelectorAll('[data-sec]'));
   var hero=document.querySelector('.hero'), heroSub=document.getElementById('hero-sub');
   var mq=document.getElementById('mq'), sw=document.getElementById('miradas');
@@ -956,6 +1014,15 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       if(r.bottom<-200||r.top>vh+200) return;
       var c=r.top+r.height/2, d=clamp(Math.abs(c-vh*0.5)/(vh*0.55),0,1);
       el.style.setProperty('--fs',(68+smooth(1-d)*57).toFixed(1)+'%');
+    });
+
+    // fotos: pasan de blanco y negro a color al llegar al centro, con un leve parallax
+    photos.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh) return;
+      var c=r.top+r.height/2, d=clamp(Math.abs(c-vh*0.5)/(vh*0.5),0,1);
+      el.style.setProperty('--c',smooth(1-d).toFixed(3));
+      el.style.setProperty('--py',clamp((vh-r.top)/(vh+r.height),0,1).toFixed(3));
     });
 
     // gradientes que se desplazan
