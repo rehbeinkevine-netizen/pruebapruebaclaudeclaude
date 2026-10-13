@@ -98,11 +98,7 @@ h3{font-family:var(--sans);font-weight:700;font-stretch:112%;font-size:1.05rem;l
   font-size:clamp(1.9rem,7.2vw,6.6rem);line-height:.95;letter-spacing:-.02em;
   white-space:nowrap;margin-top:.12em;
 }
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);margin-top:clamp(32px,5vw,64px);align-items:end}
-.meta{display:grid;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;border-top:1px solid var(--line-paper);padding-top:14px}
-.meta div{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:12px}
-.meta dt,.meta dd{margin:0}
-.meta dt{text-transform:uppercase;letter-spacing:.12em;color:#6b6b68}
+.hero-lede{margin-top:clamp(32px,5vw,64px)}
 .cue{margin-top:clamp(40px,6vw,72px);font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
 .cue i{display:block;width:1px;height:42px;background:currentColor;animation:cue 1.8s ease-in-out infinite;transform-origin:top}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -199,6 +195,12 @@ blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-siz
 .tribe{padding:20px 18px 22px 0;border-bottom:1px solid var(--line-paper);min-width:0}
 .tribe b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.55rem;line-height:1.05;display:block;margin-bottom:.4em}
 .tribe span{font-size:14.5px;line-height:1.45;display:block}
+.ink .tribes,.ink .tribe,.ink .term{border-color:var(--line-ink)}
+.ink .tribe span,.ink .term dd{color:#d4d4d1}
+.tribe em{display:block;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:.6em}
+.like-row .bar.hi{background:var(--paper)}
+.like-row .bar.lo{background:rgba(241,241,239,.45)}
+.intro-note{font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin:1em 0 0;opacity:.75}
 
 /* switch afuera/adentro */
 .switch{position:relative;height:280vh;background:var(--paper)}
@@ -292,7 +294,6 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 
 /* responsive */
 @media (max-width:900px){
-  .hero-grid{grid-template-columns:minmax(0,1fr)}
   .c-5,.c-6,.c-7,.c-4,.c-8{grid-column:span 12}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ranks{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -314,7 +315,6 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   .like-row .bar{grid-column:1 / -1;grid-row:2}
   .f-row{grid-template-columns:minmax(0,1fr)}
   .arch-row{grid-template-columns:7rem minmax(0,1fr) 3rem}
-  .meta div{grid-template-columns:minmax(0,1fr);gap:2px}
   .chrome span:last-child{display:none}
 }
 @media (prefers-reduced-motion:reduce){
@@ -341,15 +341,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <span class="hero-tec">el Tec</span>
       <span class="hero-sub" id="hero-sub">de Monterrey</span>
     </h1>
-    <div class="hero-grid">
-      <p class="lede">Qué es, por qué pesa en México y cómo se siente pertenecer. Un mapa común para que el equipo llegue al brief hablando el mismo idioma.</p>
-      <dl class="meta">
-        <div><dt>Para</dt><dd>Equipo de cuenta, planning y creatividad</dd></div>
-        <div><dt>Encargo esperado</dt><dd>Campaña institucional de imagen. No de captación de alumnos.</dd></div>
-        <div><dt>Foco</dt><dd>Orgullo, pertenencia y la distancia entre la mirada de adentro y la de afuera</dd></div>
-        <div><dt>Fuentes</dt><dd>WPP BAV México 2025 · Sightly (ago–oct 2026) · prensa, informes del Tec, X y Reddit</dd></div>
-      </dl>
-    </div>
+    <p class="lede hero-lede">Qué es, qué lugar ocupa en México y cómo se vive desde adentro. Un punto de partida común antes del brief.</p>
     <div class="cue"><i></i>Desliza para empezar</div>
   </div>
 </header>
@@ -395,8 +387,8 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="term"><dt>EXATEC</dt><dd>Egresado del Tec. Funciona como identidad, no como diploma: incluye correo, credencial, asociaciones y ritos.</dd></div>
       <div class="term"><dt>Borregos</dt><dd>Los equipos deportivos de todos los campus. Mascota: Teus. Rival clásico: Tigres UANL.</dd></div>
       <div class="term"><dt>El azul</dt><dd>Nació en 1945 porque el equipo de futbol americano no consiguió tela roja para sus uniformes.</dd></div>
-      <div class="term"><dt>Tec21</dt><dd>Modelo educativo por retos y bloques de cinco semanas. Es la principal queja interna.</dd></div>
-      <div class="term"><dt>Semana i</dt><dd>Una semana de retos fuera del aula. Afuera se usa como chiste de prestigio.</dd></div>
+      <div class="term"><dt>Tec21</dt><dd>Modelo educativo por retos y bloques de cinco semanas. Es una de las críticas más repetidas en los foros de alumnos.</dd></div>
+      <div class="term"><dt>Semana i</dt><dd>Una semana de retos fuera del aula. En redes aparece a veces como broma sobre el prestigio.</dd></div>
       <div class="term"><dt>Regreso a Casa</dt><dd>El rito anual de egresados. Más de 1,800 volvieron a sus campus entre oct y dic de 2025.</dd></div>
     </dl>
   </div>
@@ -406,12 +398,50 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <section class="band ink" id="importancia" data-sec="02 · Su peso en México" data-drift>
   <div class="wrap">
     <div class="eyebrow"><b>02</b><span>Su importancia en México</span></div>
-    <h2 class="mega" data-breathe><span>La privada que <span class="it">todos</span> conocen.</span></h2>
+    <h2 class="mega" data-breathe><span>Primero, cómo funciona el <span class="it">sistema</span>.</span></h2>
     <div class="cols">
-      <p class="lede c-6" style="max-width:36ch">México tiene 5.76 millones de universitarios y una cobertura del 46.8%. Dos de cada cinco estudian en privadas. En ese mercado, el Tec es la marca de referencia.</p>
+      <p class="lede c-6" style="max-width:36ch">México tiene 5.76 millones de universitarios. Según la SEP, la cobertura es del 46.8%: más de la mitad de los jóvenes en edad universitaria no está estudiando.</p>
       <div class="prose c-6">
-        <p>Es la universidad más estimada de la categoría en BAV México 2025, la más preferida y la más recomendada. También es de las más caras: un semestre en campus CDMX cuesta 180,720 pesos (ago–dic 2026), y una carrera privada premium completa ronda los 1.5 millones, unas 16 veces más que una pública.</p>
-        <p class="src">SEP, Segundo Informe 2025-26 · El Heraldo, 17/07/2026 · Expansión, 19 y 24/08/2026</p>
+        <p>El 62% estudia en instituciones públicas y el 38% en privadas. Las públicas de prestigio casi no cobran, pero filtran con el examen de admisión. Las privadas cobran, y en el segmento premium la beca funciona como herramienta de acceso y también de marca.</p>
+        <p>Cuando en México se dice que “no hay lugar”, casi siempre se habla de la UNAM, el IPN o la UAM. El sistema crece, pero sobre todo en otras instituciones.</p>
+        <p class="src">SEP, Segundo Informe 2025-26 · La Jornada, 29/07/2026 · ANUIES, 05/10/2026</p>
+      </div>
+    </div>
+
+    <div class="tribes" style="margin-top:clamp(36px,5vw,56px)">
+      <div class="tribe"><em>Pública de prestigio</em><b>UNAM, IPN, UAM</b><span>Cuota simbólica. El filtro es el examen: en 2026, 158,712 personas presentaron el de la UNAM y el 86% no obtuvo lugar.</span></div>
+      <div class="tribe"><em>Pública de cobertura</em><b>Bienestar, Rosario Castellanos, TecNM</b><span>Sin examen y sin cuotas. En 2026 el gobierno abrió 37,503 lugares para quienes no entraron. Su calidad está en discusión.</span></div>
+      <div class="tribe"><em>Estatales autónomas</em><b>UANL, UdeG, BUAP, UAEMéx</b><span>Masivas y con prestigio regional. ANUIES calcula un déficit acumulado de 55,400 millones de pesos desde 2019.</span></div>
+      <div class="tribe"><em>Privadas</em><b>De UVM y UNITEC a Tec, ITAM, Ibero y Anáhuac</b><span>Van de la privada económica a la premium. La diferencia de precio entre un extremo y otro es enorme.</span></div>
+    </div>
+
+    <div class="cols" style="margin-top:clamp(48px,7vw,80px)">
+      <div class="c-7">
+        <h3>Costo estimado de una carrera de cuatro años</h3>
+        <div class="likes" role="img" aria-label="Costo estimado a cuatro años: pública 93,793 pesos; privada económica 406,436; privada media 823,294; privada premium 1,500,687.">
+          <div class="like-row" data-tip="Pública · $93,793 a 4 años"><span>Pública</span><span class="bar lo" style="width:6.25%"></span><em>$93,793</em></div>
+          <div class="like-row" data-tip="Privada económica (UVM, UNITEC) · $406,436 a 4 años"><span>Privada económica</span><span class="bar lo" style="width:27.1%"></span><em>$406,436</em></div>
+          <div class="like-row" data-tip="Privada media (La Salle, Anáhuac regionales) · $823,294 a 4 años"><span>Privada media</span><span class="bar lo" style="width:54.9%"></span><em>$823,294</em></div>
+          <div class="like-row" data-tip="Privada premium (Tec, Ibero, ITAM) · $1,500,687 a 4 años · ~16 veces la pública"><span>Privada premium</span><span class="bar hi" style="width:100%"></span><em>$1,500,687</em></div>
+        </div>
+        <p class="src">Estimado de CotizadorHipotecario.mx citado por Expansión (19 y 24/08/2026). No son colegiaturas oficiales.</p>
+      </div>
+      <div class="c-5">
+        <div class="facts" style="grid-template-columns:minmax(0,1fr);margin-top:0">
+          <div class="fact"><span class="n"><span data-count="74">74</span>%</span><p>más gana un profesionista que alguien con solo bachillerato.</p><p class="src">IMCO, Compara Carreras 2026</p></div>
+          <div class="fact"><span class="n"><span data-count="54">54</span>%</span><p>de los profesionistas trabaja fuera de su campo de estudio.</p><p class="src">IMCO, Compara Carreras 2026</p></div>
+          <div class="fact"><span class="n"><span data-count="211">211</span> mil</span><p>abandonan cada año la universidad pública. El 76% por motivos económicos.</p><p class="src">ANUIES, 05/10/2026</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="callout" style="max-width:28ch">En ese contexto, la pregunta de muchas familias es si la universidad vale lo que cuesta. El Tec responde con empleabilidad.</p>
+
+    <h2 class="mega" data-breathe style="margin-top:clamp(72px,10vw,140px)"><span>La privada que <span class="it">todos</span> conocen.</span></h2>
+    <div class="cols">
+      <p class="lede c-6" style="max-width:36ch">Entre las privadas, el Tec es la marca de referencia: la más estimada, la más preferida y la más recomendada en BAV México 2025.</p>
+      <div class="prose c-6">
+        <p>También es de las más caras. Un semestre en el campus Ciudad de México cuesta 180,720 pesos (ago–dic 2026).</p>
+        <p class="src">BAV México 2025 · El Heraldo, 17/07/2026</p>
       </div>
     </div>
 
@@ -437,7 +467,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <div class="cols" style="margin-top:clamp(56px,8vw,96px)">
       <div class="c-4">
         <h3>La galería EXATEC</h3>
-        <p class="muted" style="margin:0;max-width:30ch">No es una fábrica de astronautas. Es una red que pone directores en Cemex, Banamex, Softtek y Mazda, y que tuvo a un computólogo en el origen de Google.</p>
+        <p class="muted" style="margin:0;max-width:30ch">Sus egresados más visibles están en la empresa, la banca y el gobierno: directores en Cemex, Banamex, Softtek y Mazda, y un computólogo que estuvo en el origen de Google.</p>
       </div>
       <div class="c-8">
         <div class="people" style="margin-top:0">
@@ -462,7 +492,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <section class="band paper" id="diferencial" data-sec="03 · El diferencial" data-drift>
   <div class="wrap">
     <div class="eyebrow"><b>03</b><span>Lo que de verdad compran</span></div>
-    <p class="lede" style="margin-top:1.4em;max-width:40ch">El alumno no habla del plan de estudios. Habla de lo que pasa después. Tres palabras resumen el diferencial.</p>
+    <p class="lede" style="margin-top:1.4em;max-width:42ch">Cuando alumnos y egresados explican por qué eligieron el Tec, hablan poco del plan de estudios y mucho de lo que viene después. El diferencial se puede resumir en tres palabras.</p>
 
     <div class="pillar">
       <p class="wide" data-wide><span class="it">Salida</span> laboral.</p>
@@ -485,11 +515,11 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <p class="wide" data-wide>Re<span class="it">nombre</span>.</p>
       <div class="proof">
         <blockquote>“En Deloitte el director solo vio que salí del Tec. Me contrataron al día siguiente.”<cite>Egresado, r/mexico, nov 2024</cite></blockquote>
-        <div class="stat"><span class="n" data-count="95.4" data-dec="1">95.4</span><p>en “vale más”, contra 5.0 en “buena relación calidad-precio”. Se paga por desearlo, no porque sea buen trato.</p></div>
+        <div class="stat"><span class="n" data-count="95.4" data-dec="1">95.4</span><p>en “vale más”, contra 5.0 en “buena relación calidad-precio”. La gente está dispuesta a pagar más, aunque no lo vea como un buen negocio.</p></div>
       </div>
     </div>
 
-    <p class="callout">Lo que se compra no es una carrera. Es un apellido: EXATEC.<small>Lectura de planning</small></p>
+    <p class="callout">Muchos lo eligen por la carrera. Lo que más valoran después es ser EXATEC.<small>Lectura de planning</small></p>
   </div>
 </section>
 
@@ -497,7 +527,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <section class="band ink" id="orgullo" data-sec="04 · Orgullo" data-drift>
   <div class="wrap">
     <div class="eyebrow"><b>04</b><span>Orgullo</span></div>
-    <h2 class="mega" data-breathe><span>Orgullo de <span class="it">escuela</span>, no de bandera.</span></h2>
+    <h2 class="mega" data-breathe><span>Un orgullo más de <span class="it">escuela</span> que de país.</span></h2>
     <div class="cols">
       <div class="c-6">
         <h3>De qué se sienten orgullosos</h3>
@@ -510,7 +540,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
         </ul>
       </div>
       <div class="c-6">
-        <h3>Lo único que mueve emoción en redes es Borregos</h3>
+        <h3>En redes, lo que más moviliza es Borregos</h3>
         <p class="muted" style="margin:0 0 18px;font-size:15px">Likes por post en el mismo periodo, cuentas de distinto tamaño.</p>
         <div class="likes" role="img" aria-label="Posts deportivos de Borregos entre 773 y 1,465 likes; posts institucionales de medios con millones de seguidores entre 1 y 2 likes.">
           <div class="like-row" data-tip="Flag football CONADEIP · Tec Santa Fe 46–19 UVM · 1,465 likes"><span>Borregos Santa Fe vs UVM</span><span class="bar" style="width:100%"></span><em>1,465</em></div>
@@ -526,7 +556,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <div class="cols" style="margin-top:clamp(56px,8vw,96px);align-items:end">
       <blockquote class="c-7" style="font-size:clamp(1.8rem,3.6vw,3rem);line-height:1.08">“El orgullo EXATEC continúa representando a México alrededor del mundo.”<cite>@EXATEC, 22/09/2026 · 0 likes</cite></blockquote>
       <div class="prose c-5">
-        <p>La frase más patriótica del periodo es de la marca, no de un alumno, y no despegó. Cuando un egresado habla en primera persona, presume la red y el nombre del Tec. México aparece como lo que se representa afuera. América Latina, como la liga que se gana.</p>
+        <p>La frase más patriótica del periodo vino de la cuenta oficial y tuvo poca respuesta. Cuando los egresados hablan en primera persona, suelen hablar de la red y del nombre del Tec. México aparece como lo que representan afuera, y América Latina como la región donde compiten.</p>
       </div>
     </div>
   </div>
@@ -539,8 +569,8 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <h2 class="mega" data-breathe><span>Pertenecer <span class="it">se gana</span>.</span></h2>
     <div class="cols">
       <div class="prose c-6">
-        <p class="lede" style="margin-bottom:1em;max-width:36ch">La pertenencia del Tec está diseñada. La oficina de egresados dice por escrito que su trabajo es “fortalecer el sentido de pertenencia”.</p>
-        <p>Y funciona: el vínculo es vertical, de mentor a alumno, no de amistad entre pares. Para quienes prefieren o usan el Tec, la marca es Experta y Líder, y además Nutre. Lo que casi no existe es el Compañero. Se pertenece por haber sido aceptado y formado por una institución exigente. La exigencia es el filtro: “no cualquiera entra ni cualquiera se queda”.</p>
+        <p class="lede" style="margin-bottom:1em;max-width:36ch">El Tec cultiva la pertenencia de forma deliberada. Su oficina de egresados define su trabajo como “fortalecer el sentido de pertenencia”.</p>
+        <p>Los datos sugieren un vínculo vertical, más parecido al de mentor y alumno que al de amigos entre pares. Para quienes prefieren o usan el Tec, la marca es Experta y Líder, y también Nutre; el arquetipo de Compañero casi no aparece. La pertenencia se asocia a haber sido aceptado y formado por una institución exigente, donde la exigencia funciona como filtro.</p>
         <blockquote style="margin-top:1.4em">“El Tec siempre será su casa.”<cite>David Garza, Regreso a Casa, sep 2026</cite></blockquote>
       </div>
       <div class="c-6">
@@ -558,7 +588,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
     </div>
 
-    <h3 style="margin-top:clamp(56px,8vw,96px)">“El alumno del Tec” no existe en singular</h3>
+    <h3 style="margin-top:clamp(56px,8vw,96px)">No hay un solo tipo de alumno</h3>
     <div class="tribes">
       <div class="tribe"><b>El que paga completo</b><span>Sostiene el estereotipo de afuera. Siente orgullo de red sin necesitar el relato del esfuerzo.</span></div>
       <div class="tribe"><b>El becado parcial</b><span>Vive el promedio como condición de permanencia. Si baja, pierde el porcentaje.</span></div>
@@ -569,8 +599,62 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 06 SWITCH -->
-<section class="switch" id="miradas" data-sec="06 · Dos miradas" aria-label="Afuera y adentro">
+<!-- 06 PERSONA -->
+<section class="band ink" id="persona" data-sec="06 · La persona de adentro" data-drift>
+  <div class="wrap">
+    <div class="eyebrow"><b>06</b><span>La persona de adentro</span></div>
+    <h2 class="mega" data-breathe><span>Exigentes, competitivos y <span class="it">orgullosos</span>.</span></h2>
+    <div class="cols">
+      <p class="lede c-6" style="max-width:36ch">Quien está adentro se exige mucho y espera lo mismo de su institución. También tiene una alta valoración de sí mismo: afuera se lee como soberbia, adentro como seguridad.</p>
+      <div class="c-6" style="align-self:end">
+        <blockquote>“El esfuerzo y la ética son la base de todo, no hay medias tintas.”<cite>Ingeniero industrial, generación 1993 · Premio al Mérito EXATEC Aguascalientes 2026</cite></blockquote>
+      </div>
+    </div>
+
+    <ul class="list" style="margin-top:clamp(36px,5vw,56px)">
+      <li><b>Exigente</b><span>Valora la exigencia como estándar. Quienes prefieren o usan el Tec le dan 99.9 en “alto desempeño” y 99.2 en “constante” (BAV México 2025).</span></li>
+      <li><b>Competitivo</b><span>El promedio, la PAA y el porcentaje de beca son tema permanente en los foros de alumnos.</span></li>
+      <li><b>Seguro de sí</b><span>“Se creen mucho” es una lectura frecuente afuera y también aparece adentro. Un becado lo explica como una estrategia de algunos, que cambia según el campus.</span></li>
+      <li><b>Orgulloso de haber llegado</b><span>Siente que su lugar se lo ganó, sobre todo si entró con beca. “Nunca me sentí marcado” es una frase que se repite.</span></li>
+      <li><b>Habla en código</b><span>PAA, porcentaje, bloque, Semana Tec, servicio becario. Un vocabulario que se aprende estando adentro.</span></li>
+    </ul>
+    <p class="src">BAV México 2025, audiencia que prefiere o usa el Tec · r/TecDeMonterrey 2025–2026 · X, 2026</p>
+
+    <h2 class="mega" data-breathe style="margin-top:clamp(72px,10vw,140px)"><span>El mundo de las <span class="it">becas</span>.</span></h2>
+    <div class="cols">
+      <p class="lede c-6" style="max-width:36ch">Afuera se lo ve como escuela de ricos. Adentro, cerca de la mitad del alumnado tiene algún tipo de apoyo.</p>
+      <div class="prose c-6">
+        <p>Las becas explican buena parte de la cultura del esfuerzo. Para el becado, el promedio es la condición para conservar el porcentaje. Para quien paga completo, el orgullo pasa más por la red que por el mérito.</p>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><span class="n"><span data-count="51">51</span>%</span><p>del alumnado tiene beca o apoyo financiero.</p><p class="src">Informe anual 2025</p></div>
+      <div class="fact"><span class="n">$<span data-count="3544" >3,544</span> M</span><p>en apoyos durante el semestre ago–dic 2025: 2,890 millones en becas y 653 en préstamos.</p><p class="src">Informe anual 2025</p></div>
+      <div class="fact"><span class="n">&lt;2%</span><p>tiene la beca del 100%. La mayoría de los apoyos son parciales.</p><p class="src">Mentor de Líderes del Mañana, X, mar 2026</p></div>
+    </div>
+
+    <h3 style="margin-top:clamp(48px,7vw,80px)">Los tipos de apoyo</h3>
+    <dl class="glossary">
+      <div class="term"><dt>Líderes del Mañana</dt><dd>Cubre 100% de colegiatura, manutención y seguro. Pide promedio de 9.0 o más, 1,330 en la PAA, un proyecto social y necesidad económica total. En 2026 hubo 245 becas para 34,000 solicitudes. Se financia con 13,000 donantes (40%) y Sorteos Tec (60%).</dd></div>
+      <div class="term"><dt>Talento académico</dt><dd>Entre 30% y 70% de la colegiatura. Según un mentor del programa, cubre a cerca de la mitad de los becados.</dd></div>
+      <div class="term"><dt>Socioeconómica</dt><dd>Se asigna según necesidad. En PrepaTec tiene un tope de 40%.</dd></div>
+      <div class="term"><dt>Préstamo educativo</dt><dd>Complementa la beca. Una parte importante del apoyo total es financiamiento que se devuelve.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:clamp(48px,7vw,80px)">Cómo se vive</h3>
+    <div class="tribes">
+      <div class="tribe"><b>Se sostiene con promedio</b><span>Si el promedio baja, se puede perder el porcentaje. Por eso el becado vive el esfuerzo como condición para quedarse.</span></div>
+      <div class="tribe"><b>Se retribuye con servicio</b><span>El servicio becario empieza en segundo semestre. En los foros se describe más como trámite que como formación.</span></div>
+      <div class="tribe"><b>Varía según el campus</b><span>Con 99.6 de promedio y 1,560 en la PAA, un alumno obtuvo 70% en Chihuahua. Con 100 y 1,528, otro obtuvo 60% en Monterrey. Los campus chicos suelen dar más.</span></div>
+      <div class="tribe"><b>Funciona como relato</b><span>Las historias de becados, como la del oaxaqueño que llegó a Monterrey, son de las pocas que muestran movilidad social.</span></div>
+    </div>
+    <p class="src">Informe anual 2025 · El Economista, 18/08/2026 · Radio Fórmula, 03/08/2026 · tec.mx/prepatec/becas · r/TecDeMonterrey 2024–2026 · N+, 05/10/2026</p>
+  </div>
+</section>
+
+<!-- 07 SWITCH -->
+<section class="switch" id="miradas" data-sec="07 · Dos miradas" aria-label="Afuera y adentro">
   <div class="stage">
     <div class="layer out">
       <div><span class="word">afuera</span><span class="cap">El país</span><span class="line">Lo admiran desde lejos: prestigioso, de clase alta, distante.</span></div>
@@ -581,9 +665,9 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<section class="band paper" id="miradas-datos" data-sec="06 · Dos miradas" data-drift>
+<section class="band paper" id="miradas-datos" data-sec="07 · Dos miradas" data-drift>
   <div class="wrap">
-    <div class="eyebrow"><b>06</b><span>Adentro vs afuera</span></div>
+    <div class="eyebrow"><b>07</b><span>Adentro vs afuera</span></div>
     <h2 class="mega" data-breathe><span>La misma marca, <span class="it">dos países</span>.</span></h2>
 
     <div class="mirror">
@@ -630,25 +714,25 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     </div>
 
     <div class="cols" style="margin-top:clamp(48px,7vw,88px)">
-      <p class="callout c-7" style="margin-top:0">La frialdad que ve el de afuera no es falta de simpatía. Es falta de evidencia de que el Tec cuida a su gente.</p>
+      <p class="callout c-7" style="margin-top:0">Lo que afuera se percibe como frialdad parece tener más que ver con no ver el cuidado que con falta de simpatía.</p>
       <div class="prose c-5" style="align-self:end">
-        <p>Lo que cambia entre las dos miradas es la confianza, la autenticidad y el cuidado. Lo que no cambia es la simpatía: amigable, amable y simple siguen bajísimos incluso adentro. Nadie le pide al Tec que sea simpático, y forzarlo sonaría falso.</p>
-        <p>Hay una tercera mirada que no es de clase: la del reclutador, que ve al Tec como un atajo de contratación. Y el patrón no es solo mexicano: Harvard tiene el mismo perfil “Admired” en EE. UU. (estima 84.1, relevancia 3.0, distante 95.1). La paradoja de la élite es de categoría.</p>
+        <p>Entre las dos miradas cambian sobre todo la confianza, la autenticidad y el cuidado. La simpatía casi no se mueve: amigable, amable y simple siguen muy bajos incluso adentro. Como nadie parece esperar que el Tec sea simpático, forzar ese tono podría sonar poco creíble.</p>
+        <p>Hay además una tercera mirada, la del reclutador, que suele ver al Tec como una garantía al contratar. Y el patrón no es solo mexicano: Harvard tiene el mismo perfil “Admired” en EE. UU. (estima 84.1, relevancia 3.0, distante 95.1). La admiración con distancia parece propia de las universidades de élite en general.</p>
         <p class="src">BAV USA 2026 Q1 · Reddit r/mexico · GEURS 2026</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 07 BRECHA -->
-<section class="band ink" id="brecha" data-sec="07 · La brecha" data-drift>
+<!-- 08 BRECHA -->
+<section class="band ink" id="brecha" data-sec="08 · La brecha" data-drift>
   <div class="wrap">
-    <div class="eyebrow"><b>07</b><span>La brecha</span></div>
+    <div class="eyebrow"><b>08</b><span>La brecha</span></div>
     <h2 class="mega" data-breathe><span>Lo respetan. Falta que lo <span class="it">quieran</span>.</span></h2>
     <div class="cols">
       <div class="prose c-5">
         <p class="lede" style="margin-bottom:1em">El respeto ya está ganado, incluso afuera. El salto pendiente es de respeto a amor, y de amor a lealtad.</p>
-        <p>Incluso entre quienes ya prefieren o usan el Tec, el amor llega a 47.6 y la lealtad a 24.4. No hace falta generar más admiración. Hace falta convertirla en apego.</p>
+        <p>Incluso entre quienes ya prefieren o usan el Tec, el amor llega a 47.6 y la lealtad a 24.4. El trabajo pendiente parece estar menos en generar admiración y más en convertirla en apego.</p>
       </div>
       <div class="c-7">
         <div class="chart-head" style="margin-bottom:0">
@@ -667,32 +751,35 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 08 TENSIONES -->
-<section class="band paper" id="tensiones" data-sec="08 · Lo que hay que cuidar" data-drift>
+<!-- 09 TENSIONES -->
+<section class="band paper" id="tensiones" data-sec="09 · Lo que hay que cuidar" data-drift>
   <div class="wrap">
-    <div class="eyebrow"><b>08</b><span>Lo que hay que cuidar</span></div>
+    <div class="eyebrow"><b>09</b><span>Lo que hay que cuidar</span></div>
     <h2 class="mega" data-breathe><span>Terreno <span class="it">sensible</span>.</span></h2>
     <div class="tensions">
-      <div class="tension"><div><b>El precio está en el centro de la conversación.</b><span>La prensa convierte cada ranking en comparación de colegiatura. Prestigio máximo (99.6) y valor percibido mínimo (5.0).</span></div></div>
-      <div class="tension"><div><b>No “humanizar” bajando el premium.</b><span>En esta categoría, ser más amable o simple no mueve relevancia. La cercanía que falta es de cuidado y confianza, no de simpatía.</span></div></div>
-      <div class="tension"><div><b>Tec21 es la herida interna.</b><span>La queja académica vive en foros cerrados: bloques de cinco semanas, poca teoría. Una campaña de orgullo no puede sonar a negación.</span></div></div>
-      <div class="tension"><div><b>Hablarle a un solo alumno.</b><span>El que paga, el becado y el Líder del Mañana no se reconocen en el mismo espejo. “Comunidad de esfuerzo” le habla bien al becado y deja afuera al resto.</span></div></div>
-      <div class="tension"><div><b>Adyacencia política.</b><span>El contenido más compartido del periodo usó al Tec como escenario de un mensaje político (un TikTok con 34% de los likes y 75% de los shares). El Tec no era el tema.</span></div></div>
-      <div class="tension"><div><b>Las redes amplifican la queja.</b><span>X y Reddit sobrerrepresentan estereotipo y reclamo. La trayectoria de los egresados vive en otro lado. Hay que leerlas como una mirada, no como la verdad.</span></div></div>
+      <div class="tension"><div><b>El precio pesa en la conversación.</b><span>La prensa suele convertir los rankings en comparaciones de colegiatura. Prestigio máximo (99.6) y valor percibido mínimo (5.0).</span></div></div>
+      <div class="tension"><div><b>No “humanizar” bajando el premium.</b><span>En los datos de esta categoría, la amabilidad o la simpleza no aparecen asociadas a mayor relevancia. La cercanía que falta tiene más que ver con cuidado y confianza.</span></div></div>
+      <div class="tension"><div><b>Tec21 genera críticas internas.</b><span>En los foros de alumnos se cuestionan los bloques de cinco semanas y la poca teoría. Una campaña de orgullo tendría que convivir con esa conversación.</span></div></div>
+      <div class="tension"><div><b>Hablarle a un solo alumno.</b><span>El que paga, el becado y el Líder del Mañana no se reconocen en el mismo espejo. “Comunidad de esfuerzo” conecta con el becado y puede no interpelar al resto.</span></div></div>
+      <div class="tension"><div><b>Adyacencia política.</b><span>El contenido más compartido del periodo usó al Tec como escenario de un mensaje político (un TikTok con 34% de los likes y 75% de los shares). El Tec aparecía como contexto.</span></div></div>
+      <div class="tension"><div><b>Las redes amplifican la queja.</b><span>X y Reddit sobrerrepresentan el estereotipo y el reclamo, y casi no muestran la trayectoria de los egresados. Conviene leerlas como una mirada entre otras.</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- 09 HIPÓTESIS -->
-<section class="band ink" id="hipotesis" data-sec="09 · Para el brief" data-drift>
+<!-- 10 RECOMENDACIONES -->
+<section class="band ink" id="recomendaciones" data-sec="10 · Recomendaciones" data-drift>
   <div class="wrap">
-    <div class="eyebrow"><b>09</b><span>Hipótesis para llegar al brief</span></div>
-    <h2 class="mega" data-breathe><span>Por dónde <span class="it">empezar</span>.</span></h2>
+    <div class="eyebrow"><b>10</b><span>Recomendaciones</span></div>
+    <h2 class="mega" data-breathe><span>Cosas a <span class="it">tener en cuenta</span>.</span></h2>
+    <p class="intro-note">Puntos de partida para la conversación del brief. No son conclusiones cerradas.</p>
     <div class="hyp">
-      <p data-breathe><span>Mostrar afuera el <span class="it">cuidado</span> que adentro ya se siente.<small>La brecha más grande entre las dos miradas es “cuida a su gente”: 54.0 afuera, 90.2 adentro.</small></span></p>
-      <p data-breathe><span>Contar la <span class="it">red</span> con quienes la usan, no con el ranking.<small>Los rankings y los mensajes institucionales casi no generan respuesta. Las historias con nombre propio sí.</small></span></p>
-      <p data-breathe><span>Pasar del <span class="it">respeto</span> al amor sin perder estatus.<small>El embudo muestra que el respeto ya está. Lo que falta es apego y lealtad.</small></span></p>
-      <p data-breathe><span>La exigencia como prueba de que <span class="it">creen en ti</span>.<small>El vínculo es de mentor a alumno. Exigir es la forma en que el Tec demuestra que confía.</small></span></p>
+      <p data-breathe><span>Hablarle a gente <span class="it">exigente</span>.<small>La comunidad del Tec se mide alto y espera lo mismo de su institución. Un mensaje genérico o complaciente probablemente le parezca poco.</small></span></p>
+      <p data-breathe><span>Acompañar el <span class="it">orgullo</span> en lugar de corregirlo.<small>La seguridad en sí mismos es parte de la identidad de adentro. La campaña puede darles algo nuevo de qué enorgullecerse, cuidando no reforzar la imagen de soberbia que ve el de afuera.</small></span></p>
+      <p data-breathe><span>Reconocer el <span class="it">esfuerzo</span> en sus distintas formas.<small>Para el becado, el esfuerzo es la condición para quedarse. Para quien paga, el orgullo pasa más por la red. Un relato que contemple los dos caminos tiene más chances de que todos se reconozcan.</small></span></p>
+      <p data-breathe><span>Mirar las <span class="it">becas</span> como evidencia de cuidado.<small>Que la mitad del alumnado tenga algún apoyo contrasta con la imagen de escuela de ricos. Puede ser una prueba del cuidado que adentro sí se percibe, siempre que no se presente como caridad ni prometa un acceso que en la práctica es muy selectivo.</small></span></p>
+      <p data-breathe><span>Partir de la pertenencia que <span class="it">ya existe</span>.<small>EXATEC, Borregos y Regreso a Casa son ritos que la comunidad reconoce como propios. Son un material más creíble que un mensaje institucional nuevo.</small></span></p>
+      <p data-breathe><span>Del respeto al <span class="it">cariño</span>, sin perder estatus.<small>El respeto ya está, adentro y afuera. Lo pendiente es el apego. Bajar el tono premium para parecer más cercanos no parece ser el camino.</small></span></p>
     </div>
 
     <h3 style="margin-top:clamp(56px,8vw,96px)">Preguntas para llevar a la reunión de brief</h3>
@@ -722,7 +809,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
       <div>
         <h3>Institucional y prensa</h3>
-        <p>SEP y Segundo Informe de Gobierno 2025-26 · Informes anuales del Tec 2024 y 2025 · Conecta Tec · THE, QS y GEURS 2026 · Expansión, El Economista, El Heraldo, Milenio, La Jornada.</p>
+        <p>SEP y Segundo Informe de Gobierno 2025-26 · ANUIES · IMCO Compara Carreras 2026 · Informes anuales del Tec 2024 y 2025 · Conecta Tec · THE, QS y GEURS 2026 · Expansión, El Economista, El Heraldo, Milenio, La Jornada.</p>
         <p>Los costos de colegiatura son estimados de prensa, no tarifas oficiales.</p>
       </div>
     </div>
