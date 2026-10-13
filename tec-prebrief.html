@@ -133,6 +133,10 @@ blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-siz
 .list li span{font-size:15.5px;line-height:1.45}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .chips span{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.chips.brands span{font-family:var(--sans);font-weight:700;font-stretch:115%;font-size:13px;letter-spacing:.04em;text-transform:uppercase;border-radius:4px;padding:7px 12px}
+.ranks.two{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:6px}
+.ranks.two .n{font-size:clamp(3rem,5.4vw,4.8rem)}
+.big-n{display:block;font-weight:800;font-stretch:118%;font-size:clamp(2.8rem,6vw,5rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:6px 0 8px}
 .chips.says span{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.2;letter-spacing:0;padding:4px 14px 6px}
 
 /* fotos */
@@ -476,36 +480,56 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <h2 class="mega" data-breathe><span>Ingeniería y negocios, desde el <span class="it">primer día</span>.</span></h2>
     <nav class="subnav" aria-label="En esta sección"><a href="#carreras"><b>02.1</b>Las carreras</a><a href="#tec21"><b>02.2</b>Tec21</a><a href="#campus"><b>02.3</b>Vida de campus</a><a href="#glosario"><b>02.4</b>El idioma de la casa</a></nav>
     <h3 id="carreras" style="margin-top:clamp(40px,6vw,64px)"><span class="sn">02.1</span>Las carreras</h3>
-    <p class="muted" style="max-width:62ch;margin:0">El Tec no publica su matrícula por carrera. Este mapa combina tres lecturas: las carreras con más historia, las de mayor demanda y las que la institución marca como de alta selectividad. Las tres apuntan al mismo núcleo.</p>
+    <p class="lede" style="max-width:44ch">Ingeniería y negocios son el corazón del Tec. Ahí se concentra la mayoría de los alumnos y buena parte de su reconocimiento.</p>
 
-    <div class="timeline">
-      <div class="tl"><b>1943</b><span>Abre con Ingeniería Industrial (química, eléctrica, mecánica y administración) y Estudios Contables.</span></div>
-      <div class="tl"><b>1946</b><span>Primer título profesional, de un Ingeniero Industrial Químico. Ese año nace Arquitectura.</span></div>
-      <div class="tl"><b>1969</b><span>Ingeniería en Sistemas Computacionales. El Tec la presenta como la primera carrera de computación de México y América Latina.</span></div>
-      <div class="tl"><b>2023</b><span>Ingeniería Química cumple 80 años, con más de 7 mil egresados.</span></div>
-      <div class="tl"><b>2026</b><span>Arquitectura cumple 80 años, con más de 14 mil egresados.</span></div>
+    <div class="cols" style="margin-top:clamp(36px,5vw,56px)">
+      <div class="c-6">
+        <h3>A qué carreras van</h3>
+        <div class="split" role="img" aria-label="Aproximadamente 40% ingenierías, entre 30% y 35% negocios, el resto arquitectura, diseño, salud y otras.">
+          <div class="s1" data-tip="Ingenierías · ~40% · mecatrónica, industrial, sistemas y software"><b>~40%</b>Ingenierías</div>
+          <div class="s2" data-tip="Negocios · 30–35% · administración, finanzas, negocios internacionales, mercadotecnia"><b>30–35%</b>Negocios</div>
+          <div class="s3" data-tip="Resto · arquitectura, diseño, salud y otras"><b>Resto</b>Arquitectura, salud y otras</div>
+        </div>
+        <div class="chips" style="margin-top:16px"><span>Tecnologías Computacionales</span><span>Industrial y de Sistemas</span><span>Mecatrónica</span><span>Negocios Internacionales</span><span>Mercadotecnia</span><span>Finanzas</span><span>Medicina</span><span>Arquitectura</span></div>
+        <p class="src">Reparto aproximado que describen directivos de campus regionales. Carreras más buscadas según listados de medios.</p>
+      </div>
+      <div class="c-6">
+        <h3>Por qué son reconocidos</h3>
+        <div class="ranks two">
+          <div class="rank"><span class="n"><sup>#</sup>21</span><p>del mundo en Administración y Negocios.</p></div>
+          <div class="rank"><span class="n"><sup>#</sup>25</span><p>del mundo en Mercadotecnia.</p></div>
+          <div class="rank"><span class="n"><sup>#</sup>40</span><p>del mundo en Arte y Diseño.</p></div>
+          <div class="rank"><span class="n"><sup>#</sup>58</span><p>del mundo en el área de Ingeniería y Tecnología.</p></div>
+        </div>
+        <p class="src">QS World University Rankings by Subject 2025: 4 disciplinas en el top 50 y 10 en el top 100. Además, su Escuela de Medicina reporta la mayor aceptación acumulada en el ENARM 2021–2025 entre ocho universidades comparadas (66.6%, según el Tec).</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:clamp(48px,7vw,80px)">Dónde fueron pioneros</h3>
+    <div class="cards three">
+      <div class="card"><em>Internet</em><b>La primera conexión de México</b><span>Desde el Campus Monterrey, a fines de 1988. El Tec también la presenta como la primera de América Latina.</span></div>
+      <div class="card"><em>Computación</em><b>La primera carrera del país</b><span>Ingeniería en Sistemas Computacionales, en 1969. El Tec la presenta como la primera de México y América Latina.</span></div>
+      <div class="card"><em>Aprender con empresas</em><b>Retos reales en el aula</b><span>Con Tec21, cada carrera se cursa resolviendo problemas que plantean empresas y organizaciones.</span></div>
     </div>
 
     <div class="cols" style="margin-top:clamp(48px,7vw,80px)">
-      <div class="c-7">
-        <h3>Cómo se reparte la demanda</h3>
-        <div class="split" role="img" aria-label="Aproximadamente 40% ingenierías, entre 30% y 35% negocios, el resto arquitectura, diseño y otras.">
-          <div class="s1" data-tip="Ingenierías · ~40% · mecatrónica, industrial, sistemas y software"><b>~40%</b>Ingenierías</div>
-          <div class="s2" data-tip="Negocios · 30–35% · administración, finanzas, negocios internacionales, mercadotecnia"><b>30–35%</b>Negocios</div>
-          <div class="s3" data-tip="Resto · arquitectura, diseño y otras"><b>Resto</b>Arquitectura, diseño y otras</div>
-        </div>
-        <p class="src">Aproximación de directivos de campus regionales, no una cifra oficial del sistema.</p>
-        <div class="peeks three" style="margin-top:clamp(28px,4vw,44px)">
-          <div class="peek"><button class="peek-head" type="button" aria-expanded="false"><span><em>Más historia</em><b>Las fundadoras</b><span class="tz">Las ingenierías de origen.</span></span><i class="peek-ico" aria-hidden="true"></i></button><div class="peek-body"><div><div class="peek-inner"><ul><li>Ingeniería Química</li><li>Ingeniería Industrial</li><li>Ingeniería Mecánica</li><li>Arquitectura</li><li>Sistemas Computacionales, la primera carrera de computación del país</li></ul></div></div></div></div>
-          <div class="peek"><button class="peek-head" type="button" aria-expanded="false"><span><em>Más demanda</em><b>Las más buscadas</b><span class="tz">Ingeniería y negocios a la cabeza.</span></span><i class="peek-ico" aria-hidden="true"></i></button><div class="peek-body"><div><div class="peek-inner"><ul><li>Tecnologías Computacionales</li><li>Industrial y de Sistemas</li><li>Mecatrónica</li><li>Negocios Internacionales</li><li>Mercadotecnia y Finanzas</li><li>Medicina</li></ul><p class="src">Listados de medios y patrón que describen los campus</p></div></div></div></div>
-          <div class="peek"><button class="peek-head" type="button" aria-expanded="false"><span><em>Más selectividad</em><b>Cupo limitado</b><span class="tz">Medicina y algunas de frontera.</span></span><i class="peek-ico" aria-hidden="true"></i></button><div class="peek-body"><div><div class="peek-inner"><ul><li>Médico Cirujano</li><li>Negocios en inglés (BBA, BFI, BM)</li><li>Arquitectura</li><li>Ingeniería Biomédica</li><li>Biotecnología y Nanotecnología, según el campus</li></ul><p class="src">Sitio de admisiones del Tec</p></div></div></div></div>
+      <div class="c-6">
+        <h3>Dónde trabajan después</h3>
+        <p style="margin:0;font-size:15px;max-width:46ch" class="muted">Las diez empresas que más egresados del Tec han contratado, según el propio Tec:</p>
+        <div class="chips brands"><span>Cemex</span><span>Citibanamex</span><span>PepsiCo</span><span>IBM</span><span>BBVA</span><span>Ford</span><span>General Motors</span><span>Microsoft</span><span>Oracle</span><span>Procter &amp; Gamble</span></div>
+        <div class="peeks one">
+          <div class="peek"><button class="peek-head" type="button" aria-expanded="false"><span><em>Ferias</em><b>EmpleaTEC</b><span class="tz">Donde se encuentran alumnos y empresas.</span></span><i class="peek-ico" aria-hidden="true"></i></button><div class="peek-body"><div><div class="peek-inner"><p>Es la feria de empleo del Tec. En una de sus ediciones participaron 122 empresas, con la llegada de nombres como Amazon, Kia, Uber y DiDi.</p><p>Las áreas que más contratan son desarrollo de negocios, operaciones, ventas, ingeniería y tecnologías de la información.</p><p class="src">Conecta Tec. La lista de empleadores es de hace algunos años.</p></div></div></div></div>
         </div>
       </div>
-      <div class="c-5">
-        <div class="facts one">
-          <div class="fact"><span class="n"><span data-count="66.6" data-dec="1">66.6</span>%</span><p>de aceptación acumulada en el ENARM 2021–2025 para su Escuela de Medicina. Es la más alta entre las ocho universidades del comparativo, según el Tec.</p><p class="src">Conecta Tec, 2025</p></div>
-          <div class="fact"><span class="n">Top <span data-count="100">100</span></span><p>mundial en varias disciplinas de QS by Subject 2025: Administración y Negocios, Mercadotecnia, y Arte y Diseño.</p><p class="src">QS World University Rankings by Subject 2025</p></div>
+      <div class="c-6">
+        <h3>Con quiénes tienen contacto</h3>
+        <span class="big-n">+<span data-count="1500">1,500</span></span>
+        <p style="margin:0;font-size:15px;max-width:44ch">empresas y organizaciones trabajaron con el Tec como “socios formadores” en 2022, planteando los retos que resuelven los alumnos.</p>
+        <div class="peeks">
+          <div class="peek"><button class="peek-head" type="button" aria-expanded="false"><span><em>Ejemplo</em><b>Coppel</b><span class="tz">Un reto para 3,500 alumnos.</span></span><i class="peek-ico" aria-hidden="true"></i></button><div class="peek-body"><div><div class="peek-inner"><p>Unos 3,500 alumnos de Negocios de todos los campus trabajaron al mismo tiempo en un reto planteado por Coppel.</p><p class="src">El Financiero</p></div></div></div></div>
+          <div class="peek"><button class="peek-head" type="button" aria-expanded="false"><span><em>En el periodo</em><b>Heineken, FEMSA, COPARMEX</b><span class="tz">Retos, premios y foros.</span></span><i class="peek-ico" aria-hidden="true"></i></button><div class="peek-body"><div><div class="peek-inner"><p>Heineken Green Challenge, el Premio Eugenio Garza Sada con FEMSA y el Foro Nacional de Integridad con COPARMEX aparecen en la conversación de agosto a octubre de 2026.</p><p class="src">Sightly Social Posts y News, México</p></div></div></div></div>
         </div>
+        <p class="src">Informe institucional 2022 · Conecta Tec</p>
       </div>
     </div>
 
@@ -547,7 +571,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="term"><dt>Semana i</dt><dd>Una semana de retos fuera del aula. En redes aparece a veces como broma sobre el prestigio.</dd></div>
       <div class="term"><dt>Regreso a Casa</dt><dd>El rito anual de egresados. Más de 1,800 volvieron a sus campus entre octubre y diciembre de 2025.</dd></div>
     </dl>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>La experiencia se apoya en ingeniería, negocios y un modelo que pone al alumno frente a problemas reales. Y tiene un vocabulario propio que se aprende estando adentro.</p></div>
+    <div class="takeaway"><em>Lo que nos llevamos</em><p>La experiencia se apoya en ingeniería y negocios, en un contacto constante con empresas y en un modelo que pone al alumno frente a problemas reales.</p></div>
 
   </div>
 </section>
@@ -1035,7 +1059,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <h2 class="mega" data-breathe><span>Cosas a <span class="it">tener en cuenta</span>.</span></h2>
     <p class="muted" style="margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.06em">Puntos de partida para la conversación del brief. No son conclusiones cerradas.</p>
     <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Lo que fuimos viendo</h3>
-    <ol class="recap"><li><a href="#que-es"><span>01</span>Nació con la ambición de una institución de nivel mundial.</a></li><li><a href="#como-funciona"><span>02</span>Ingeniería, negocios y aprendizaje por retos.</a></li><li><a href="#posicionamiento"><span>03</span>Un discurso oficial amplio; lo propio está en su gente.</a></li><li><a href="#sistema"><span>04</span>En un sistema con filtro, el Tec se justifica por el después.</a></li><li><a href="#peso"><span>05</span>El prestigio ya está instalado.</a></li><li><a href="#diferencial"><span>06</span>Salida laboral, red y nombre.</a></li><li><a href="#orgullo"><span>07</span>Orgullo de escuela, activado por Borregos y la red.</a></li><li><a href="#pertenencia"><span>08</span>Pertenencia como logro y como rito.</a></li><li><a href="#persona"><span>09</span>Exigentes, orgullosos, y la mitad con algún apoyo.</a></li><li><a href="#miradas-datos"><span>10</span>El cuidado se ve adentro, no afuera.</a></li><li><a href="#brecha"><span>11</span>Falta pasar del respeto al cariño.</a></li><li><a href="#tensiones"><span>12</span>Precio, Tec21 y diversidad de alumnos, con cuidado.</a></li></ol>
+    <ol class="recap"><li><a href="#que-es"><span>01</span>Nació con la ambición de una institución de nivel mundial.</a></li><li><a href="#como-funciona"><span>02</span>Ingeniería y negocios, cerca de las empresas.</a></li><li><a href="#posicionamiento"><span>03</span>Un discurso oficial amplio; lo propio está en su gente.</a></li><li><a href="#sistema"><span>04</span>En un sistema con filtro, el Tec se justifica por el después.</a></li><li><a href="#peso"><span>05</span>El prestigio ya está instalado.</a></li><li><a href="#diferencial"><span>06</span>Salida laboral, red y nombre.</a></li><li><a href="#orgullo"><span>07</span>Orgullo de escuela, activado por Borregos y la red.</a></li><li><a href="#pertenencia"><span>08</span>Pertenencia como logro y como rito.</a></li><li><a href="#persona"><span>09</span>Exigentes, orgullosos, y la mitad con algún apoyo.</a></li><li><a href="#miradas-datos"><span>10</span>El cuidado se ve adentro, no afuera.</a></li><li><a href="#brecha"><span>11</span>Falta pasar del respeto al cariño.</a></li><li><a href="#tensiones"><span>12</span>Precio, Tec21 y diversidad de alumnos, con cuidado.</a></li></ol>
     <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">Hacia dónde podría ir</h3>
     <div class="recos">
       <div class="reco" data-stop><p>Hablarle a gente <span class="it">exigente</span>.<small>La comunidad del Tec se mide alto y espera lo mismo de su institución. Un mensaje genérico o complaciente probablemente le parezca poco.<i class="from">Viene de 08 · 09</i></small></p></div>
