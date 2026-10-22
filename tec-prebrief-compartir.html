@@ -2161,9 +2161,9 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   });
   var fbDb=null,fbUser=null,fbOffline=false,fbRows=[];
   function fbSay(t){fbStatus.textContent=t;}
-  function offlineMode(){
+  function offlineMode(shared){
     fbOffline=true;
-    document.getElementById('fb-sub').textContent='En esta copia del archivo los comentarios no se guardan. Escribilo igual, tocá “Copiar” y pegalo en el chat del equipo.';
+    document.getElementById('fb-sub').textContent=shared?'Con tu acceso, los comentarios no se guardan en el documento. Escribilo igual, tocá “Copiar” y pegalo en el chat del equipo.':'En esta copia del archivo los comentarios no se guardan. Escribilo igual, tocá “Copiar” y pegalo en el chat del equipo.';
     fbSend.textContent='Copiar';
   }
   var hasClaude=!!(window.claude&&typeof window.claude.use==='function'),fbPending=hasClaude;
@@ -2174,8 +2174,8 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       if(!fbDb){offlineMode();return;}
       fbOffline=false;fbSend.textContent='Enviar';
       document.getElementById('fb-sub').textContent='Elegí el tipo, contá qué ves y, si es sobre una parte puntual, marcá la sección. Le llega al equipo de estrategia.';
-      return fbUser?Promise.all([fbUser.isOwner(),fbUser.canEdit()]):[false,false];
-    }).then(function(r){if(r&&(r[0]||r[1]))startAdmin();}).catch(function(){});
+      return fbUser?Promise.all([fbUser.isOwner(),fbUser.canEdit(),fbUser.can('data.write')]):[false,false,null];
+    }).then(function(r){if(!r)return;if(r[2]===false&&!r[0])offlineMode(true);if(r[0]||r[1])startAdmin();}).catch(function(){});
   }
   function fallbackCopy(txt){
     if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(txt);
@@ -2203,7 +2203,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       fbText.value='';fbSay('¡Gracias! Tu comentario quedó guardado.');
     },function(err){
       var c=err&&err.code;
-      if(c==='invalid_argument')fbSay('No tenés permiso para comentar en este documento. Pedile a Kev acceso como Colaborador.');
+      if(c==='invalid_argument'){offlineMode(true);fbSay('Con tu acceso no se puede guardar. Tocá “Copiar” y pegalo en el chat del equipo.');}
       else if(c==='quota_exceeded')fbSay('El espacio de comentarios está lleno. Avisale a Kev.');
       else if(c==='resource_exhausted')fbSay('Muchos envíos seguidos. Esperá un momento y probá de nuevo.');
       else fbSay('No se pudo enviar ahora. Probá de nuevo en un rato.');
