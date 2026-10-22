@@ -475,6 +475,27 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 .vs-table td:first-child{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);width:18%}
 .vs-table td{font-size:15.5px}
 .vs-table th{font-size:12px}
+.aud{margin-top:clamp(48px,7vw,80px);border:1.5px solid var(--bl);border-radius:12px;padding:clamp(20px,3vw,36px);color:var(--fg)}
+.aud-h{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+.aud-h h3{margin:0;color:var(--bl);font-size:1.1rem}
+.aud-h p{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--soft)}
+.aud-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:18px;align-items:start}
+.heat{width:100%;min-width:0;border-collapse:collapse;font-size:13px}
+.heat th{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);text-align:center!important;padding:0 4px 8px;vertical-align:bottom;line-height:1.25}
+.heat th:first-child{text-align:left!important}
+.heat td{padding:5px 4px;border-bottom:1px solid var(--line);text-align:center!important}
+.heat td:first-child{text-align:left!important;white-space:nowrap}
+.heat td:first-child small{font-family:var(--mono);color:var(--soft);font-size:10px;margin-left:4px}
+.heat i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle}
+.heat i.p{background:var(--bl)}
+.heat i.r{background:transparent;border:1.5px solid var(--bl)}
+.heat i.c{background:transparent;border:1px dashed var(--soft);opacity:.7}
+.heat tr.core td{font-weight:700}
+.heat-key{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-family:var(--mono);font-size:10.5px;color:var(--soft);align-items:center}
+.heat-key span{display:inline-flex;gap:6px;align-items:center}
+.aud-points{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.aud-points li{border-top:1px solid var(--bl);padding-top:12px;color:var(--bl);font-size:15px;line-height:1.45}
+.aud-points b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.35rem;line-height:1.15;margin-bottom:4px}
 .olympic-plus{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(3.4rem,13vw,12rem);line-height:.9;letter-spacing:-.03em}
 .olympic-plus .it{font-size:1em}
 .motto-hero{margin-top:clamp(32px,5vw,56px);padding-block:clamp(28px,4vw,48px);border-block:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
@@ -574,7 +595,11 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   .region-h i{margin-left:0;width:100%}
   .verbs li{grid-template-columns:minmax(0,1fr);gap:4px}
   .youth-big{grid-template-columns:minmax(0,1fr)}
-  .timeline.t3col,.triad,.quotes-b,.cross li{grid-template-columns:minmax(0,1fr)}
+  .timeline.t3col,.triad,.quotes-b,.cross li,.aud-grid{grid-template-columns:minmax(0,1fr)}
+  .heat td:first-child{white-space:normal}
+  .heat{font-size:12.5px}
+  .heat th{font-size:9px;letter-spacing:.02em;padding:0 2px 8px}
+  .heat td{padding:5px 2px}
 }
 @media (max-width:900px){
   .tension3{grid-template-columns:minmax(0,1fr)}
@@ -1040,6 +1065,24 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     </div>
     <p class="callout lit" style="max-width:26ch">Los cuatro contestan “EXATEC” cuando les preguntan de dónde salieron.</p>
 
+    <div class="aud" id="audiencias">
+      <div class="aud-h"><h3>Qué prioriza cada audiencia</h3><p>Matriz de diferenciadores por audiencia · Tec, oct 2026</p></div>
+      <div class="aud-grid">
+        <div class="tbl-wrap" style="margin:0">
+          <table class="heat">
+            <thead><tr><th>Audiencia</th><th>Excelen&shy;cia</th><th>Alcance global</th><th>Transfor&shy;mar</th><th>Sentido humano</th></tr></thead>
+            <tbody><tr class="core"><td>Estudiantes</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr><td>Padres de estudiantes</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr class="core"><td>Prospectos</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr><td>Padres de prospectos</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr><td>Profesores</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td></tr><tr><td>EXATEC</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr><td>Consejeros</td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr><td>Sociedad</td><td><i class="c" aria-label="Complementario"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr><tr><td>Empleadores<small>*</small></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td></tr><tr><td>Gobierno<small>*</small></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td></tr><tr><td>Donantes<small>*</small></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="r" aria-label="Relevante"></i></td><td><i class="p" aria-label="Prioritario"></i></td><td><i class="p" aria-label="Prioritario"></i></td></tr></tbody>
+          </table>
+          <div class="heat-key"><span><i class="p" style="display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--bl)"></i>Prioritario</span><span><i style="display:inline-block;width:12px;height:12px;border-radius:3px;border:1.5px solid var(--bl)"></i>Relevante</span><span><i style="display:inline-block;width:12px;height:12px;border-radius:3px;border:1px dashed currentColor"></i>Complementario</span><span>* pendiente de evaluar</span></div>
+        </div>
+        <ul class="aud-points">
+          <li><b>Excelencia y sentido humano, primero.</b>Para estudiantes y prospectos son prioritarios. Transformar es solo relevante.</li>
+          <li><b>Lo humano es la formación humanista.</b>Es prioritaria para casi todos. “Comunidad con sentido” es relevante o complementaria para estudiantes, padres y prospectos.</li>
+          <li><b>La selectividad no es lo que buscan.</b>Es complementaria para estudiantes, padres y prospectos. Sí pesan la empleabilidad y el liderazgo con impacto, prioritarios para casi todos.</li>
+        </ul>
+      </div>
+    </div>
+
     <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Cómo pertenecen</h3>
     <div class="cards three">
       <div class="card"><em>Cultivada</em><b>Una pertenencia buscada</b><span>Su oficina de egresados define su trabajo como “fortalecer el sentido de pertenencia”. “El Tec siempre será su casa” (David Garza, Regreso a Casa, sep 2026).</span></div>
@@ -1274,7 +1317,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="term"><dt>Donantes</dt><dd>Confianza en que su contribución genera impacto.</dd></div>
       <div class="term"><dt>Gobierno</dt><dd>Un aliado para impulsar talento, innovación y competitividad.</dd></div>
     </dl>
-    <p class="src">Prioritarias: estudiantes actuales y sus familias, EXATEC, empleadores y líderes de opinión, y prospectos con su bajada de atracción. Ampliadas: profesores, investigadores, organizaciones y sociedad.</p>
+    <p class="src">Prioritarias: estudiantes actuales y sus familias, EXATEC, empleadores y líderes de opinión, y prospectos con su bajada de atracción. Ampliadas: profesores, investigadores, organizaciones y sociedad. Qué diferenciador pesa más en cada una: <a href="#audiencias">ver 08</a>.</p>
 
     <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Cuándo</h3>
     <div class="timeline">
@@ -1379,6 +1422,15 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </table>
     </div>
 
+    <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Cómo se vive hoy, según el propio Tec</h3>
+    <p class="muted" style="margin:0 0 4px;max-width:60ch;font-size:15px">Su documento interno sobre humanismo lo baja a experiencias concretas. Es material para mostrar, no solo para decir.</p>
+    <div class="cards">
+      <div class="card"><em>Sensibilidad</em><b>Artes, cultura y deporte</b><span>Cultivan la expresión, el autoconocimiento y las habilidades para la vida. Borregos también es humanismo.</span></div>
+      <div class="card"><em>Criterio</em><b>Pensamiento crítico</b><span>Para leer la realidad social, cultural y tecnológica, y actuar con conciencia ética.</span></div>
+      <div class="card"><em>Cuidado</em><b>Bienestar y equilibrio</b><span>Cada alumno es “una persona con necesidades, aspiraciones y posibilidades que trascienden su desempeño académico”.</span></div>
+      <div class="card"><em>Planeta</em><b>Ruta Azul</b><span>Su programa de sostenibilidad y acción climática, como parte de la experiencia Tec.</span></div>
+    </div>
+    <p class="src bsrc">Humanismo en el Tec, documento interno de Marketing y Comunicación, oct 2026. Ese documento incluye el servicio social y el voluntariado como prácticas; para la campaña manda el brief: “No es servicio social”.</p>
     <p class="callout lit">No es un tema aparte: vive en cómo forman, investigan, innovan, emprenden y toman decisiones.</p>
     <p class="quote-xl">“No es servicio social. No es ser menos exigentes.”<cite>Brief de posicionamiento · Tampoco debe ser el único eje de la narrativa</cite></p>
     <div class="takeaway"><em>Palabra clave</em><p>Sentido. Lo humanista no se suma como un tema más: es el para qué de la excelencia.</p></div>
@@ -1465,7 +1517,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <ul class="list">
       <li><b>Puede sonar a filtro</b><span>Mal contado, “match” suena a club o a “el Tec no es para todos”, justo la distancia que el brief quiere bajar.</span></li>
       <li><b>Desde la persona</b><span>Contarlo en las dos direcciones, nunca desde el Tec eligiendo.</span></li>
-      <li><b>Por actitud</b><span>Que quede claro que el encaje es por compromiso y propósito, no por nivel socioeconómico. Las becas son la prueba: cerca de la mitad tiene algún apoyo.</span></li>
+      <li><b>Por actitud</b><span>Que quede claro que el encaje es por compromiso y propósito, no por nivel socioeconómico. Las becas son la prueba: cerca de la mitad tiene algún apoyo. Y para estudiantes, padres y prospectos la selectividad es solo complementaria (<a href="#audiencias">ver 08</a>).</span></li>
     </ul>
     <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Preguntas que abre</h3>
     <ul class="qs">
@@ -1523,13 +1575,15 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     </div>
 
     <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">Lo que dice el brief</h3>
-    <p class="muted" style="margin:0;max-width:60ch;font-size:15px">No lo plantea como un diagnóstico del mundo y no explica por qué ahora. Pero la idea aparece en varias líneas:</p>
+    <p class="muted" style="margin:0;max-width:60ch;font-size:15px">El brief no lo plantea como un diagnóstico del mundo ni explica por qué ahora. Pero la idea aparece en varias líneas:</p>
     <div class="quotes-b">
       <blockquote>“Además del conocimiento, las credenciales y los resultados, adquiere mayor relevancia la capacidad de colaborar, innovar responsablemente y contribuir positivamente al entorno.”<cite>Creencias actuales de las audiencias</cite></blockquote>
       <blockquote>“Bajar la tensión del héroe individual: personas que quieren poner sus capacidades en acción para contribuir a algo más grande que ellas mismas.”<cite>Tono</cite></blockquote>
       <blockquote>“No separamos el éxito del impacto.”<cite>Brand Expression</cite></blockquote>
       <blockquote>“El valor no está solo en quiénes forman parte del ecosistema, sino en lo que son capaces de hacer juntos.”<cite>Territorio</cite></blockquote>
     </div>
+
+    <div class="bnote" style="margin-top:clamp(48px,7vw,80px)"><em>Y el Tec, por dentro, dice por qué</em><p>Su documento sobre humanismo sí lo explica: los estudiantes enfrentan contextos cada vez más complejos y cambiantes, con transformaciones tecnológicas, sociales, laborales y ambientales. Sin formación humanista, <span class="it">“existe el riesgo de reducir la educación universitaria a un aprendizaje funcional o instrumental”</span>. Por eso el propósito es “formar personas capaces de imaginar y transformar la realidad con sentido humano”: la universidad <b>no forma únicamente profesionistas, forma personas</b>.<small>Humanismo en el Tec, documento interno de Marketing y Comunicación, oct 2026</small></p></div>
 
     <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">Lo que dicen los jóvenes en México</h3>
     <div class="youth-big">
@@ -1553,10 +1607,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <ul class="cross">
       <li><div><em>Dice el brief</em><p class="b" style="margin:0">“Contribuir a algo más grande que uno mismo.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">El 64% siente que puede tener un papel activo, y elige su carrera por dinero, sentido y bienestar.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">La comunidad como el lugar donde el propósito se vuelve acción.</p></div></li>
       <li><div><em>Dice el brief</em><p class="b" style="margin:0">“No separamos el éxito del impacto.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">La universidad sigue siendo la apuesta (67%), pero el 68% cree que afuera hay más oportunidades.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">Un éxito que rinde aquí: para uno, para otros y para México.</p></div></li>
-      <li><div><em>Dice el brief</em><p class="b" style="margin:0">“Lo que son capaces de hacer juntos.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">Más del 70% se siente abrumado y 1 de cada 5 jóvenes se siente solo.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">Una excelencia que sostiene: nadie llega solo.</p></div></li>
+      <li><div><em>Dice el brief</em><p class="b" style="margin:0">“Lo que son capaces de hacer juntos.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">Más del 70% se siente abrumado y 1 de cada 5 jóvenes se siente solo.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">Una excelencia que sostiene, con bienestar y equilibrio en el modelo: nadie llega solo.</p></div></li>
     </ul>
     <p class="callout lit">Sienten que el mundo que reciben está roto. No piden el mundo: piden que los tomen en serio y que el esfuerzo valga la pena.</p>
-    <div class="takeaway"><em>Para la idea</em><p>En un mundo que empuja a salvarse solo, la excelencia del Tec puede ser la que se logra juntos.</p></div>
+    <div class="takeaway"><em>Para la idea</em><p>En un mundo que empuja a salvarse solo, el Tec no forma solo profesionistas: forma personas. Ese es su “juntos”, más que la comunidad como un valor en sí.</p></div>
   </div>
 </section>
 
@@ -1567,7 +1621,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <h2 class="mega" data-breathe><span>Exigentes, pero <span class="it">cercanos</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">Mantener los altos estándares y la cultura de exigencia, sin perder la empatía, la cercanía ni el acompañamiento.</p>
-      <p class="ev c-6 end">Lo vimos en <a href="#persona">09</a>: quien está adentro es exigente y orgulloso. Y en <a href="#miradas-datos">10</a>: adentro el Tec “cuida a su gente” (90.2); afuera casi no se ve (54.0).</p>
+      <p class="ev c-6 end">Lo vimos en <a href="#persona">09</a>: quien está adentro es exigente y orgulloso. Y en <a href="#miradas-datos">10</a>: adentro el Tec “cuida a su gente” (90.2); afuera casi no se ve (54.0). <span class="bd">Su propio modelo ya incluye el bienestar y el equilibrio personal (<a href="#humanista">ver 14</a>).</span></p>
     </div>
 
     <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">El caso: la NASA</h3>
@@ -1896,6 +1950,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div>
         <h3 class="bd">Brief del Tec</h3>
         <p class="bd">Brief de Posicionamiento Institucional, Campaña 2027, y Brief Tec de Monterrey (campaña 26-27), ambos del 14 de octubre de 2026. Brand Expression del Tec. Lo del “match” viene de lo conversado en la reunión de brief, no del documento.</p>
+        <p class="bd">Documentos complementarios del Tec: “Humanismo en el Tec” (interno, Marketing y Comunicación) y “Priorización estratégica de diferenciadores por audiencia” (oct 2026). En la matriz, empleadores, gobierno y donantes están pendientes de evaluar.</p>
         <p class="bd">Las cifras del brief son del propio Tec y de QS Latin America &amp; the Caribbean 2027. Las fortalezas citan el BHT Nacional 2024 (prospectos de profesional) y las expectativas de alumnos, un estudio cuantitativo con estudiantes de Preparatoria y Profesional.</p>
       </div>
       <div>
