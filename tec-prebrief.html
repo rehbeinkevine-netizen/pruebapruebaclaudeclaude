@@ -426,6 +426,32 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 .hanzi{font-family:"Noto Serif SC","Songti SC","SimSun",var(--serif);font-size:clamp(3rem,7vw,5.4rem);line-height:1.1;letter-spacing:.08em;padding-block:clamp(24px,4vw,48px);border-block:1px solid var(--line);text-align:center}
 .type-claim{font-family:var(--sans);font-weight:800;font-stretch:112%;font-size:clamp(2rem,4.4vw,3.6rem);line-height:.98;letter-spacing:-.025em;padding-block:clamp(24px,4vw,48px);border-block:1px solid var(--line);text-wrap:balance}
 .type-claim .it{font-weight:400}
+.venn{margin:clamp(40px,6vw,72px) auto 0;max-width:1080px}
+.venn svg{display:block;width:100%;height:auto}
+.venn .vc{fill:var(--fg);fill-opacity:.045;stroke:var(--fg);stroke-width:1.5}
+.venn .vt{font-family:var(--sans);font-weight:800;font-stretch:118%;font-size:27px;letter-spacing:.04em;fill:var(--fg)}
+.venn .vs{font-family:var(--serif);font-style:italic;font-size:20px;fill:var(--soft)}
+.venn .vmx{font-family:var(--sans);font-weight:700;font-size:21px;fill:var(--bl)}
+.venn .vmx.strong{font-weight:800;font-size:23px}
+.venn .vin{font-family:var(--mono);font-size:14.5px;fill:var(--soft)}
+.venn .varrow{fill:none;stroke:var(--bl);stroke-width:2;stroke-dasharray:6 6}
+.venn .vgoal{fill:var(--bl)}
+.venn .vgoal-t{font-family:var(--serif);font-style:italic;font-size:34px;fill:#fff}
+.venn .vgoal-s{font-family:var(--mono);font-size:13px;letter-spacing:.08em;fill:#fff}
+.venn figcaption{text-align:center}
+.regions{display:grid;gap:clamp(56px,8vw,104px);margin-top:clamp(56px,8vw,104px)}
+.region-h{display:flex;align-items:baseline;gap:8px 18px;border-top:2px solid var(--fg);padding-top:16px;flex-wrap:wrap}
+.region-h b{font-weight:800;font-stretch:118%;font-size:clamp(1.3rem,2.6vw,2.1rem);letter-spacing:-.01em;text-transform:uppercase;line-height:1.05}
+.region-h span{font-family:var(--serif);font-style:italic;color:var(--soft);font-size:1.25rem}
+.region-h i{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-left:auto}
+.region.goal .region-h{border-top-color:var(--bl)}
+.region.goal .region-h b{color:var(--bl)}
+.mottos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,56px)}
+.mottos li{padding:24px 0 22px;border-bottom:1px solid var(--line);display:grid;gap:8px;align-content:start;min-width:0}
+.mottos q{quotes:none;font-family:var(--serif);font-style:italic;font-size:clamp(1.9rem,4vw,3.4rem);line-height:1;letter-spacing:-.015em;overflow-wrap:break-word;text-wrap:balance}
+.mottos span{font-size:15px;line-height:1.45;color:var(--soft)}
+.mottos em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.mottos li.mx q,.mottos li.mx em{color:var(--bl)}
 .motto-hero{margin-top:clamp(32px,5vw,56px);padding-block:clamp(28px,4vw,48px);border-block:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
 .motto-hero p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(2.2rem,6vw,5.4rem);line-height:.95;letter-spacing:-.02em}
 .motto-hero p s{text-decoration:none;opacity:.35}
@@ -471,7 +497,8 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   .chrome #chrome-sec{display:none}
   .index a{grid-template-columns:2.4rem minmax(0,1fr)}
   .index .ds{display:none}
-  .bnote,.say,.tension3,.motto-hero,.voices,.claims{grid-template-columns:minmax(0,1fr)}
+  .bnote,.say,.tension3,.motto-hero,.voices,.claims,.mottos{grid-template-columns:minmax(0,1fr)}
+  .region-h i{margin-left:0;width:100%}
   .verbs li{grid-template-columns:minmax(0,1fr);gap:4px}
   .youth-big{grid-template-columns:minmax(0,1fr)}
 }
@@ -517,7 +544,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
         <li><a href="#parte-4"><span class="rn">IV</span><span class="nm">Dos miradas</span><span class="ds">Adentro y afuera</span></a></li>
         <li><a href="#parte-5"><span class="rn">V</span><span class="nm">Hacia el brief</span><span class="ds">Qué tener en cuenta</span></a></li>
         <li><a href="#parte-6" class="bd"><span class="rn">VI</span><span class="nm">El brief</span><span class="ds">Lo que nos pidieron</span></a></li>
-        <li><a href="#parte-7"><span class="rn">VII</span><span class="nm">Después del brief</span><span class="ds">Tensiones, frases y jóvenes</span></a></li>
+        <li><a href="#parte-7"><span class="rn">VII</span><span class="nm">Después del brief</span><span class="ds">Tensiones, jóvenes y lemas</span></a></li>
       </ol>
     </div>
   </div>
@@ -1402,7 +1429,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <span class="ch-num" aria-hidden="true">VII</span>
     <h2 class="ch-title">Después del <span class="it">brief</span></h2>
     <p class="ch-sub">Para empezar a pensar la idea: las tres tensiones del brief, cada una con frases de instituciones de excelencia que ayudan a resolverla, y el contexto de los jóvenes.</p>
-    <ul class="ch-list"><li><a href="#tension-1">19 Exigentes, pero cercanos</a></li><li><a href="#tension-2">20 Selectivos, pero accesibles</a></li><li><a href="#tension-3">21 Logro con propósito</a></li><li><a href="#jovenes">22 Los jóvenes y la universidad</a></li></ul>
+    <ul class="ch-list"><li><a href="#tension-1">19 Exigentes, pero cercanos</a></li><li><a href="#tension-2">20 Selectivos, pero accesibles</a></li><li><a href="#tension-3">21 Logro con propósito</a></li><li><a href="#jovenes">22 Los jóvenes y la universidad</a></li><li><a href="#lemas">23 Los lemas, en el mapa</a></li></ul>
   </div>
 </section>
 
@@ -1568,8 +1595,162 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
+<!-- 23 LEMAS EN EL MAPA -->
+<section class="band paper" id="lemas" data-sec="23 · Los lemas, en el mapa" data-drift data-stop>
+  <div class="wrap">
+    <div class="eyebrow"><b>23</b><span>Los lemas, en el mapa del brief</span></div>
+    <h2 class="mega" data-breathe><span>Cada universidad, <span class="it">su frase</span>.</span></h2>
+    <div class="cols">
+      <p class="lede c-6">El brief ubica a las universidades mexicanas en tres círculos: excelencia, sentido humano y transformación. Hoy el Tec está entre excelencia y transformación, junto a la UNAM y el IPN. Quiere estar en el centro.</p>
+      <div class="prose c-6 end">
+        <p>Sumamos los lemas y claims de cada una, y los de universidades del mundo que hablan de excelencia, comunidad y mundo. <span class="bd">En azul, las mexicanas tal como las ubica el brief.</span> Las demás son nuestra lectura.</p>
+        <p class="src">† en el brief: universidades de inspiración católica.</p>
+      </div>
+    </div>
+
+    <figure class="venn" role="img" aria-label="Diagrama de Venn del brief. Excelencia: ITAM. Excelencia y transformación: Tec hoy, UNAM, IPN. Excelencia y sentido humano: Panamericana, UDEM, Anáhuac. Sentido humano: Ibero. En el centro, donde el Tec quiere estar.">
+      <svg viewBox="0 0 1000 870" aria-hidden="true">
+        <circle class="vc" cx="500" cy="300" r="270"/>
+        <circle class="vc" cx="345" cy="565" r="270"/>
+        <circle class="vc" cx="655" cy="565" r="270"/>
+        <text class="vt" x="500" y="88" text-anchor="middle">EXCELENCIA</text>
+        <text class="vs" x="500" y="114" text-anchor="middle">conocimiento · cultura</text>
+        <text class="vmx" x="500" y="168" text-anchor="middle">ITAM</text>
+        <text class="vin" x="500" y="198" text-anchor="middle">Harvard · Yale · Stanford · LSE</text>
+        <text class="vin" x="500" y="220" text-anchor="middle">Toronto · Melbourne · USP</text>
+
+        <text class="vmx" x="245" y="600" text-anchor="middle">Ibero †</text>
+        <text class="vin" x="245" y="630" text-anchor="middle">Wellesley · Berea</text>
+        <text class="vin" x="245" y="652" text-anchor="middle">UBC · Cape Town</text>
+        <text class="vs" x="250" y="702" text-anchor="middle">humanismo · comunidad</text>
+        <text class="vt" x="250" y="738" text-anchor="middle">SENTIDO</text>
+        <text class="vt" x="250" y="768" text-anchor="middle">HUMANO</text>
+
+        <text class="vin" x="755" y="608" text-anchor="middle">ETH Zürich</text>
+        <text class="vin" x="755" y="630" text-anchor="middle">JPL · NASA</text>
+        <text class="vs" x="750" y="702" text-anchor="middle">tecnología · desarrollo</text>
+        <text class="vt" x="740" y="738" text-anchor="middle">TRANSFOR-</text>
+        <text class="vt" x="740" y="768" text-anchor="middle">MACIÓN</text>
+
+        <text class="vmx" x="350" y="352" text-anchor="middle">Panamericana †</text>
+        <text class="vmx" x="350" y="378" text-anchor="middle">UDEM †</text>
+        <text class="vmx" x="350" y="404" text-anchor="middle">Anáhuac †</text>
+        <text class="vin" x="345" y="434" text-anchor="middle">Chicago · UCL</text>
+        <text class="vin" x="345" y="456" text-anchor="middle">Manchester</text>
+        <text class="vin" x="345" y="478" text-anchor="middle">Howard</text>
+
+        <text class="vmx strong" x="650" y="352" text-anchor="middle">Tec, hoy</text>
+        <text class="vmx" x="650" y="378" text-anchor="middle">UNAM</text>
+        <text class="vmx" x="650" y="404" text-anchor="middle">IPN</text>
+        <text class="vin" x="655" y="434" text-anchor="middle">MIT · UT Austin</text>
+
+        <text class="vin" x="500" y="676" text-anchor="middle">Georgia Tech</text>
+        <text class="vin" x="500" y="698" text-anchor="middle">Virginia Tech</text>
+        <text class="vin" x="500" y="720" text-anchor="middle">Penn State</text>
+        <text class="vin" x="500" y="742" text-anchor="middle">Princeton</text>
+
+        <path class="varrow" d="M 612 344 C 575 360, 548 385, 530 420"/>
+        <circle class="vgoal" cx="500" cy="472" r="52"/>
+        <text class="vgoal-t" x="500" y="468" text-anchor="middle">Tec</text>
+        <text class="vgoal-s" x="500" y="490" text-anchor="middle">a dónde va</text>
+        <text class="vin" x="500" y="548" text-anchor="middle">Tsinghua · Cambridge</text>
+      </svg>
+      <figcaption class="src">Mapa de universidades mexicanas: brief de posicionamiento, oct 2026. Ubicación de las internacionales: lectura nuestra a partir de sus lemas.</figcaption>
+    </figure>
+
+    <div class="regions">
+
+      <div class="region goal">
+        <div class="region-h"><b>El centro</b><span>excelencia + transformación + sentido humano</span><i>A dónde quiere ir el Tec</i></div>
+        <ul class="mottos">
+          <li><q>Self-Discipline and Social Commitment.</q><span>自强不息、厚德载物 · Exigirse sin descanso, y comprometerse con los demás.</span><em>Tsinghua University · Lema</em></li>
+          <li><q>Dear World… Yours, Cambridge.</q><span>Querido mundo… Tuya, Cambridge. La gente que llega cambia la ciudad; las ideas que salen cambian el mundo.</span><em>University of Cambridge · Claim de campaña</em></li>
+          <li><q>Citius, Altius, Fortius, Communiter.</q><span>Más rápido, más alto, más fuerte, juntos. No es una universidad: es el modelo de “preservar y ampliar”.</span><em>Comité Olímpico Internacional · 2021</em></li>
+          <li class="mx"><q>Educación de excelencia que transforma con sentido.</q><span>Es la esencia de marca, todavía no un lema. El Tec no tiene una frase corta propia.</span><em>Tec de Monterrey · Brief, oct 2026</em></li>
+        </ul>
+      </div>
+
+      <div class="region">
+        <div class="region-h"><b>Excelencia + transformación</b><span>donde está el Tec hoy</span><i>Según el brief</i></div>
+        <ul class="mottos">
+          <li class="mx"><q>¿Por qué no?</q><span>La frase que más repite hoy en sus redes.</span><em>Tec de Monterrey, hoy · Bio institucional</em></li>
+          <li class="mx"><q>Por mi raza hablará el espíritu.</q><span>El lema de José Vasconcelos, de 1921.</span><em>UNAM · Lema</em></li>
+          <li class="mx"><q>La Técnica al Servicio de la Patria.</q><span>Lo propusieron los propios estudiantes en 1937.</span><em>IPN · Lema</em></li>
+          <li><q>Mens et Manus.</q><span>Mente y mano.</span><em>MIT · Lema</em></li>
+          <li><q>What starts here changes the world.</q><span>Lo que empieza aquí cambia el mundo.</span><em>UT Austin · Claim</em></li>
+        </ul>
+      </div>
+
+      <div class="region">
+        <div class="region-h"><b>Excelencia + sentido humano</b><span>conocimiento con valores</span><i>Las católicas del brief, y más</i></div>
+        <ul class="mottos">
+          <li class="mx"><q>Ubi spiritus, libertas.</q><span>Donde está el espíritu, hay libertad.</span><em>Universidad Panamericana † · Lema</em></li>
+          <li class="mx"><q>Homo hominis in ministerio perficitur.</q><span>El hombre solo se realiza al servicio del hombre.</span><em>UDEM † · Lema</em></li>
+          <li class="mx"><q>Vince in bono malum.</q><span>Vence al mal con el bien.</span><em>Anáhuac † · Lema</em></li>
+          <li><q>Crescat scientia; vita excolatur.</q><span>Que el saber crezca, y así se enriquezca la vida humana.</span><em>University of Chicago · Lema</em></li>
+          <li><q>Cognitio, sapientia, humanitas.</q><span>Conocimiento, sabiduría, humanidad.</span><em>University of Manchester · Lema</em></li>
+          <li><q>Cuncti adsint meritaeque expectent praemia palmae.</q><span>Que vengan todos los que por su mérito merezcan el premio. Mérito y apertura en la misma frase.</span><em>University College London · Lema</em></li>
+          <li><q>Veritas et Utilitas.</q><span>Verdad y servicio.</span><em>Howard University · Lema</em></li>
+          <li><q>Sapientia et Virtus.</q><span>Sabiduría y virtud.</span><em>University of Hong Kong · Lema</em></li>
+          <li><q>Más allá del deber.</q><span>La exigencia que se pasa de lo obligatorio.</span><em>Universidad de los Andes, Colombia · Lema</em></li>
+        </ul>
+      </div>
+
+      <div class="region">
+        <div class="region-h"><b>Transformación + sentido humano</b><span>cambiar el mundo, para otros</span><i>El lado que el Tec casi no ocupa</i></div>
+        <ul class="mottos">
+          <li><q>Progress and Service.</q><span>Progreso y servicio.</span><em>Georgia Tech · Lema</em></li>
+          <li><q>Ut Prosim.</q><span>Que yo sirva.</span><em>Virginia Tech · Lema</em></li>
+          <li><q>Making life better.</q><span>Hacer la vida mejor.</span><em>Penn State · Lema</em></li>
+          <li><q>To learn and to apply, for the benefit of mankind.</q><span>Aprender y aplicar, para beneficio de la humanidad.</span><em>Hong Kong Polytechnic University · Lema</em></li>
+          <li><q>In the nation’s service and the service of humanity.</q><span>Al servicio de la nación y de la humanidad.</span><em>Princeton · Lema informal</em></li>
+          <li><q>Think one person can change the world? So do we.</q><span>¿Crees que una persona puede cambiar el mundo? Nosotros también.</span><em>Oberlin College · Claim</em></li>
+          <li><q>My heart is in the work.</q><span>Mi corazón está en el trabajo.</span><em>Carnegie Mellon · Lema</em></li>
+          <li><q>What would you fight for?</q><span>¿Por qué pelearías? Veinte años de historias de investigación, Sports Emmy 2024.</span><em>Notre Dame · Claim de campaña</em></li>
+        </ul>
+      </div>
+
+      <div class="region">
+        <div class="region-h"><b>Excelencia</b><span>conocimiento · cultura</span><i>El territorio más ocupado</i></div>
+        <ul class="mottos">
+          <li class="mx"><q>Los mejores profesores para los mejores estudiantes.</q><span>Excelencia pura, dicha de frente.</span><em>ITAM · Lema</em></li>
+          <li><q>Veritas.</q><span>Verdad.</span><em>Harvard · Lema</em></li>
+          <li><q>Lux et Veritas.</q><span>Luz y verdad.</span><em>Yale · Lema</em></li>
+          <li><q>Die Luft der Freiheit weht.</q><span>Sopla el viento de la libertad.</span><em>Stanford · Lema</em></li>
+          <li><q>Rerum cognoscere causas.</q><span>Entender las causas de las cosas.</span><em>London School of Economics · Lema</em></li>
+          <li><q>Velut arbor ævo.</q><span>Como un árbol a través de los siglos.</span><em>University of Toronto · Lema</em></li>
+          <li><q>Postera crescam laude.</q><span>Creceremos en la estima de las generaciones futuras.</span><em>University of Melbourne · Lema</em></li>
+          <li><q>Scientia vinces.</q><span>Con el conocimiento vencerás.</span><em>Universidade de São Paulo · Lema</em></li>
+        </ul>
+      </div>
+
+      <div class="region">
+        <div class="region-h"><b>Sentido humano</b><span>humanismo · comunidad</span><i>Servir, pertenecer, esperar</i></div>
+        <ul class="mottos">
+          <li class="mx"><q>La verdad nos hará libres.</q><span>El lema jesuita de la Ibero.</span><em>Ibero † · Lema</em></li>
+          <li><q>Non ministrari sed ministrare.</q><span>No ser servido, sino servir.</span><em>Wellesley College · Lema</em></li>
+          <li><q>God has made of one blood all peoples of the earth.</q><span>De una misma sangre hizo a todos los pueblos de la tierra.</span><em>Berea College · Lema</em></li>
+          <li><q>For the Common Weal.</q><span>Por el bien común.</span><em>Glasgow Caledonian University · Lema</em></li>
+          <li><q>Tuum est.</q><span>Depende de ti.</span><em>University of British Columbia · Lema</em></li>
+          <li><q>Spes Bona.</q><span>Buena esperanza.</span><em>University of Cape Town · Lema</em></li>
+        </ul>
+      </div>
+
+      <div class="region">
+        <div class="region-h"><b>Transformación</b><span>tecnología · desarrollo</span><i>Mirar hacia adelante</i></div>
+        <ul class="mottos">
+          <li><q>Dare Mighty Things.</q><span>Atrévete a cosas grandes.</span><em>JPL · NASA · Lema</em></li>
+          <li><q>Welcome Tomorrow.</q><span>Bienvenido, mañana.</span><em>ETH Zürich · Lema</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="takeaway"><em>Lo que nos llevamos</em><p>La excelencia sola está saturada de verdad y luz. Los lemas que ocupan el centro juntan exigencia y compromiso con otros. Ese espacio, en México, todavía no tiene dueño.</p></div>
+  </div>
+</section>
+
 <!-- CIERRE -->
-<section class="band paper closing" id="cierre" data-sec="Cierre" data-t data-drift data-stop>
+<section class="band ink closing" id="cierre" data-sec="Cierre" data-t data-drift data-stop>
   <div class="wrap">
     <svg class="torch big" viewBox="0 0 588.56 588.56" aria-hidden="true"><use href="#torch"/></svg>
     <p class="lit">Ahora, la idea.</p>
@@ -1577,7 +1758,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 </section>
 
 <!-- FUENTES -->
-<footer class="band ink" data-sec="Fuentes" style="padding-block:clamp(64px,10vh,112px)">
+<footer class="band paper" data-sec="Fuentes" style="padding-block:clamp(64px,10vh,112px)">
   <div class="wrap">
     <div class="eyebrow"><b>Fuentes y límites</b></div>
     <div class="sources">
