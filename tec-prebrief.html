@@ -74,7 +74,7 @@ blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(1
 blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.06em;line-height:1.5;margin-top:.8em;color:var(--soft)}
 
 /* HERO */
-.hero{padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(64px,10vh,120px);overflow:hidden}
+.hero{padding-top:calc(env(safe-area-inset-top,0px) + 92px);padding-bottom:clamp(64px,10vh,120px);overflow:hidden}
 .hero-top{display:flex;align-items:center;gap:14px}
 .hero-top .torch{width:40px;height:40px}
 .hero-tec{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(9rem,40vw,36rem);line-height:.8;letter-spacing:-.045em;
@@ -463,33 +463,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 .youth-big p small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--soft);margin-top:.9em}
 .voices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(48px,7vw,88px)}
 
-/* comentarios del equipo */
-.fb{position:relative;background:radial-gradient(60% 80% at 85% 0%,#1d3a8a 0%,rgba(29,58,138,0) 70%),#0a1636;color:#eef2ff;
-  padding:calc(env(safe-area-inset-top,0px) + 64px) var(--gutter) clamp(32px,5vw,48px);--fg:#eef2ff;--soft:#aab7dd;--line:rgba(238,242,255,.22)}
-.fb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,56px);align-items:start}
-.fb-k{margin:0 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
-.fb-t{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
-.fb-s{margin:14px 0 0;font-size:14.5px;line-height:1.5;color:var(--soft);max-width:44ch}
-.fb-form{display:grid;gap:10px}
-.fb-kinds{display:flex;flex-wrap:wrap;gap:6px;border:0;margin:0;padding:0}
-.fb-kinds label{cursor:pointer}
-.fb-kinds input{position:absolute;opacity:0;pointer-events:none}
-.fb-kinds span{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:5px 12px;transition:background-color .15s,border-color .15s}
-.fb-kinds input:checked+span{background:#eef2ff;color:#0a1636;border-color:#eef2ff}
-.fb-kinds input:focus-visible+span{outline:2px solid #eef2ff;outline-offset:2px}
-.fb textarea,.fb select{width:100%;font:inherit;font-size:15px;color:#eef2ff;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
-.fb textarea{resize:vertical;min-height:92px;line-height:1.45}
-.fb textarea::placeholder{color:#8f9cc4}
-.fb select option{color:#0a1636}
-.fb-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
-.fb-btn{appearance:none;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.02em;color:#0a1636;background:#eef2ff;border:0;border-radius:8px;padding:0 20px;cursor:pointer;min-height:44px}
-.fb-btn:disabled{opacity:.5;cursor:default}
-.fb-status{margin:0;min-height:1.4em;font-size:13.5px;color:#cfe0ff}
 .find-pills{position:fixed;top:calc(env(safe-area-inset-top,0px) + 7px);left:50%;transform:translateX(-50%);z-index:96;display:flex;gap:6px}
 .find-pills .find-pill{position:static;transform:none}
 @media (max-width:900px){
   .find-pills{left:auto;right:var(--gutter);transform:none}
-  .fb-grid{grid-template-columns:minmax(0,1fr)}
 }
 
 /* buscador */
@@ -594,7 +571,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <div class="progress" aria-hidden="true"></div>
 <div class="chrome" aria-hidden="true"><span class="brand"><svg class="torch" width="16" height="16"><use href="#torch"/></svg>Tec de Monterrey · Pre-brief</span><span id="chrome-sec">Octubre 2026</span></div>
 <div class="keys" aria-hidden="true"><kbd>←</kbd><kbd>→</kbd> navegar</div>
-<div class="find-pills"><button class="find-pill" type="button" id="find-open" aria-label="Buscar en el documento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="lbl">Buscar</span><kbd>/</kbd></button><button class="find-pill" type="button" id="fb-open" aria-label="Dejar un comentario"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span class="lbl">Comentar</span></button></div>
+<div class="find-pills"><button class="find-pill" type="button" id="find-open" aria-label="Buscar en el documento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="lbl">Buscar</span><kbd>/</kbd></button></div>
 <div class="find" id="find" role="dialog" aria-modal="true" aria-label="Buscar en el documento">
   <div class="find-box">
     <div class="find-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" id="find-q" placeholder="Buscar en el documento…" autocomplete="off" aria-label="Buscar" aria-controls="find-res"><button type="button" id="find-close">Esc</button></div>
@@ -602,32 +579,6 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <div class="find-foot"><span>↑ ↓ elegir</span><span>Enter ir</span><span>Esc cerrar</span></div>
   </div>
 </div>
-
-<!-- COMENTARIOS DEL EQUIPO -->
-<section class="fb" id="opiniones" data-sec="Comentarios" aria-labelledby="fb-title">
-  <div class="wrap">
-    <div class="fb-grid">
-      <div>
-        <p class="fb-k">Para el equipo</p>
-        <h2 class="fb-t" id="fb-title">Dejá tus opiniones, correcciones o pedidos de datos acá.</h2>
-        <p class="fb-s" id="fb-sub">Elegí el tipo, contá qué ves y, si es sobre una parte puntual, marcá la sección. Le llega al equipo de estrategia.</p>
-      </div>
-      <form class="fb-form" id="fb-form" novalidate>
-        <fieldset class="fb-kinds" aria-label="Tipo de comentario">
-          <label><input type="radio" name="fb-kind" value="Opinión" checked><span>Opinión</span></label>
-          <label><input type="radio" name="fb-kind" value="Corrección"><span>Corrección</span></label>
-          <label><input type="radio" name="fb-kind" value="Pedido de dato"><span>Pedido de dato</span></label>
-        </fieldset>
-        <textarea id="fb-text" rows="3" maxlength="4000" placeholder="Escribí acá tu comentario…" aria-label="Comentario"></textarea>
-        <div class="fb-row">
-          <select id="fb-sec" aria-label="Sección"><option value="">Sobre todo el documento</option></select>
-          <button class="fb-btn" type="submit" id="fb-send">Enviar</button>
-        </div>
-        <p class="fb-status" id="fb-status" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- PORTADA -->
 <header class="band paper hero" id="inicio" data-sec="Portada" data-drift data-stop>
@@ -2122,55 +2073,6 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     var tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea')return;
     if(e.key==='/'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k')){e.preventDefault();openFind();}
   },true);
-
-  /* ---------- comentarios del equipo: van al Google Form del equipo ---------- */
-  var FORM='https://docs.google.com/forms/d/e/1FAIpQLSeHdETZ3IBeDWduLRlpXaVHVVbH2BcgY2xgaJsWMiXmr2xGqg/';
-  var F_KIND='entry.1980455443',F_SEC='entry.538977207',F_TEXT='entry.1677121988';
-  var KIND_OPT={'Opinión':'Opinion'};
-  var fbForm=document.getElementById('fb-form'),fbText=document.getElementById('fb-text'),fbSec=document.getElementById('fb-sec'),
-      fbSend=document.getElementById('fb-send'),fbStatus=document.getElementById('fb-status');
-  var seen={};
-  secs.forEach(function(el){var n=el.dataset.sec;if(!n||n==='Portada'||n==='Comentarios'||seen[n])return;seen[n]=1;var o=document.createElement('option');o.value=n;o.textContent=n;fbSec.appendChild(o);});
-  document.getElementById('fb-open').addEventListener('click',function(){
-    var cur=chromeSec.textContent;if(seen[cur])fbSec.value=cur;
-    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
-    setTimeout(function(){fbText.focus({preventScroll:true});},reduce?0:500);
-  });
-  function fbSay(t){fbStatus.textContent=t;}
-  function fbParams(kind,sec,text){
-    var q=new URLSearchParams();
-    q.append(F_KIND,KIND_OPT[kind]||kind);q.append(F_SEC,sec||'Todo el documento');q.append(F_TEXT,text);
-    return q;
-  }
-  fbForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var text=fbText.value.trim();if(!text){fbSay('Escribí algo antes de enviar.');fbText.focus();return;}
-    var kind=(fbForm.querySelector('input[name="fb-kind"]:checked')||{}).value||'Opinión',q=fbParams(kind,fbSec.value,text);
-    fbSend.disabled=true;fbSay('Enviando…');
-    fbBeacon(q).then(function(){
-      fbText.value='';fbSay('¡Gracias! Tu comentario le llegó al equipo de estrategia.');
-    },function(){
-      /* si esta vista no deja enviar directo, abrimos el formulario ya completado */
-      fbStatus.textContent='Desde acá no se pudo enviar directo. ';
-      var a=document.createElement('a');a.href=FORM+'viewform?usp=pp_url&'+q.toString();a.target='_blank';a.rel='noopener';
-      a.textContent='Abrí el formulario ya completado y tocá “Enviar”.';a.style.color='#fff';
-      fbStatus.appendChild(a);
-    }).then(function(){fbSend.disabled=false;});
-  });
-  /* El formulario acepta respuestas por GET: lo mandamos como si pidiéramos una imagen.
-     Google responde con una página, no una imagen, así que load/error significan "llegó";
-     solo un bloqueo de seguridad de la vista (securitypolicyviolation) cuenta como fallo. */
-  function fbBeacon(q){
-    return new Promise(function(ok,ko){
-      var url=FORM+'formResponse?'+q.toString()+'&submit=Submit',blocked=false,done=false;
-      function onV(e){if(String(e.blockedURI||'').indexOf('docs.google.com')>-1)blocked=true;}
-      function finish(){if(done)return;done=true;setTimeout(function(){document.removeEventListener('securitypolicyviolation',onV);blocked?ko():ok();},250);}
-      document.addEventListener('securitypolicyviolation',onV);
-      var img=new Image();img.referrerPolicy='no-referrer';img.onload=img.onerror=finish;
-      setTimeout(finish,6000);
-      try{img.src=url;}catch(e){blocked=true;finish();}
-    });
-  }
 
   /* ---------- tooltip ---------- */
   var tip=document.getElementById('tip');
