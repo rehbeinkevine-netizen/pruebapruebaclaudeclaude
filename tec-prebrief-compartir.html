@@ -468,6 +468,48 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 .youth-big p small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--soft);margin-top:.9em}
 .voices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(48px,7vw,88px)}
 
+/* buscador */
+.find-pill{position:fixed;top:calc(env(safe-area-inset-top,0px) + 7px);left:50%;transform:translateX(-50%);z-index:96;display:flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--paper);border:1px solid rgba(241,241,239,.35);border-radius:999px;padding:6px 8px 6px 12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.find-pill:hover{border-color:var(--paper)}
+.find-pill svg{width:13px;height:13px;flex:none}
+.find-pill kbd{font-family:var(--mono);font-size:10px;border:1px solid rgba(241,241,239,.45);border-radius:3px;padding:1px 6px}
+.hero-find{margin-top:24px;display:grid;gap:10px;max-width:520px}
+.hero-find label{display:flex;align-items:center;gap:12px;border:1.5px solid var(--fg);border-radius:999px;padding:12px 18px;cursor:text;background:rgba(255,255,255,.5)}
+.hero-find label svg{width:18px;height:18px;flex:none}
+.hero-find input{all:unset;flex:1;min-width:0;font-family:var(--sans);font-size:1.05rem;color:var(--fg)}
+.hero-find input::placeholder{color:var(--soft)}
+.hero-find p{margin:0;font-size:14px;line-height:1.5;color:var(--soft)}
+.try{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.try button,.find-empty button{appearance:none;font:inherit;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:inherit;background:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer}
+.try button:hover,.find-empty button:hover{border-color:currentColor}
+.byline{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--fg)}
+.find{position:fixed;inset:0;z-index:120;display:none;background:rgba(12,12,13,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:calc(env(safe-area-inset-top,0px) + 8vh) 16px 16px}
+.find.on{display:block}
+.find-box{max-width:680px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden;display:flex;flex-direction:column;max-height:80vh;max-height:80svh}
+.find-top{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line-paper)}
+.find-top svg{width:20px;height:20px;flex:none}
+.find-top input{all:unset;flex:1;min-width:0;font-family:var(--sans);font-size:1.25rem;color:var(--ink)}
+.find-top input::placeholder{color:#8a8a86}
+.find-top button{appearance:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--line-paper);border-radius:4px;padding:3px 7px;cursor:pointer;color:var(--ink)}
+.find-res{list-style:none;margin:0;padding:6px;overflow:auto}
+.find-res li{border-radius:8px;padding:10px 12px;cursor:pointer;display:grid;gap:3px}
+.find-res li.sel,.find-res li:hover{background:rgba(12,12,13,.07)}
+.find-res em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5f5f5c}
+.find-res span{font-size:14.5px;line-height:1.45}
+.find-res mark{background:var(--ink);color:var(--paper);border-radius:2px;padding:0 2px}
+.find-empty{padding:18px;font-size:14.5px;line-height:1.5;color:#5f5f5c;display:grid;gap:12px}
+.find-empty .try button{color:var(--ink)}
+.find-foot{padding:9px 18px;border-top:1px solid var(--line-paper);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:#5f5f5c;display:flex;gap:16px;flex-wrap:wrap}
+.hit{animation:hit 2.4s ease-out 1}
+@keyframes hit{0%,35%{box-shadow:0 0 0 6px var(--bl,#1a4fd6);background-color:rgba(26,79,214,.12)}100%{box-shadow:0 0 0 6px transparent;background-color:transparent}}
+@media (max-width:900px){
+  .find-pill{left:auto;right:var(--gutter);transform:none}
+  .find-pill kbd,.find-pill .lbl{display:none}
+  .find-pill{padding:7px 9px}
+}
+
 #tip{position:fixed;z-index:99;pointer-events:none;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;line-height:1.45;padding:8px 11px;border-radius:4px;max-width:260px;box-shadow:0 0 0 1px rgba(241,241,239,.25);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}
 #tip.on{opacity:1;transform:none}
 
@@ -530,11 +572,19 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <div class="progress" aria-hidden="true"></div>
 <div class="chrome" aria-hidden="true"><span class="brand"><svg class="torch" width="16" height="16"><use href="#torch"/></svg>Tec de Monterrey · Pre-brief</span><span id="chrome-sec">Octubre 2026</span></div>
 <div class="keys" aria-hidden="true"><kbd>←</kbd><kbd>→</kbd> navegar</div>
+<button class="find-pill" type="button" id="find-open" aria-label="Buscar en el documento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="lbl">Buscar</span><kbd>/</kbd></button>
+<div class="find" id="find" role="dialog" aria-modal="true" aria-label="Buscar en el documento">
+  <div class="find-box">
+    <div class="find-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" id="find-q" placeholder="Buscar en el documento…" autocomplete="off" aria-label="Buscar" aria-controls="find-res"><button type="button" id="find-close">Esc</button></div>
+    <ul class="find-res" id="find-res" role="listbox"></ul>
+    <div class="find-foot"><span>↑ ↓ elegir</span><span>Enter ir</span><span>Esc cerrar</span></div>
+  </div>
+</div>
 
 <!-- PORTADA -->
 <header class="band paper hero" id="inicio" data-sec="Portada" data-drift data-stop>
   <div class="wrap">
-    <div class="hero-top"><svg class="torch" viewBox="0 0 588.56 588.56" role="img" aria-label="Logo del Tecnológico de Monterrey"><use href="#torch"/></svg><div class="eyebrow"><b>Pre-brief estratégico</b><span>Campaña institucional</span><span>Octubre 2026</span></div></div>
+    <div class="hero-top"><svg class="torch" viewBox="0 0 588.56 588.56" role="img" aria-label="Logo del Tecnológico de Monterrey"><use href="#torch"/></svg><div class="eyebrow"><b>Pre-brief estratégico</b><span>Campaña institucional</span><span>Octubre 2026</span><span class="byline">by Equipo de Estrategia (Kev and minions)</span></div></div>
     <h1 style="margin:0">
       <span class="hero-tec">el Tec</span>
       <span class="hero-sub" id="hero-sub">de Monterrey</span>
@@ -543,6 +593,11 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div>
         <p class="lede">Qué es, qué lugar ocupa en México y cómo se vive desde adentro. Empezó como punto de partida antes del brief; ahora suma lo que el Tec nos contó.</p>
         <p class="legend-b"><i></i>En azul, datos del brief del Tec (14 oct 2026)</p>
+        <div class="hero-find">
+          <label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" id="hero-q" placeholder="Buscar un tema, un dato o una universidad" aria-label="Buscar en el documento" autocomplete="off"></label>
+          <p>Escribí lo que buscás y elegí un resultado para ir directo a esa parte. También podés usar el botón “Buscar” de arriba o la tecla <b>/</b> desde cualquier lugar del documento.</p>
+          <div class="try"><span class="muted" style="font-size:13px">Probá:</span><button type="button">becas</button><button type="button">match</button><button type="button">formación humanista</button><button type="button">Del Toro</button><button type="button">Cambridge</button><button type="button">UNAM</button></div>
+        </div>
       </div>
       <ol class="index">
         <li><a href="#parte-1"><span class="rn">I</span><span class="nm">El Tec</span><span class="ds">Qué es y cómo funciona</span></a></li>
@@ -1767,7 +1822,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- FUENTES -->
 <footer class="band paper" data-sec="Fuentes" style="padding-block:clamp(64px,10vh,112px)">
   <div class="wrap">
-    <div class="eyebrow"><b>Fuentes y límites</b></div>
+    <div class="eyebrow"><b>Fuentes y límites</b><span>by Equipo de Estrategia (Kev and minions)</span></div>
     <div class="sources">
       <div>
         <h3>Marca</h3>
@@ -1940,6 +1995,85 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     var h=e.target.closest&&e.target.closest('.peek-head');if(!h)return;
     var open=h.parentElement.classList.toggle('open');h.setAttribute('aria-expanded',open?'true':'false');
   });
+
+  /* ---------- buscador ---------- */
+  var finder=document.getElementById('find'),fq=document.getElementById('find-q'),fres=document.getElementById('find-res'),heroQ=document.getElementById('hero-q');
+  var SEL='h1,h2,h3,p,li,blockquote,dt,dd,tr,figcaption,.card,.fact,.rank,.stat,.person,.tl,.peek-head,.peek-inner,.type-claim,.hanzi,.region-h,.keywords,.chips';
+  var norm=function(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();};
+  var esc=function(t){return t.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var index=[];
+  [].slice.call(document.querySelectorAll('[data-sec]')).forEach(function(sec){
+    [].slice.call(sec.querySelectorAll(SEL)).forEach(function(el){
+      if(el.closest('.find,.keys,.chrome,.hero-find'))return;
+      var up=el.parentElement&&el.parentElement.closest(SEL);
+      if(up&&sec.contains(up))return;
+      var txt=(el.innerText||el.textContent||'').replace(/\s+/g,' ').trim();
+      if(txt.length<3)return;
+      var w=/^H[1-3]$/.test(el.tagName)||el.classList.contains('region-h')?3:1;
+      index.push({el:el,sec:sec.dataset.sec,txt:txt,n:norm(txt),w:w});
+    });
+  });
+  var hits=[],sel=0;
+  function snippet(txt,terms){
+    var n=norm(txt),i=n.indexOf(terms[0]),start=Math.max(0,i-60),end=Math.min(txt.length,start+170);
+    var out=(start>0?'…':'')+txt.slice(start,end)+(end<txt.length?'…':''),nOut=norm(out),html='',pos=0,ranges=[];
+    terms.forEach(function(t){var k=nOut.indexOf(t);while(k>-1){ranges.push([k,k+t.length]);k=nOut.indexOf(t,k+t.length);}});
+    ranges.sort(function(a,b){return a[0]-b[0];});
+    ranges.forEach(function(r){if(r[0]<pos)return;html+=esc(out.slice(pos,r[0]))+'<mark>'+esc(out.slice(r[0],r[1]))+'</mark>';pos=r[1];});
+    return html+esc(out.slice(pos));
+  }
+  var TRY=['becas','match','formación humanista','Del Toro','Cambridge','UNAM','tensiones','jóvenes'];
+  function render(){
+    var q=norm(fq.value.trim()),terms=q.split(/\s+/).filter(Boolean);
+    sel=0;
+    if(!terms.length){
+      hits=[];
+      fres.innerHTML='<li class="find-empty" style="cursor:default;background:none"><div>Escribí una palabra: un tema, un dato, una universidad o una persona. Elegí un resultado y te llevo directo a esa parte.</div><div class="try">'+TRY.map(function(t){return '<button type="button">'+t+'</button>';}).join('')+'</div></li>';
+      return;
+    }
+    hits=index.filter(function(it){return terms.every(function(t){return it.n.indexOf(t)>-1;});})
+      .map(function(it){var sc=it.w*10-Math.min(it.txt.length,400)/100;if(norm(it.sec).indexOf(terms[0])>-1)sc+=5;return {it:it,sc:sc};})
+      .sort(function(a,b){return b.sc-a.sc;}).slice(0,40).map(function(x){return x.it;});
+    if(!hits.length){fres.innerHTML='<li class="find-empty" style="cursor:default;background:none">No encontré nada con “'+esc(fq.value.trim())+'”. Probá con otra palabra o sin tildes.</li>';return;}
+    fres.innerHTML=hits.map(function(it,i){return '<li role="option" data-i="'+i+'"'+(i===0?' class="sel" aria-selected="true"':'')+'><em>'+esc(it.sec)+'</em><span>'+snippet(it.txt,terms)+'</span></li>';}).join('');
+  }
+  function mark(i){var lis=fres.querySelectorAll('li[data-i]');lis.forEach(function(li){li.classList.remove('sel');li.removeAttribute('aria-selected');});
+    if(lis[i]){lis[i].classList.add('sel');lis[i].setAttribute('aria-selected','true');lis[i].scrollIntoView({block:'nearest'});}sel=i;}
+  function openFind(v){finder.classList.add('on');if(typeof v==='string')fq.value=v;render();fq.focus();var L=fq.value.length;try{if(v===undefined)fq.select();else fq.setSelectionRange(L,L);}catch(e){}}
+  function closeFind(){finder.classList.remove('on');}
+  function go(it){
+    closeFind();
+    var el=it.el,pk=el.closest('.peek');
+    if(pk&&!pk.classList.contains('open')){pk.classList.add('open');var hd=pk.querySelector('.peek-head');hd&&hd.setAttribute('aria-expanded','true');}
+    var target=el.closest('.peek')||el;
+    setTimeout(function(){
+      var y=target.getBoundingClientRect().top+window.scrollY-Math.min(160,window.innerHeight*.22);
+      window.scrollTo({top:Math.max(0,y),behavior:reduce?'auto':'smooth'});
+      target.classList.remove('hit');void target.offsetWidth;target.classList.add('hit');
+      setTimeout(function(){target.classList.remove('hit');},2600);
+    },pk?300:0);
+  }
+  document.getElementById('find-open').addEventListener('click',function(){openFind();});
+  document.getElementById('find-close').addEventListener('click',closeFind);
+  finder.addEventListener('click',function(e){
+    if(e.target===finder){closeFind();return;}
+    var b=e.target.closest('.try button');if(b){fq.value=b.textContent;render();fq.focus();return;}
+    var li=e.target.closest('li[data-i]');if(li)go(hits[+li.dataset.i]);
+  });
+  fq.addEventListener('input',render);
+  fq.addEventListener('keydown',function(e){
+    if(e.key==='ArrowDown'){e.preventDefault();mark(Math.min(sel+1,hits.length-1));}
+    else if(e.key==='ArrowUp'){e.preventDefault();mark(Math.max(sel-1,0));}
+    else if(e.key==='Enter'){e.preventDefault();if(hits[sel])go(hits[sel]);}
+    else if(e.key==='Escape'){closeFind();}
+  });
+  heroQ.addEventListener('focus',function(){var v=heroQ.value;heroQ.value='';heroQ.blur();openFind(v);});
+  document.querySelector('.hero-find .try').addEventListener('click',function(e){var b=e.target.closest('button');if(b)openFind(b.textContent);});
+  document.addEventListener('keydown',function(e){
+    if(finder.classList.contains('on')){if(e.key==='Escape')closeFind();return;}
+    var tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea')return;
+    if(e.key==='/'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k')){e.preventDefault();openFind();}
+  },true);
 
   /* ---------- tooltip ---------- */
   var tip=document.getElementById('tip');
