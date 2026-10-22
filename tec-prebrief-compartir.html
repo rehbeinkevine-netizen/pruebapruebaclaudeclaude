@@ -2154,7 +2154,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     var text=fbText.value.trim();if(!text){fbSay('Escribí algo antes de enviar.');fbText.focus();return;}
     var kind=(fbForm.querySelector('input[name="fb-kind"]:checked')||{}).value||'Opinión',q=fbParams(kind,fbSec.value,text);
     fbSend.disabled=true;fbSay('Enviando…');
-    fetch(FORM+'formResponse',{method:'POST',mode:'no-cors',body:q}).then(function(){
+    fbBeacon(q).then(function(){
       fbText.value='';fbSay('¡Gracias! Tu comentario le llegó al equipo de estrategia.');
     },function(){
       /* si esta vista no deja enviar directo, abrimos el formulario ya completado */
@@ -2164,6 +2164,20 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       fbStatus.appendChild(a);
     }).then(function(){fbSend.disabled=false;});
   });
+  /* El formulario acepta respuestas por GET: lo mandamos como si pidiéramos una imagen.
+     Google responde con una página, no una imagen, así que load/error significan "llegó";
+     solo un bloqueo de seguridad de la vista (securitypolicyviolation) cuenta como fallo. */
+  function fbBeacon(q){
+    return new Promise(function(ok,ko){
+      var url=FORM+'formResponse?'+q.toString()+'&submit=Submit',blocked=false,done=false;
+      function onV(e){if(String(e.blockedURI||'').indexOf('docs.google.com')>-1)blocked=true;}
+      function finish(){if(done)return;done=true;setTimeout(function(){document.removeEventListener('securitypolicyviolation',onV);blocked?ko():ok();},250);}
+      document.addEventListener('securitypolicyviolation',onV);
+      var img=new Image();img.referrerPolicy='no-referrer';img.onload=img.onerror=finish;
+      setTimeout(finish,6000);
+      try{img.src=url;}catch(e){blocked=true;finish();}
+    });
+  }
 
   /* ---------- tooltip ---------- */
   var tip=document.getElementById('tip');
