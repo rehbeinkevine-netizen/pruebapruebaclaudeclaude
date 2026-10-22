@@ -252,7 +252,7 @@ blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-siz
 details.table{margin-top:20px;font-size:14px}
 details.table summary{cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .tbl-wrap{overflow-x:auto;margin-top:12px}
-table{border-collapse:collapse;width:100%;min-width:420px;font-variant-numeric:tabular-nums}
+table{color:inherit;font-size:inherit;border-collapse:collapse;width:100%;min-width:420px;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}
 th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 td:not(:first-child),th:not(:first-child){text-align:right}
@@ -453,6 +453,28 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 .mottos em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 .mottos li.mx q,.mottos li.mx em{color:var(--bl)}
 .timeline.t3col{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lens{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg);border:1px solid currentColor;border-radius:999px;padding:2px 10px}
+.lens::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.triad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:20px}
+.triad>div{border-top:2px solid var(--fg);padding-top:16px}
+.triad b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1;margin-bottom:12px}
+.triad ul{list-style:none;margin:0;padding:0;display:grid}
+.triad a{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line);text-decoration:none;font-size:15px;line-height:1.4}
+.triad a span{font-family:var(--mono);font-size:11.5px;color:var(--soft);padding-top:.2em}
+.quotes-b{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px clamp(24px,4vw,56px);margin-top:18px}
+.quotes-b blockquote{color:var(--bl);border-top:2px solid var(--bl);padding-top:14px;font-size:clamp(1.25rem,2vw,1.6rem)}
+.quotes-b blockquote cite{color:var(--bl)}
+.cross{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--fg)}
+.cross li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,3vw,40px);padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.cross em{display:block;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+.cross .b{color:var(--bl);font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.2}
+.cross .j{font-size:15px;line-height:1.45}
+.cross .t{font-weight:700;font-stretch:108%;font-size:1.1rem;line-height:1.3}
+.claim .bign{font-weight:800;font-stretch:118%;font-size:clamp(4rem,9vw,7.5rem);line-height:.85;letter-spacing:-.04em;padding-block:clamp(20px,3vw,36px);border-block:1px solid var(--line)}
+.claim .ph.tallish{aspect-ratio:4/5}
+.vs-table td:first-child{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);width:18%}
+.vs-table td{font-size:15.5px}
+.vs-table th{font-size:12px}
 .olympic-plus{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(3.4rem,13vw,12rem);line-height:.9;letter-spacing:-.03em}
 .olympic-plus .it{font-size:1em}
 .motto-hero{margin-top:clamp(32px,5vw,56px);padding-block:clamp(28px,4vw,48px);border-block:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
@@ -552,7 +574,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   .region-h i{margin-left:0;width:100%}
   .verbs li{grid-template-columns:minmax(0,1fr);gap:4px}
   .youth-big{grid-template-columns:minmax(0,1fr)}
-  .timeline.t3col{grid-template-columns:minmax(0,1fr)}
+  .timeline.t3col,.triad,.quotes-b,.cross li{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:900px){
   .tension3{grid-template-columns:minmax(0,1fr)}
@@ -609,7 +631,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
         <li><a href="#parte-4"><span class="rn">IV</span><span class="nm">Dos miradas</span><span class="ds">Adentro y afuera</span></a></li>
         <li><a href="#parte-5"><span class="rn">V</span><span class="nm">Hacia el brief</span><span class="ds">Qué tener en cuenta</span></a></li>
         <li><a href="#parte-6" class="bd"><span class="rn">VI</span><span class="nm">El brief</span><span class="ds">Lo que nos pidieron</span></a></li>
-        <li><a href="#parte-7"><span class="rn">VII</span><span class="nm">Después del brief</span><span class="ds">Tensiones, jóvenes y lemas</span></a></li>
+        <li><a href="#parte-7"><span class="rn">VII</span><span class="nm">Después del brief</span><span class="ds">Comunidad, tensiones y lemas</span></a></li>
       </ol>
     </div>
   </div>
@@ -628,7 +650,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- 01 QUÉ ES -->
 <section class="band paper" id="que-es" data-sec="01 · Qué es" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>01</b><span>Qué es</span></div>
+    <div class="eyebrow"><b>01</b><span>Qué es</span><span class="lens">Excelencia</span></div>
     <h2 class="mega" data-breathe><span>Una universidad <span class="it">privada</span> sin dueño.</span></h2>
     <div class="cols">
       <p class="lede c-6">Nació en 1943 en Monterrey. Un grupo de empresarios encabezado por Eugenio Garza Sada, egresado del MIT, quiso tener en México una institución de ese nivel.</p>
@@ -656,7 +678,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="fact"><span class="n" data-count="18943">18,943</span><p>graduados en una sola generación, entre PrepaTec, profesional y posgrado.</p><p class="src">@ConectaTECmx</p></div>
     </div>
     <div class="bnote"><em>Cómo se cuenta</em><p>“Hace más de 80 años nació con una convicción: <span class="it">la educación tiene el poder de transformar a las personas</span> y, a través de ellas, transformar a México.”<small>Primera frase del brief de posicionamiento, oct 2026</small></p></div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>Nació con la ambición de tener en México una institución de nivel mundial, y esa ambición sigue muy presente en cómo se cuenta a sí misma.</p></div>
+    <div class="takeaway"><em>Para el brief · Excelencia</em><p>La excelencia está en su origen. No hay que demostrarla: hay que darle sentido.</p></div>
 
   </div>
 </section>
@@ -664,7 +686,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- 02 CÓMO FUNCIONA -->
 <section class="band ink" id="como-funciona" data-sec="02 · Cómo funciona" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>02</b><span>Cómo funciona</span></div>
+    <div class="eyebrow"><b>02</b><span>Cómo funciona</span><span class="lens">Transformación</span></div>
     <h2 class="mega" data-breathe><span>Ingeniería y negocios, desde el <span class="it">primer día</span>.</span></h2>
     <nav class="subnav" aria-label="En esta sección"><a href="#carreras"><b>02.1</b>Las carreras</a><a href="#tec21"><b>02.2</b>Tec21</a><a href="#campus"><b>02.3</b>Vida de campus</a><a href="#glosario"><b>02.4</b>El idioma de la casa</a></nav>
     <h3 id="carreras" style="margin-top:clamp(40px,6vw,64px)"><span class="sn">02.1</span>Las carreras</h3>
@@ -759,12 +781,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <dl class="glossary">
       <div class="term"><dt>EXATEC</dt><dd>Egresado del Tec. Funciona como identidad: incluye correo, credencial, asociaciones y ritos propios.</dd></div>
       <div class="term"><dt>Borregos</dt><dd>Los equipos deportivos de todos los campus. Mascota: Teus. Rival clásico: Tigres UANL.</dd></div>
-      <div class="term"><dt>El azul</dt><dd>Nació en 1945 porque el equipo de futbol americano no consiguió tela roja para sus uniformes.</dd></div>
       <div class="term"><dt>PrepaTec</dt><dd>La preparatoria del Tec. Muchos alumnos llegan a la universidad con el código del campus ya aprendido.</dd></div>
-      <div class="term"><dt>Semana i</dt><dd>Una semana de retos fuera del aula. En redes aparece a veces como broma sobre el prestigio.</dd></div>
       <div class="term"><dt>Regreso a Casa</dt><dd>El rito anual de egresados. Más de 1,800 volvieron a sus campus entre octubre y diciembre de 2025.</dd></div>
     </dl>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>La experiencia se apoya en ingeniería y negocios, en un contacto constante con empresas y en un modelo que pone al alumno frente a problemas reales.</p></div>
+    <div class="takeaway"><em>Para el brief · Transformación</em><p>Su forma de transformar ya existe: retos reales, socios formadores y carreras pioneras. Es evidencia, no promesa.</p></div>
 
   </div>
 </section>
@@ -772,7 +792,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- 03 POSICIONAMIENTO -->
 <section class="band paper" id="posicionamiento" data-sec="03 · Cómo se posiciona" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>03</b><span>Cómo se posiciona hoy</span></div>
+    <div class="eyebrow"><b>03</b><span>Cómo se posiciona hoy</span><span class="lens">Los tres ejes</span></div>
     <blockquote class="mega it" data-breathe style="font-size:clamp(2.4rem,6.4vw,6rem);line-height:1;max-width:18ch;font-weight:400"><span>“Transformar la vida de las personas y las comunidades a través de la educación.”</span><cite>Propósito del Grupo Educativo Tecnológico de Monterrey (Tec, TecSalud y Tecmilenio). El resto del discurso gira alrededor de esta frase.</cite></blockquote>
 
     <div class="peeks three" style="margin-top:clamp(32px,5vw,56px)">
@@ -797,14 +817,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     </div>
     <div class="bnote"><em>La esencia, según el brief</em><p><span class="it">“Educación de excelencia que transforma con sentido.”</span> Se apoya en cuatro diferenciadores: un ecosistema de excelencia, un alcance global que impulsa a México, una capacidad única de transformar y generar impacto, y un sentido humano con propósito.<small>Brief de campaña y de posicionamiento, 14 oct 2026. Más en la parte VI.</small></p></div>
 
-    <div class="cols" style="margin-top:clamp(48px,7vw,80px)">
-      <p class="callout lit c-7" style="margin-top:0">El discurso oficial habla de transformación. La red EXATEC, Borregos y la exigencia del promedio casi no aparecen en él.</p>
-      <div class="prose c-5 end">
-        <p>El posicionamiento es coherente con la Visión 2030, aunque bastante amplio: varias universidades privadas grandes podrían usar frases parecidas. Lo más propio del Tec parece estar en la experiencia de alumnos y egresados (la red, la exigencia y el resultado laboral) más que en el copy institucional.</p>
-        <p class="src">tec.mx · Rumbo al 2030 · perfiles oficiales en Instagram, Facebook y X · comunicado QS LatAm, oct 2026</p>
-      </div>
-    </div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>El discurso oficial es amplio y aspiracional. Lo más propio del Tec parece estar en la experiencia de su gente, <span class="bd">y el brief va en la misma dirección: pide que el héroe sean los alumnos, los profesores y la comunidad.</span></p></div>
+    <div class="takeaway"><em>Para el brief · Los tres ejes</em><p>El discurso oficial ya nombra los tres ejes, pero en abstracto. Lo propio aparece en la experiencia de su gente, <span class="bd">y el brief va en la misma dirección: pide que el héroe sean los alumnos, los profesores y la comunidad.</span></p></div>
 
   </div>
 </section>
@@ -822,7 +835,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- 04 SISTEMA -->
 <section class="band paper" id="sistema" data-sec="04 · El sistema" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>04</b><span>El sistema universitario</span></div>
+    <div class="eyebrow"><b>04</b><span>El sistema universitario</span><span class="lens">Sentido humano · acceso</span></div>
     <h2 class="mega" data-breathe><span>Un sistema con <span class="it">filtro</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">México tiene 5.76 millones de universitarios. Según la SEP, la cobertura es del 46.8%: <span class="hl">más de la mitad de los jóvenes en edad universitaria no está estudiando</span>.</p>
@@ -861,14 +874,14 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
     </div>
 
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>En un sistema con filtro y precios muy dispares, muchas familias se preguntan si la universidad vale lo que cuesta. El Tec suele responder con empleabilidad.</p></div>
+    <div class="takeaway"><em>Para el brief · Sentido humano</em><p>En un sistema con filtro y precios muy dispares, el acceso es parte de la conversación. Hoy el Tec responde con empleabilidad; el brief le pide responder también con sentido.</p></div>
   </div>
 </section>
 
 <!-- 05 PESO -->
 <section class="band ink" id="peso" data-sec="05 · Su peso en México" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>05</b><span>Su peso en México</span></div>
+    <div class="eyebrow"><b>05</b><span>Su peso en México</span><span class="lens">Excelencia</span></div>
     <h2 class="mega" data-breathe><span>La privada que <span class="it">casi todos</span> conocen.</span></h2>
     <div class="cols">
       <p class="lede c-6">Entre las privadas, el Tec aparece como la marca de referencia. En BAV México 2025 es la más estimada, la más preferida y la más recomendada.</p>
@@ -920,17 +933,14 @@ td:not(:first-child),th:not(:first-child){text-align:right}
           <div class="person"><b>Blanca Treviño</b><span>Fundadora y presidenta de Softtek. Premio Trayectoria EXATEC 2025.</span></div>
           <div class="person"><b>Fernando González Olivieri</b><span>EGADE, 1979. Director general de Cemex durante una década.</span></div>
           <div class="person"><b>Edgardo del Rincón</b><span>Economía, 1984. CEO de Banamex desde junio de 2026.</span></div>
-          <div class="person"><b>Herminio Blanco</b><span>Economía, 1971. Secretario de Comercio y negociador del TLCAN.</span></div>
           <div class="person"><b>Javier Reyes</b><span>Economía, 1998. Chancellor de UMass Amherst, el primer latino en el cargo.</span></div>
-          <div class="person"><b>Carmen Félix</b><span>Ing. en electrónica. Primera astronauta análoga mexicana.</span></div>
-          <div class="person"><b>Eva Trujillo</b><span>Médica y pediatra. Cofundó Comenzar de Nuevo, con más de 15 mil pacientes atendidos.</span></div>
+          
           <div class="person"><b>Miguel Barbeyto</b><span>Mercadotecnia, 2001. Presidente de Mazda México.</span></div>
-          <div class="person"><b>Miguel Mier</b><span>Economía, 1994. Director de operaciones de Cinépolis.</span></div>
         </div>
         <p class="src">Conecta Tec (24/07/2026), Premios EXATEC, EGADE, Wikipedia</p>
       </div>
     </div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>El prestigio ya está instalado, en México y afuera. Probablemente no sea lo que haya que construir.</p></div>
+    <div class="takeaway"><em>Para el brief · Excelencia</em><p>El prestigio ya está instalado. No es lo que hay que construir: es la base desde donde ampliar.</p></div>
 
   </div>
 </section>
@@ -941,14 +951,14 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <span class="ch-num" aria-hidden="true">III</span>
     <h2 class="ch-title">La <span class="it">gente</span></h2>
     <p class="ch-sub">Qué valoran, de qué se enorgullecen, cómo pertenecen y quién es la persona de adentro.</p>
-    <ul class="ch-list"><li><a href="#diferencial">06 El diferencial</a></li><li><a href="#orgullo">07 Orgullo</a></li><li><a href="#pertenencia">08 Pertenencia</a></li><li><a href="#persona">09 La persona de adentro</a></li></ul>
+    <ul class="ch-list"><li><a href="#diferencial">06 El diferencial</a></li><li><a href="#orgullo">07 Orgullo</a></li><li><a href="#pertenencia">08 Los alumnos</a></li><li><a href="#persona">09 La persona de adentro</a></li></ul>
   </div>
 </section>
 
 <!-- 06 DIFERENCIAL -->
 <section class="band ink" id="diferencial" data-sec="06 · El diferencial" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>06</b><span>Lo que más valoran</span></div>
+    <div class="eyebrow"><b>06</b><span>Lo que más valoran</span><span class="lens">Excelencia + transformación</span></div>
     <p class="lede" style="margin-top:1.4em;max-width:44ch">Cuando alumnos y egresados explican por qué eligieron el Tec, hablan poco del plan de estudios y mucho de lo que viene después. El diferencial se podría resumir en tres palabras.</p>
 
     <div class="pillar" style="margin-top:clamp(32px,5vw,56px)">
@@ -976,14 +986,14 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <p class="callout lit">Muchos lo eligen por la carrera. Con el tiempo, lo que más parecen valorar es ser EXATEC.</p>
     <div class="bnote"><em>El brief coincide</em><p>Las fortalezas que el Tec reconoce en sí mismo son <b>liderazgo, prestigio, excelencia, emprendimiento, éxito y empleabilidad</b>: salida laboral, red y nombre con otras palabras. El brief pide preservarlas y, a la vez, que el éxito <span class="it">no se separe del impacto</span>.<small>Brief de posicionamiento, oct 2026 · BHT Nacional 2024, prospectos de profesional</small></p></div>
 
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>Lo que más se valora es la salida laboral, la red y el nombre. Ser EXATEC parece pesar cada vez más con los años.</p></div>
+    <div class="takeaway"><em>Para el brief · Excelencia + transformación</em><p>Se valora la salida laboral, la red y el nombre. El brief quiere que ese éxito también se lea como impacto.</p></div>
   </div>
 </section>
 
 <!-- 07 ORGULLO -->
 <section class="band paper" id="orgullo" data-sec="07 · Orgullo" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>07</b><span>Orgullo</span></div>
+    <div class="eyebrow"><b>07</b><span>Orgullo</span><span class="lens">Sentido humano</span></div>
     <h2 class="mega" data-breathe><span>Un orgullo más de <span class="it">escuela</span> que de país.</span></h2>
     <div class="cols">
       <div class="c-6">
@@ -1011,45 +1021,17 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
     </div>
 
-    <div class="cols sub" style="align-items:end">
-      <blockquote class="c-7" style="font-size:clamp(1.8rem,3.6vw,3rem);line-height:1.08">“El orgullo EXATEC continúa representando a México alrededor del mundo.”<cite>@EXATEC, 22/09/2026 · 0 likes</cite></blockquote>
-      <div class="prose c-5">
-        <p>La frase más patriótica del periodo vino de la cuenta oficial y tuvo poca respuesta. Cuando los egresados hablan en primera persona, suelen hablar de la red y del nombre del Tec. México aparece como lo que representan afuera, y América Latina como la región donde compiten.</p>
-      </div>
-    </div>
     <div class="bnote"><em>Lo que pide el brief</em><p>Para los EXATEC, el brief resume su necesidad en tres palabras: <b>orgullo, prestigio y pertenencia</b>. Y pide que la campaña genere en la comunidad Tec <span class="it">identificación, apropiación y orgullo</span>, con activaciones en campus y oficinas.<small>Brief de posicionamiento y de campaña, oct 2026</small></p></div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>El orgullo es más de escuela que de país. Se activa más con Borregos y con la red que con los mensajes institucionales.</p></div>
+    <div class="takeaway"><em>Para el brief · Sentido humano</em><p>El orgullo ya existe y es de comunidad: Borregos, la red, los ritos. Es el material más creíble para hablar de “juntos”.</p></div>
 
   </div>
 </section>
 
-<!-- 08 PERTENENCIA -->
-<section class="band ink" id="pertenencia" data-sec="08 · Pertenencia" data-drift data-stop>
+<!-- 08 LOS ALUMNOS -->
+<section class="band ink" id="pertenencia" data-sec="08 · Los alumnos" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>08</b><span>Pertenencia</span></div>
-    <h2 class="mega" data-breathe><span>Pertenecer se siente <span class="it">ganado</span>.</span></h2>
-    <div class="cols">
-      <div class="prose c-6">
-        <p class="lede" style="margin-bottom:1em">El Tec cultiva la pertenencia de manera bastante deliberada. Su oficina de egresados define su trabajo como “fortalecer el sentido de pertenencia”.</p>
-        <p>Los datos sugieren un vínculo vertical, más parecido al de mentor y alumno que al de amigos entre pares. Para quienes prefieren o usan el Tec, la marca es Experta y Líder, y también Nutre. El arquetipo de Compañero casi no aparece. La pertenencia se asocia a haber sido aceptado y formado por una institución exigente, donde la exigencia funciona como filtro.</p>
-        <blockquote style="margin-top:1.4em">“El Tec siempre será su casa.”<cite>David Garza, Regreso a Casa, sep 2026</cite></blockquote>
-      </div>
-      <div class="c-6">
-        <h3>Arquetipos del Tec entre quienes lo prefieren o usan</h3>
-        <div class="arch" id="arch" role="img" aria-label="Arquetipos en percentil: Experto 100, Líder 100, Inventor 97.4, Nutre 84.6, Amigo de confianza 79.5, Compañero 2.6, Inocente 2.6.">
-          <div class="arch-row" data-tip="Expert · 100"><span>Experto</span><span class="track"><i class="fill" style="--w:100%"></i></span><em>100</em></div>
-          <div class="arch-row" data-tip="Leader · 100"><span>Líder</span><span class="track"><i class="fill" style="--w:100%"></i></span><em>100</em></div>
-          <div class="arch-row" data-tip="Inventor · 97.4"><span>Inventor</span><span class="track"><i class="fill" style="--w:97.4%"></i></span><em>97.4</em></div>
-          <div class="arch-row" data-tip="Nurturer · 84.6"><span>Nutre</span><span class="track"><i class="fill" style="--w:84.6%"></i></span><em>84.6</em></div>
-          <div class="arch-row" data-tip="Trusted Friend · 79.5"><span>Amigo de confianza</span><span class="track"><i class="fill" style="--w:79.5%"></i></span><em>79.5</em></div>
-          <div class="arch-row low" data-tip="Companion · 2.6"><span>Compañero</span><span class="track"><i class="fill" style="--w:2.6%"></i></span><em>2.6</em></div>
-          <div class="arch-row low" data-tip="Innocent · 2.6"><span>Inocente</span><span class="track"><i class="fill" style="--w:2.6%"></i></span><em>2.6</em></div>
-        </div>
-        <p class="src">WPP BAV México 2025 · audiencia que prefiere o usa el Tec (n=234) · percentil 0–100</p>
-      </div>
-    </div>
-
-    <h3 class="sub" data-stop>No hay un solo tipo de alumno</h3>
+    <div class="eyebrow"><b>08</b><span>Los alumnos</span><span class="lens">Sentido humano</span></div>
+    <h2 class="mega" data-breathe><span>No hay un solo <span class="it">alumno Tec</span>.</span></h2>
     <div class="cards">
       <div class="card"><b>El que paga completo</b><span>Es quien más se parece al estereotipo de afuera. Suele sentir orgullo de red sin necesitar el relato del esfuerzo.</span></div>
       <div class="card"><b>El becado parcial</b><span>Vive el promedio como condición de permanencia. Si baja, pierde el porcentaje.</span></div>
@@ -1057,16 +1039,23 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="card"><b>El de PrepaTec</b><span>Llega con el código del campus aprendido y, a veces, con la beca ya ganada.</span></div>
     </div>
     <p class="callout lit" style="max-width:26ch">Los cuatro contestan “EXATEC” cuando les preguntan de dónde salieron.</p>
-    <div class="bnote"><em>El brief lo reconoce</em><p>Que el Compañero casi no aparezca encaja con lo que el propio Tec admite: sus códigos históricos, fuertes y orientados al logro, pueden haber reforzado <span class="it">una percepción más masculina, rígida y transaccional</span>, y dejado menos visibles la sensibilidad, la creatividad, las artes, la empatía y la formación en valores.<small>Brief de campaña, oct 2026</small></p></div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>La pertenencia se vive como un logro y como un rito, aunque cada alumno llegue por un camino distinto.</p></div>
 
+    <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Cómo pertenecen</h3>
+    <div class="cards three">
+      <div class="card"><em>Cultivada</em><b>Una pertenencia buscada</b><span>Su oficina de egresados define su trabajo como “fortalecer el sentido de pertenencia”. “El Tec siempre será su casa” (David Garza, Regreso a Casa, sep 2026).</span></div>
+      <div class="card"><em>Vertical</em><b>Mentor más que compañero</b><span>Entre quienes lo prefieren o usan, el Tec es Experto y Líder (100) y Nutre (84.6). El Compañero casi no aparece (2.6).</span></div>
+      <div class="card"><em>Ganada</em><b>Pertenecer como logro</b><span>Se asocia a haber sido aceptado y formado por una institución exigente, donde la exigencia funciona como filtro.</span></div>
+    </div>
+    <p class="src">WPP BAV México 2025 · audiencia que prefiere o usa el Tec (n=234) · percentil 0–100</p>
+    <div class="bnote"><em>El brief lo reconoce</em><p>Que el Compañero casi no aparezca encaja con lo que el propio Tec admite: sus códigos históricos, fuertes y orientados al logro, pueden haber reforzado <span class="it">una percepción más masculina, rígida y transaccional</span>, y dejado menos visibles la sensibilidad, la creatividad, las artes, la empatía y la formación en valores.<small>Brief de campaña, oct 2026</small></p></div>
+    <div class="takeaway"><em>Para el brief · Sentido humano</em><p>No hay un solo alumno Tec. Una idea de comunidad tiene que reconocer los distintos caminos para llegar.</p></div>
   </div>
 </section>
 
 <!-- 09 PERSONA -->
 <section class="band paper" id="persona" data-sec="09 · La persona de adentro" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>09</b><span>La persona de adentro</span></div>
+    <div class="eyebrow"><b>09</b><span>La persona de adentro</span><span class="lens">Excelencia + sentido humano</span></div>
     <h2 class="mega" data-breathe><span>Exigentes, competitivos y <span class="it">orgullosos</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">Quien está adentro suele exigirse mucho y esperar lo mismo de su institución. También tiende a tener una alta valoración de sí mismo, que afuera a veces se lee como soberbia y adentro como seguridad.</p>
@@ -1079,7 +1068,6 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <li><b>Competitivo</b><span>El promedio, la PAA y el porcentaje de beca son tema permanente en los foros de alumnos.</span></li>
       <li><b>Seguro de sí</b><span>“Se creen mucho” es una lectura frecuente afuera y también aparece adentro. Un becado lo explica como una estrategia de algunos, que cambia según el campus.</span></li>
       <li><b>Orgulloso de haber llegado</b><span>Siente que su lugar se lo ganó, sobre todo si entró con beca.</span></li>
-      <li><b>Habla en código</b><span>PAA, porcentaje, bloque, Semana Tec, servicio becario. Un vocabulario que se aprende estando adentro.</span></li>
     </ul>
     <p class="src">WPP BAV México 2025, audiencia que prefiere o usa el Tec · r/TecDeMonterrey 2025–2026 · X, 2026</p>
     <div class="bnote"><em>El brief lo dice así</em><p>Los mismos atributos que sostienen al Tec pueden leerse al revés: <b>la exigencia como alta presión y poco equilibrio personal, la selectividad como exclusividad, el prestigio como estatus y el éxito como una aspiración individual.</b> Su respuesta: <span class="it">exigentes, pero cercanos</span>.<small>Brief de campaña y Brand Expression, oct 2026</small></p></div>
@@ -1116,7 +1104,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     </div>
     <p class="src">Informe anual 2025 · El Economista, 18/08/2026 · Radio Fórmula, 03/08/2026 · tec.mx/prepatec/becas · r/TecDeMonterrey 2024–2026 · N+, 05/10/2026</p>
     <div class="bnote"><em>Selectivos, pero accesibles</em><p>Así lo escribe el brief: “Buscamos atraer personas <span class="it">con potencial y compromiso</span>, procurando que su condición económica o social no limite sus oportunidades de acceder al Tec.” También reconoce que algunas audiencias asocian al Tec con <b>ciertos perfiles y niveles socioeconómicos</b>, lo que genera distancia.<small>Brand Expression y brief de campaña, oct 2026</small></p></div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>Quien está adentro es exigente, competitivo y está orgulloso de haber llegado. Y cerca de la mitad llegó con algún apoyo.</p></div>
+    <div class="takeaway"><em>Para el brief · Excelencia + sentido humano</em><p>Exigentes y orgullosos de haber llegado, y cerca de la mitad con algún apoyo. Ahí ya conviven la excelencia y el sentido humano.</p></div>
 
   </div>
 </section>
@@ -1134,7 +1122,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- 10 ADENTRO Y AFUERA -->
 <section class="band paper" id="miradas-datos" data-sec="10 · Adentro y afuera" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>10</b><span>Adentro y afuera</span></div>
+    <div class="eyebrow"><b>10</b><span>Adentro y afuera</span><span class="lens">Sentido humano</span></div>
     <h2 class="mega" data-breathe><span>La misma marca, <span class="it">dos países</span>.</span></h2>
     <div class="mirror">
       <div class="side-out">
@@ -1181,7 +1169,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
     </div>
     <div class="bnote"><em>El brief lo confirma</em><p>El propio Tec reconoce que, para algunas audiencias, se siente <span class="it">más distante o frío</span>, asociado a ciertos perfiles y niveles socioeconómicos. Por eso pide “construir al mismo tiempo una percepción de mayor cercanía”.<small>Brief de campaña, oct 2026</small></p></div>
-    <div class="takeaway"><em>Lo que nos llevamos</em><p>Adentro se percibe cuidado y afuera casi no se ve. El respeto ya existe; falta el cariño.</p></div>
+    <div class="takeaway"><em>Para el brief · Sentido humano</em><p>Adentro se percibe el cuidado; afuera casi no se ve. Lo humano ya está: hay que hacerlo visible.</p></div>
   </div>
 </section>
 
@@ -1190,35 +1178,37 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   <div class="wrap">
     <span class="ch-num" aria-hidden="true">V</span>
     <h2 class="ch-title">Hacia el <span class="it">brief</span></h2>
-    <p class="ch-sub">Lo que llevamos a la reunión: qué cuidar y por dónde empezar la conversación.</p>
-    <ul class="ch-list"><li><a href="#tensiones">11 Lo que hay que cuidar</a></li><li><a href="#recomendaciones">12 Recomendaciones</a></li></ul>
+    <p class="ch-sub">Todo lo anterior, ordenado en los tres ejes que después trajo el brief: excelencia, transformación y sentido humano.</p>
+    <ul class="ch-list"><li><a href="#recomendaciones">11 Lo que fuimos viendo</a></li></ul>
   </div>
 </section>
 
-<!-- 11 TENSIONES -->
-<section class="band paper" id="tensiones" data-sec="11 · Lo que hay que cuidar" data-drift data-stop>
+<!-- 11 LO QUE FUIMOS VIENDO -->
+<section class="band paper" id="recomendaciones" data-sec="11 · Lo que fuimos viendo" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>11</b><span>Lo que hay que cuidar</span></div>
-    <h2 class="mega" data-breathe><span>Terreno <span class="it">sensible</span>.</span></h2>
-    <div class="tensions">
-      <div class="tension"><div><b>El precio pesa en la conversación.</b><span>La prensa suele convertir los rankings en comparaciones de colegiatura. Prestigio máximo (99.6) y valor percibido mínimo (5.0).</span></div></div>
-      <div class="tension"><div><b>Cuidado con “humanizar” bajando el premium.</b><span>En los datos de esta categoría, la amabilidad o la simpleza no aparecen asociadas a mayor relevancia. La cercanía que falta tiene más que ver con cuidado y confianza. <span class="bd">El brief lo dice igual: no quieren una marca “suavecita”.</span></span></div></div>
-      <div class="tension"><div><b>Tec21 genera críticas internas.</b><span>En los foros de alumnos se cuestionan los bloques de cinco semanas y la poca teoría. Una campaña de orgullo tendría que convivir con esa conversación.</span></div></div>
-      <div class="tension"><div><b>Hablarle a un solo alumno.</b><span>El que paga, el becado y el Líder del Mañana no se reconocen en el mismo espejo. “Comunidad de esfuerzo” conecta con el becado y puede no interpelar al resto.</span></div></div>
-      <div class="tension"><div><b>Adyacencia política.</b><span>El contenido más compartido del periodo usó al Tec como escenario de un mensaje político (un TikTok con 34% de los likes y 75% de los shares). El Tec aparecía como contexto.</span></div></div>
-      <div class="tension"><div><b>Las redes amplifican la queja.</b><span>X y Reddit sobrerrepresentan el estereotipo y el reclamo, y casi no muestran la trayectoria de los egresados. Conviene leerlas como una mirada entre otras.</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 12 RECOMENDACIONES -->
-<section class="band ink" id="recomendaciones" data-sec="12 · Recomendaciones" data-drift data-stop>
-  <div class="wrap">
-    <div class="eyebrow"><b>12</b><span>Recomendaciones</span></div>
-    <h2 class="mega" data-breathe><span>Cosas a <span class="it">tener en cuenta</span>.</span></h2>
+    <div class="eyebrow"><b>11</b><span>Lo que fuimos viendo</span><span class="lens">Los tres ejes</span></div>
+    <h2 class="mega" data-breathe><span>Todo decanta en <span class="it">tres ejes</span>.</span></h2>
     <p class="muted" style="margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.06em">Puntos de partida que llevamos a la conversación del brief. No son conclusiones cerradas.</p>
-    <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Lo que fuimos viendo</h3>
-    <ol class="recap"><li><a href="#que-es"><span>01</span>Nació con la ambición de una institución de nivel mundial.</a></li><li><a href="#como-funciona"><span>02</span>Ingeniería y negocios, cerca de las empresas.</a></li><li><a href="#posicionamiento"><span>03</span>Un discurso oficial amplio; lo propio está en su gente.</a></li><li><a href="#sistema"><span>04</span>En un sistema con filtro, el Tec se justifica por el después.</a></li><li><a href="#peso"><span>05</span>El prestigio ya está instalado.</a></li><li><a href="#diferencial"><span>06</span>Salida laboral, red y nombre.</a></li><li><a href="#orgullo"><span>07</span>Orgullo de escuela, activado por Borregos y la red.</a></li><li><a href="#pertenencia"><span>08</span>Pertenencia como logro y como rito.</a></li><li><a href="#persona"><span>09</span>Exigentes, orgullosos, y cerca de la mitad con alguna beca.</a></li><li><a href="#miradas-datos"><span>10</span>El cuidado se ve adentro, no afuera.</a></li><li><a href="#tensiones"><span>11</span>Precio, Tec21 y diversidad de alumnos, con cuidado.</a></li></ol>
+    <div class="triad" style="margin-top:clamp(40px,6vw,64px)">
+      <div><b>Excelencia</b><ul>
+        <li><a href="#que-es"><span>01</span>Nació con la ambición de una institución de nivel mundial.</a></li>
+        <li><a href="#peso"><span>05</span>El prestigio ya está instalado, en México y afuera.</a></li>
+        <li><a href="#diferencial"><span>06</span>Salida laboral, red y nombre.</a></li>
+        <li><a href="#persona"><span>09</span>Exigentes y orgullosos de haber llegado.</a></li>
+      </ul></div>
+      <div><b>Transformación</b><ul>
+        <li><a href="#como-funciona"><span>02</span>Retos reales, socios formadores y carreras pioneras.</a></li>
+        <li><a href="#peso"><span>05</span>220 mil empresas creadas por EXATEC.</a></li>
+        <li><a href="#posicionamiento"><span>03</span>El discurso oficial habla de transformar, pero en abstracto.</a></li>
+      </ul></div>
+      <div><b>Sentido humano</b><ul>
+        <li><a href="#sistema"><span>04</span>En un sistema con filtro, el acceso importa.</a></li>
+        <li><a href="#orgullo"><span>07</span>Un orgullo de comunidad: Borregos, red, ritos.</a></li>
+        <li><a href="#pertenencia"><span>08</span>No hay un solo tipo de alumno.</a></li>
+        <li><a href="#persona"><span>09</span>Cerca de la mitad tiene alguna beca.</a></li>
+        <li><a href="#miradas-datos"><span>10</span>El cuidado se ve adentro, no afuera.</a></li>
+      </ul></div>
+    </div>
     <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">Hacia dónde podría ir</h3>
     <div class="recos">
       <div class="reco" data-stop><p>Hablarle a gente <span class="it">exigente</span>.<small>La comunidad del Tec se mide alto y espera lo mismo de su institución. Un mensaje genérico o complaciente probablemente le parezca poco.<i class="from">Viene de 08 · 09</i></small></p></div>
@@ -1245,14 +1235,14 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     <span class="ch-num" aria-hidden="true">VI</span>
     <h2 class="ch-title">El <span class="it">brief</span></h2>
     <p class="ch-sub">Lo que el Tec nos pidió el 14 de octubre, ordenado para que se quede.</p>
-    <ul class="ch-list"><li><a href="#que-piden">13 Qué piden</a></li><li><a href="#problema">14 El problema</a></li><li><a href="#humanista">15 Lo que quieren sumar</a></li><li><a href="#territorio">16 El territorio</a></li><li><a href="#tono">17 Cómo tiene que sonar</a></li><li><a href="#match">18 El match</a></li></ul>
+    <ul class="ch-list"><li><a href="#que-piden">12 Qué piden</a></li><li><a href="#problema">13 El problema</a></li><li><a href="#humanista">14 Lo que quieren sumar</a></li><li><a href="#territorio">15 El territorio</a></li><li><a href="#tono">16 Cómo tiene que sonar</a></li><li><a href="#match">17 El match</a></li></ul>
   </div>
 </section>
 
-<!-- 13 QUÉ PIDEN -->
-<section class="band bpaper" id="que-piden" data-sec="13 · Qué piden" data-drift data-stop>
+<!-- 12 QUÉ PIDEN -->
+<section class="band bpaper" id="que-piden" data-sec="12 · Qué piden" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>13</b><span>Qué piden</span><span class="btag">Brief del Tec</span></div>
+    <div class="eyebrow"><b>12</b><span>Qué piden</span><span class="btag">Brief del Tec</span></div>
     <h2 class="mega" data-breathe><span>Ampliar, <span class="it">no cambiar</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">“El reto no es cambiar lo que ya se reconoce. Es ampliar lo que significa el Tec.” La excelencia se queda. Lo que falta es que se vea para qué sirve y cómo se vive.</p>
@@ -1298,10 +1288,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 14 EL PROBLEMA -->
-<section class="band blue" id="problema" data-sec="14 · El problema" data-drift data-stop>
+<!-- 13 EL PROBLEMA -->
+<section class="band blue" id="problema" data-sec="13 · El problema" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>14</b><span>El problema</span><span class="btag">Brief del Tec</span></div>
+    <div class="eyebrow"><b>13</b><span>El problema</span><span class="btag">Brief del Tec</span></div>
     <h2 class="mega" data-breathe><span>Lo que los sostiene también <span class="it">los aleja</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">El Tec es reconocido por su excelencia académica, su exigencia y sus altos estándares. Forma líderes y personas exitosas. Es una fortaleza que quieren preservar.</p>
@@ -1328,10 +1318,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 15 LO QUE QUIEREN SUMAR -->
-<section class="band bpaper" id="humanista" data-sec="15 · Lo que quieren sumar" data-drift data-stop>
+<!-- 14 LO QUE QUIEREN SUMAR -->
+<section class="band bpaper" id="humanista" data-sec="14 · Lo que quieren sumar" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>15</b><span>Lo que quieren sumar</span><span class="btag">Brief del Tec</span></div>
+    <div class="eyebrow"><b>14</b><span>Lo que quieren sumar</span><span class="btag">Brief del Tec</span></div>
     <h2 class="mega" data-breathe><span>La persona <span class="it">al centro</span>.</span></h2>
     <div class="cols">
       <p class="lede c-7">“No se trata solo de formar profesionistas extraordinarios, sino también personas íntegras que generen un impacto positivo en la sociedad.”</p>
@@ -1395,10 +1385,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 16 TERRITORIO -->
-<section class="band blue" id="territorio" data-sec="16 · El territorio" data-drift data-stop>
+<!-- 15 TERRITORIO -->
+<section class="band blue" id="territorio" data-sec="15 · El territorio" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>16</b><span>El territorio</span><span class="btag">Brief del Tec</span></div>
+    <div class="eyebrow"><b>15</b><span>El territorio</span><span class="btag">Brief del Tec</span></div>
     <h2 class="mega" data-breathe><span>Un territorio <span class="it">propio</span>.</span></h2>
     <p class="lede">“No buscamos ocupar un territorio que ya existe. Queremos construir uno propio a partir de lo que el Tec es y de todo lo que es capaz de hacer.”</p>
     <div class="cards three" style="margin-top:clamp(40px,6vw,64px)">
@@ -1420,10 +1410,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 17 TONO -->
-<section class="band bpaper" id="tono" data-sec="17 · Cómo tiene que sonar" data-drift data-stop>
+<!-- 16 TONO -->
+<section class="band bpaper" id="tono" data-sec="16 · Cómo tiene que sonar" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>17</b><span>Cómo tiene que sonar</span><span class="btag">Brief del Tec</span></div>
+    <div class="eyebrow"><b>16</b><span>Cómo tiene que sonar</span><span class="btag">Brief del Tec</span></div>
     <h2 class="mega" data-breathe style="font-size:clamp(2.3rem,6.6vw,6.2rem)"><span>De una excelencia demostrativa a una excelencia <span class="it">con significado</span>.</span></h2>
     <div class="cards three" style="margin-top:clamp(32px,5vw,56px)">
       <div class="card"><em>Tensión 1</em><b>Exigentes, pero cercanos</b><span>Altos estándares y una cultura de exigencia, sin perder la empatía, la cercanía y el acompañamiento.</span></div>
@@ -1456,10 +1446,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 18 MATCH -->
-<section class="band blue" id="match" data-sec="18 · El match" data-drift data-stop>
+<!-- 17 MATCH -->
+<section class="band blue" id="match" data-sec="17 · El match" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>18</b><span>El match</span><span class="btag">De la reunión de brief</span></div>
+    <div class="eyebrow"><b>17</b><span>El match</span><span class="btag">De la reunión de brief</span></div>
     <h2 class="mega" data-breathe><span>No es entrar y ya. Es <span class="it">hacer match</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">En la reunión dijeron que no buscan tener más estudiantes de los que ya tienen. Para ellos es una cuestión de perfiles: hay gente que hace match con el Tec y gente que no, y son rigurosos en ver con quién.</p>
@@ -1493,15 +1483,15 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   <div class="wrap">
     <span class="ch-num" aria-hidden="true">VII</span>
     <h2 class="ch-title">Después del <span class="it">brief</span></h2>
-    <p class="ch-sub">Para empezar a pensar la idea: las tres tensiones del brief, cada una con frases de instituciones de excelencia que ayudan a resolverla, y el contexto de los jóvenes.</p>
-    <ul class="ch-list"><li><a href="#communiter">Un caso para abrir</a></li><li><a href="#tension-1">19 Exigentes, pero cercanos</a></li><li><a href="#tension-2">20 Selectivos, pero accesibles</a></li><li><a href="#tension-3">21 Logro con propósito</a></li><li><a href="#jovenes">22 Los jóvenes y la universidad</a></li><li><a href="#lemas">23 Los lemas, en el mapa</a></li></ul>
+    <p class="ch-sub">Para empezar a pensar la idea: un caso para abrir, por qué hoy importa la comunidad, las tres tensiones del brief y los lemas de las grandes universidades.</p>
+    <ul class="ch-list"><li><a href="#communiter">18 Un caso para abrir</a></li><li><a href="#comunidad">19 Por qué comunidad</a></li><li><a href="#tension-1">20 Exigentes, pero cercanos</a></li><li><a href="#tension-2">21 Selectivos, pero accesibles</a></li><li><a href="#tension-3">22 Logro con propósito</a></li><li><a href="#lemas">23 Los lemas, en el mapa</a></li></ul>
   </div>
 </section>
 
-<!-- CASO OLÍMPICO -->
-<section class="band ink" id="communiter" data-sec="VII · Un caso para abrir" data-drift data-stop>
+<!-- 18 CASO OLÍMPICO -->
+<section class="band ink" id="communiter" data-sec="18 · Un caso para abrir" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>Un caso para abrir</b><span>Comité Olímpico Internacional</span></div>
+    <div class="eyebrow"><b>18</b><span>Un caso para abrir</span><span class="lens">Los tres ejes</span></div>
     <h2 class="mega" data-breathe style="margin-bottom:.1em"><span>Citius, Altius, Fortius.</span></h2>
     <p class="olympic-plus" data-breathe><span>+ <span class="it">Communiter</span>.</span></p>
     <p class="lede" style="max-width:44ch;margin-top:clamp(20px,3vw,32px)">“Más rápido, más alto, más fuerte” y, desde 2021, <b>“juntos”</b>. La institución de excelencia por definición se humanizó sumando una sola palabra, sin tocar nada de lo que ya tenía.</p>
@@ -1515,54 +1505,141 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       <div class="card"><em>02</em><b>Ampliar</b><span>Una sola palabra humana cambia el sentido de todo lo demás. Es exactamente lo que pide el brief.</span></div>
       <div class="card"><em>03</em><b>La misma palabra</b><span>“Juntos” es la palabra del territorio del brief: “lo que son capaces de hacer juntos”.</span></div>
     </div>
-    <p class="callout">¿Cuál sería el “juntos” del Tec?<small>La pregunta que abre las tres tensiones</small></p>
+    <p class="callout">¿Cuál sería el “juntos” del Tec?<small>La pregunta que abre esta parte</small></p>
     <p class="src">olympics.com, “Olympic motto” · Sesión 138 del COI, Tokio, 20 de julio de 2021</p>
   </div>
 </section>
 
-<!-- 19 TENSIÓN 1 -->
-<section class="band paper" id="tension-1" data-sec="19 · Exigentes, pero cercanos" data-drift data-stop>
+<!-- 19 POR QUÉ COMUNIDAD -->
+<section class="band paper" id="comunidad" data-sec="19 · Por qué comunidad" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>19</b><span>Tensión 1 de 3</span></div>
+    <div class="eyebrow"><b>19</b><span>Por qué comunidad, por qué ahora</span><span class="lens">Sentido humano</span></div>
+    <h2 class="mega" data-breathe><span>El mundo va hacia lo <span class="it">individual</span>.</span></h2>
+    <p class="lede" style="max-width:46ch">Más gente vive sola, se siente sola y cuenta su historia en primera persona. En ese contexto, una institución de excelencia que hable de lo que se logra juntos va a contracorriente. Y por eso se nota.</p>
+    <div class="facts">
+      <div class="fact"><span class="n">+<span data-count="12">12</span>%</span><p>creció el individualismo en el mundo desde 1960, según 51 años de datos de 78 países.</p><p class="src">Santos, Varnum y Grossmann, Psychological Science, 2017</p></div>
+      <div class="fact"><span class="n">1 de 6</span><p>personas en el mundo vive con soledad. Se asocia a unas 871 mil muertes al año.</p><p class="src">OMS, Comisión sobre Conexión Social, jun 2025</p></div>
+      <div class="fact"><span class="n">1 de 5</span><p>adolescentes y jóvenes se siente solo. Entre los 13 y los 29 años, es el grupo más afectado.</p><p class="src">OMS, Comisión sobre Conexión Social, jun 2025</p></div>
+    </div>
+
+    <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">Lo que dice el brief</h3>
+    <p class="muted" style="margin:0;max-width:60ch;font-size:15px">No lo plantea como un diagnóstico del mundo y no explica por qué ahora. Pero la idea aparece en varias líneas:</p>
+    <div class="quotes-b">
+      <blockquote>“Además del conocimiento, las credenciales y los resultados, adquiere mayor relevancia la capacidad de colaborar, innovar responsablemente y contribuir positivamente al entorno.”<cite>Creencias actuales de las audiencias</cite></blockquote>
+      <blockquote>“Bajar la tensión del héroe individual: personas que quieren poner sus capacidades en acción para contribuir a algo más grande que ellas mismas.”<cite>Tono</cite></blockquote>
+      <blockquote>“No separamos el éxito del impacto.”<cite>Brand Expression</cite></blockquote>
+      <blockquote>“El valor no está solo en quiénes forman parte del ecosistema, sino en lo que son capaces de hacer juntos.”<cite>Territorio</cite></blockquote>
+    </div>
+
+    <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">Lo que dicen los jóvenes en México</h3>
+    <div class="youth-big">
+      <span class="n"><span data-count="67">67</span>%</span>
+      <p>de los mexicanos recomienda ir a la universidad antes de empezar a trabajar. <b>Es el país que más lo recomienda entre 31.</b> La universidad sigue siendo la apuesta por el futuro.<small>Ipsos, Monitor de Educación 2026</small></p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="n"><span data-count="64">64</span>%</span><p>de la Gen Z mexicana siente responsabilidad y capacidad de tener un papel activo en su futuro.</p><p class="src">UNICEF México, 2025</p></div>
+      <div class="fact"><span class="n">3</span><p>cosas a la vez mueven sus decisiones de carrera: dinero, sentido y bienestar.</p><p class="src">Deloitte, Gen Z and Millennial Survey 2025</p></div>
+      <div class="fact"><span class="n"><span data-count="68">68</span>%</span><p>cree que los jóvenes tendrían mejores oportunidades en el extranjero.</p><p class="src">Ipsos, Monitor de Educación 2026</p></div>
+      <div class="fact"><span class="n">+<span data-count="70">70</span>%</span><p>se siente abrumado. Aun así, son más optimistas que sus pares de otros países.</p><p class="src">UNICEF México, 2025</p></div>
+      <div class="fact"><span class="n"><span data-count="55">55</span>%</span><p>de la Gen Z postergó decisiones importantes por razones económicas.</p><p class="src">Deloitte, Gen Z México 2026</p></div>
+      <div class="fact"><span class="n"><span data-count="74">74</span>%</span><p>más gana un profesionista que alguien con solo bachillerato.</p><p class="src">IMCO, Compara Carreras 2026</p></div>
+    </div>
+    <div class="voices">
+      <blockquote>“Me duele muchísimo ver que una, dos o tres generaciones le fallaron completamente a esta generación.”<cite>Guillermo del Toro, Festival de Cine de Morelia, 18 oct 2026</cite></blockquote>
+      <blockquote>“Perdón por las molestias, estamos intentando salvar nuestro futuro.”<cite>Pancarta en Brest, protestas estudiantiles en Francia por mejores escuelas, oct 2026</cite></blockquote>
+    </div>
+
+    <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">El cruce</h3>
+    <ul class="cross">
+      <li><div><em>Dice el brief</em><p class="b" style="margin:0">“Contribuir a algo más grande que uno mismo.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">El 64% siente que puede tener un papel activo, y elige su carrera por dinero, sentido y bienestar.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">La comunidad como el lugar donde el propósito se vuelve acción.</p></div></li>
+      <li><div><em>Dice el brief</em><p class="b" style="margin:0">“No separamos el éxito del impacto.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">La universidad sigue siendo la apuesta (67%), pero el 68% cree que afuera hay más oportunidades.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">Un éxito que rinde aquí: para uno, para otros y para México.</p></div></li>
+      <li><div><em>Dice el brief</em><p class="b" style="margin:0">“Lo que son capaces de hacer juntos.”</p></div><div><em>Dicen los jóvenes</em><p class="j" style="margin:0">Más del 70% se siente abrumado y 1 de cada 5 jóvenes se siente solo.</p></div><div><em>Para el Tec</em><p class="t" style="margin:0">Una excelencia que sostiene: nadie llega solo.</p></div></li>
+    </ul>
+    <p class="callout lit">Sienten que el mundo que reciben está roto. No piden el mundo: piden que los tomen en serio y que el esfuerzo valga la pena.</p>
+    <div class="takeaway"><em>Para la idea</em><p>En un mundo que empuja a salvarse solo, la excelencia del Tec puede ser la que se logra juntos.</p></div>
+  </div>
+</section>
+
+<!-- 20 TENSIÓN 1 · NASA -->
+<section class="band ink" id="tension-1" data-sec="20 · Exigentes, pero cercanos" data-drift data-stop>
+  <div class="wrap">
+    <div class="eyebrow"><b>20</b><span>Tensión 1 de 3</span><span class="lens">Excelencia + sentido humano</span></div>
     <h2 class="mega" data-breathe><span>Exigentes, pero <span class="it">cercanos</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">Mantener los altos estándares y la cultura de exigencia, sin perder la empatía, la cercanía ni el acompañamiento.</p>
       <p class="ev c-6 end">Lo vimos en <a href="#persona">09</a>: quien está adentro es exigente y orgulloso. Y en <a href="#miradas-datos">10</a>: adentro el Tec “cuida a su gente” (90.2); afuera casi no se ve (54.0).</p>
     </div>
-    <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Frases que ayudan a pensarla</h3>
-    <div class="claims">
+
+    <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">El caso: la NASA</h3>
+    <p class="lede" style="max-width:48ch">La institución más exigente del mundo se cuenta en plural. Su excelencia no tiene un héroe: tiene un equipo, y un destinatario que es toda la humanidad.</p>
+    <div class="claims" style="margin-top:clamp(32px,5vw,48px)">
       <article class="claim">
         <figure class="ph" data-photo><img src="img/ref-jpl-parachute.jpg" alt="El paracaídas del rover Perseverance visto desde abajo, con las letras de Dare Mighty Things marcadas sobre los paños naranjas y blancos" loading="lazy"><figcaption>El paracaídas de Perseverance, decodificado · NASA/JPL-Caltech, 2021</figcaption></figure>
-        <em>JPL · NASA</em>
+        <em>JPL · NASA · 2021</em>
         <b>Dare Mighty Things</b>
         <span class="tr">Atrévete a cosas grandes.</span>
-        <p>Es el lema del Jet Propulsion Laboratory, el centro de la NASA que construye los rovers. Viene de una frase de Theodore Roosevelt de 1899.</p>
-        <p>En febrero de 2021 lo escondieron en código binario en los paños del paracaídas de Perseverance, que aterrizó en Marte. El patrón lo diseñó Ian Clark, ingeniero del equipo, y en internet lo descifraron enseguida.</p>
-        <p class="why">La exigencia más alta del mundo, dicha como invitación. Y con un guiño que solo encuentra quien se acerca.</p>
-        <p class="q">¿A qué se atreve una comunidad Tec?</p>
+        <p>Es el lema del Jet Propulsion Laboratory, que construye los rovers, y viene de una frase de Theodore Roosevelt de 1899. En 2021 lo escondieron en código binario en el paracaídas de Perseverance, que aterrizó en Marte. El patrón lo diseñó el ingeniero Ian Clark, y en internet lo descifraron enseguida.</p>
+        <p class="why">La exigencia más alta, dicha como invitación. Y con un guiño que solo encuentra quien se acerca.</p>
       </article>
       <article class="claim">
-        <div class="hanzi" lang="zh">自强不息<br>厚德载物</div>
-        <em>Tsinghua University · Pekín</em>
-        <b>Self-Discipline and Social Commitment</b>
-        <span class="tr">Exigirse sin descanso y sostener a los demás con integridad. Así lo traduce la propia universidad.</span>
-        <p>A Tsinghua se la conoce como “la MIT de China”. Su lema viene del I Ching, uno de los textos clásicos chinos, y se adoptó después de un discurso del pensador Liang Qichao en 1914.</p>
-        <p class="why">La primera mitad habla de exigencia hacia uno mismo; la segunda, de compromiso con los demás. Son, casi literalmente, las dos mitades de esta tensión.</p>
-        <p class="q">¿Cómo se dice “exigentes, pero cercanos” en una sola línea?</p>
+        <figure class="ph" data-photo><img src="img/ref-nasa-plaque.jpg" alt="La placa del Apolo 11 montada en la escalera del módulo lunar: Here men from the planet Earth first set foot upon the Moon, July 1969 A.D. We came in peace for all mankind" loading="lazy" style="object-position:50% 40%"><figcaption>La placa, en la escalera del módulo lunar · NASA, 1969</figcaption></figure>
+        <em>Apolo 11 · 1969</em>
+        <b>We came in peace for all mankind</b>
+        <span class="tr">Vinimos en paz, en nombre de toda la humanidad.</span>
+        <p>La placa que el Apolo 11 dejó en la Luna: “Aquí, hombres del planeta Tierra pusieron pie por primera vez en la Luna, julio de 1969 d. C.”. La firman los tres astronautas y el presidente de Estados Unidos.</p>
+        <p class="why">El logro más individual de la historia, firmado en nombre de todos.</p>
+      </article>
+      <article class="claim">
+        <figure class="ph" data-photo><img src="img/ref-nasa-johnson.jpg" alt="Katherine Johnson trabajando en su escritorio en NASA Langley, con una calculadora mecánica y un globo celeste" loading="lazy"><figcaption>Katherine Johnson en NASA Langley · NASA, 1962</figcaption></figure>
+        <em>Katherine Johnson · 1962</em>
+        <b>“Si ella dice que están bien, estoy listo.”</b>
+        <span class="tr">John Glenn, antes de su vuelo, según el Computer History Museum.</span>
+        <p>Antes de ser el primer estadounidense en orbitar la Tierra, Glenn pidió que la matemática Katherine Johnson revisara a mano los cálculos de la computadora. Su historia, y la de otras matemáticas que la NASA no mostraba, llegó al cine con Hidden Figures (2016).</p>
+        <p class="why">Detrás de cada héroe hay una comunidad que lo hace posible. Y la exigencia también es cuidado: nadie despega sin que alguien revise.</p>
+      </article>
+      <article class="claim">
+        <div class="bign">400 mil</div>
+        <em>Programa Apolo · 1961–1972</em>
+        <b>For the benefit of all mankind</b>
+        <span class="tr">Para beneficio de toda la humanidad.</span>
+        <p>Unas 400 mil personas trabajaron en el programa Apolo en su pico. Y la ley que creó la NASA en 1958 dice que sus actividades en el espacio deben estar dedicadas a fines pacíficos “para beneficio de toda la humanidad”.</p>
+        <p class="why">La excelencia como obra colectiva, y con un destinatario claro.</p>
       </article>
     </div>
+
+    <h3 class="sub" style="margin-top:clamp(56px,8vw,96px)">La contraparte: Elon Musk y SpaceX</h3>
+    <p class="muted" style="margin:0 0 6px;max-width:62ch;font-size:15px">Las dos son excelencia técnica del más alto nivel. Lo que cambia es el sentido: para quién se logra, y con quién.</p>
+    <div class="tbl-wrap">
+      <table class="tbl-text vs-table">
+        <thead><tr><th></th><th>NASA</th><th>SpaceX · Elon Musk</th></tr></thead>
+        <tbody>
+          <tr><td>Qué es</td><td>Una agencia pública, creada por ley en 1958.</td><td>Una empresa privada, fundada por Elon Musk en 2002.</td></tr>
+          <tr><td>Para quién</td><td>“Para beneficio de toda la humanidad.”</td><td>Una visión personal: “hacer la vida multiplanetaria”.</td></tr>
+          <tr><td>El héroe</td><td>El equipo: 400 mil personas, la matemática que revisa, el ingeniero que esconde un mensaje.</td><td>El fundador: la historia pública gira alrededor de su persona.</td></tr>
+          <tr><td>Cómo cuenta el logro</td><td>En plural: “vinimos en paz, en nombre de toda la humanidad”.</td><td>En primera persona, en sus redes y presentaciones.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Lectura nuestra de la narrativa pública de cada una, no de sus resultados.</p>
+
     <p class="callout">¿Cómo se ve una excelencia que cuida, sin bajar la vara?<small>La pregunta para la idea</small></p>
+    <ul class="qs">
+      <li>¿A qué se atreve una comunidad Tec?</li>
+      <li>¿El Tec se cuenta como la NASA o como Musk?</li>
+      <li>¿Quién es la Katherine Johnson del Tec: quién revisa para que otros despeguen?</li>
+      <li>¿Qué placa dejaría el Tec, y en nombre de quién?</li>
+    </ul>
   </div>
 </section>
 
-<!-- 20 TENSIÓN 2 -->
-<section class="band ink" id="tension-2" data-sec="20 · Selectivos, pero accesibles" data-drift data-stop>
+<!-- 21 TENSIÓN 2 -->
+<section class="band paper" id="tension-2" data-sec="21 · Selectivos, pero accesibles" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>20</b><span>Tensión 2 de 3</span></div>
+    <div class="eyebrow"><b>21</b><span>Tensión 2 de 3</span><span class="lens">Excelencia + sentido humano</span></div>
     <h2 class="mega" data-breathe><span>Selectivos, pero <span class="it">accesibles</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">Atraer personas con potencial y compromiso, sin que su condición económica o social limite su acceso.</p>
-      <p class="ev c-6 end">Lo vimos en <a href="#persona">09</a>: el 51% tiene beca o algún apoyo. Y en <a href="#match">18</a>: no se trata de quién puede entrar, sino de quién hace match.</p>
+      <p class="ev c-6 end">Lo vimos en <a href="#persona">09</a>: el 51% tiene beca o algún apoyo. Y en <a href="#match">17</a>: no se trata de quién puede entrar, sino de quién hace match.</p>
     </div>
     <h3 class="sub" style="margin-top:clamp(48px,7vw,80px)">Frases que ayudan a pensarla</h3>
     <div class="claims">
@@ -1596,10 +1673,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 21 TENSIÓN 3 -->
-<section class="band paper" id="tension-3" data-sec="21 · Logro con propósito" data-drift data-stop>
+<!-- 22 TENSIÓN 3 -->
+<section class="band ink" id="tension-3" data-sec="22 · Logro con propósito" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>21</b><span>Tensión 3 de 3</span></div>
+    <div class="eyebrow"><b>22</b><span>Tensión 3 de 3</span><span class="lens">Excelencia + transformación</span></div>
     <h2 class="mega" data-breathe><span>Orientados al logro, pero <span class="it">con propósito</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">Impulsar el éxito sin reducirlo a lo individual: también cuenta lo que aporta a los demás y a la sociedad.</p>
@@ -1634,58 +1711,10 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </section>
 
-<!-- 22 JÓVENES -->
-<section class="band ink" id="jovenes" data-sec="22 · Los jóvenes y la universidad" data-drift data-stop>
-  <div class="wrap">
-    <div class="eyebrow"><b>22</b><span>Los jóvenes y la universidad</span></div>
-    <h2 class="mega" data-breathe><span>En México, la universidad <span class="it">sigue siendo la apuesta</span>.</span></h2>
-    <div class="youth-big">
-      <span class="n"><span data-count="67">67</span>%</span>
-      <p>de los mexicanos recomienda ir a la universidad antes de empezar a trabajar. <b>Es el país que más lo recomienda entre 31.</b><small>Ipsos, Monitor de Educación 2026</small></p>
-    </div>
-    <div class="facts">
-      <div class="fact"><span class="n"><span data-count="68">68</span>%</span><p>cree que los jóvenes tendrían mejores oportunidades en el extranjero.</p><p class="src">Ipsos, Monitor de Educación 2026</p></div>
-      <div class="fact"><span class="n"><span data-count="74">74</span>%</span><p>más gana un profesionista que alguien con solo bachillerato.</p><p class="src">IMCO, Compara Carreras 2026</p></div>
-      <div class="fact"><span class="n"><span data-count="46.8" data-dec="1">46.8</span>%</span><p>de cobertura universitaria: más de la mitad de los jóvenes no está estudiando.</p><p class="src">SEP, 2025-26</p></div>
-      <div class="fact"><span class="n"><span data-count="64">64</span>%</span><p>de la Gen Z mexicana siente responsabilidad y capacidad de tener un papel activo en su futuro.</p><p class="src">UNICEF México, 2025</p></div>
-      <div class="fact"><span class="n">+<span data-count="70">70</span>%</span><p>se siente abrumado, y más de la mitad necesitó ayuda psicológica. Aun así, son más optimistas que sus pares de otros países.</p><p class="src">UNICEF México, 2025</p></div>
-      <div class="fact"><span class="n"><span data-count="55">55</span>%</span><p>de la Gen Z postergó decisiones importantes por razones económicas.</p><p class="src">Deloitte, Gen Z México 2026</p></div>
-    </div>
-    <div class="cols" style="margin-top:clamp(40px,6vw,64px)">
-      <div class="prose c-6">
-        <p>Creen en estudiar, pero no del todo en que México les devuelva el esfuerzo. Lo que mueve sus decisiones de carrera son tres cosas a la vez: <b>dinero, sentido y bienestar</b> (Deloitte). Valoran mucho la familia y la educación, desconfían de las instituciones políticas y les cuesta construir su autonomía (Fundación SM, 2026).</p>
-      </div>
-      <div class="prose c-6">
-        <p>La IA suma incertidumbre: en Latinoamérica, el miedo a perder el trabajo por la IA pasó del 28% al 40% entre 2024 y 2026 (Marsh). La pregunta ya no es solo qué carrera da trabajo, sino qué te prepara para algo que todavía no existe.</p>
-      </div>
-    </div>
-
-    <div class="voices">
-      <blockquote>“Me duele muchísimo ver que una, dos o tres generaciones le fallaron completamente a esta generación.”<cite>Guillermo del Toro, Festival de Cine de Morelia, 18 oct 2026. Se le quebró la voz y el clip se volvió viral.</cite></blockquote>
-      <blockquote>“Perdón por las molestias, estamos intentando salvar nuestro futuro.”<cite>Pancarta en Brest, protestas estudiantiles en Francia, oct 2026. Hasta 480 mil personas salieron a pedir profesores, aulas menos llenas y edificios dignos.</cite></blockquote>
-    </div>
-    <p class="src">En México, los jóvenes también salieron a la calle por cosas concretas: la Marcha Generación Z (nov 2025) y la marcha por el agua en Guadalajara (oct 2026). Son temas sensibles: sirven como contexto para el equipo, no como material de campaña.</p>
-
-    <div class="say" style="margin-top:clamp(48px,7vw,80px)">
-      <div>
-        <h3>Qué esperan de sí mismos</h3>
-        <ul><li>Ser capaces sin romperse: exigencia, pero con salud mental.</li><li>Que el esfuerzo rinda en algo concreto: estabilidad, movilidad, que valga la pena quedarse.</li><li>Herramientas para un futuro que nadie sabe describir.</li></ul>
-      </div>
-      <div>
-        <h3>Qué esperan de su comunidad</h3>
-        <ul><li>Un lugar donde apoyarse, no una vitrina.</li><li>Una red que sostenga, no solo contactos.</li><li>Instituciones que cumplan. Como desconfían de casi todas, una que cumple vale doble.</li></ul>
-      </div>
-    </div>
-
-    <p class="callout lit">Sienten que el mundo que reciben está roto. No piden el mundo: piden que los tomen en serio y que el esfuerzo valga la pena.</p>
-    <div class="takeaway"><em>Para el Tec</em><p>Leída desde acá, la excelencia es una promesa cumplida más que un estatus. Sin presumir aulas buenas ni pararse por encima de la crisis.</p></div>
-  </div>
-</section>
-
 <!-- 23 LEMAS EN EL MAPA -->
 <section class="band paper" id="lemas" data-sec="23 · Los lemas, en el mapa" data-drift data-stop>
   <div class="wrap">
-    <div class="eyebrow"><b>23</b><span>Los lemas, en el mapa del brief</span></div>
+    <div class="eyebrow"><b>23</b><span>Los lemas, en el mapa del brief</span><span class="lens">Los tres ejes</span></div>
     <h2 class="mega" data-breathe><span>Cada universidad, <span class="it">su frase</span>.</span></h2>
     <div class="cols">
       <p class="lede c-6">El brief ubica a las universidades mexicanas en tres círculos: excelencia, sentido humano y transformación. Hoy el Tec está entre excelencia y transformación, junto a la UNAM y el IPN. Quiere estar en el centro.</p>
@@ -1871,12 +1900,12 @@ td:not(:first-child),th:not(:first-child){text-align:right}
       </div>
       <div>
         <h3>Frases de referencia</h3>
-        <p>NASA/JPL-Caltech, PIA24431 “Mars Decoder Ring” (2021) · Tsinghua University · Tagline Guru, encuesta de lemas universitarios de EE. UU. (abril de 2016) · Inside Higher Ed y The Oberlin Review (2006) · Johnson Banks, D&amp;AD y Asbury &amp; Asbury (Dear World… Yours, Cambridge) · Texas Exes, Austin American-Statesman y Hachette (UT Austin y McRaven) · University of Chicago.</p>
+        <p>NASA/JPL-Caltech, PIA24431 “Mars Decoder Ring” (2021) · NASA, placa del Apolo 11 (S69-38749) y Katherine Johnson (LRC-1962-B701_P-09381) · Computer History Museum · Smithsonian Air &amp; Space (programa Apolo) · Ley Nacional de Aeronáutica y del Espacio (1958) · SpaceX y declaraciones públicas de Elon Musk · olympics.com · Tagline Guru, encuesta de lemas universitarios de EE. UU. (abril de 2016) · Inside Higher Ed y The Oberlin Review (2006) · Johnson Banks, D&amp;AD y Asbury &amp; Asbury (Dear World… Yours, Cambridge) · Texas Exes, Austin American-Statesman y Hachette (UT Austin y McRaven) · University of Chicago.</p>
         <p>Las imágenes de campañas se usan solo como referencia interna.</p>
       </div>
       <div>
         <h3>Jóvenes</h3>
-        <p>Ipsos, Monitor de Educación 2026 · UNICEF México, Gen Z (2025) · Deloitte, Gen Z and Millennial Survey 2025 y Gen Z México 2026 · Fundación SM, Jóvenes en México 2026 · Marsh, 2026 · IMCO · SEP.</p>
+        <p>OMS, Comisión sobre Conexión Social (jun 2025) · Santos, Varnum y Grossmann, “Global increases in individualism”, Psychological Science (2017) · Ipsos, Monitor de Educación 2026 · UNICEF México, Gen Z (2025) · Deloitte, Gen Z and Millennial Survey 2025 y Gen Z México 2026 · Fundación SM, Jóvenes en México 2026 · Marsh, 2026 · IMCO · SEP.</p>
         <p>Guillermo del Toro en el FICM, oct 2026 (Crónica, CNN en Español, Yahoo Noticias) · Protestas estudiantiles en Francia, sep–oct 2026 (Reuters, BBC, France 24, CNN, Politis).</p>
       </div>
     </div>
