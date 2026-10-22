@@ -74,7 +74,7 @@ blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(1
 blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.06em;line-height:1.5;margin-top:.8em;color:var(--soft)}
 
 /* HERO */
-.hero{padding-top:calc(env(safe-area-inset-top,0px) + 92px);padding-bottom:clamp(64px,10vh,120px);overflow:hidden}
+.hero{padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(64px,10vh,120px);overflow:hidden}
 .hero-top{display:flex;align-items:center;gap:14px}
 .hero-top .torch{width:40px;height:40px}
 .hero-tec{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(9rem,40vw,36rem);line-height:.8;letter-spacing:-.045em;
@@ -463,6 +463,49 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 .youth-big p small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--soft);margin-top:.9em}
 .voices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(48px,7vw,88px)}
 
+/* comentarios del equipo */
+.fb{position:relative;background:radial-gradient(60% 80% at 85% 0%,#1d3a8a 0%,rgba(29,58,138,0) 70%),#0a1636;color:#eef2ff;
+  padding:calc(env(safe-area-inset-top,0px) + 64px) var(--gutter) clamp(32px,5vw,48px);--fg:#eef2ff;--soft:#aab7dd;--line:rgba(238,242,255,.22)}
+.fb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,56px);align-items:start}
+.fb-k{margin:0 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.fb-t{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+.fb-s{margin:14px 0 0;font-size:14.5px;line-height:1.5;color:var(--soft);max-width:44ch}
+.fb-form{display:grid;gap:10px}
+.fb-kinds{display:flex;flex-wrap:wrap;gap:6px;border:0;margin:0;padding:0}
+.fb-kinds label{cursor:pointer}
+.fb-kinds input{position:absolute;opacity:0;pointer-events:none}
+.fb-kinds span{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:5px 12px;transition:background-color .15s,border-color .15s}
+.fb-kinds input:checked+span{background:#eef2ff;color:#0a1636;border-color:#eef2ff}
+.fb-kinds input:focus-visible+span{outline:2px solid #eef2ff;outline-offset:2px}
+.fb textarea,.fb select{width:100%;font:inherit;font-size:15px;color:#eef2ff;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.fb textarea{resize:vertical;min-height:92px;line-height:1.45}
+.fb textarea::placeholder{color:#8f9cc4}
+.fb select option{color:#0a1636}
+.fb-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.fb-btn{appearance:none;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.02em;color:#0a1636;background:#eef2ff;border:0;border-radius:8px;padding:0 20px;cursor:pointer;min-height:44px}
+.fb-btn:disabled{opacity:.5;cursor:default}
+.fb-btn.ghost{background:none;color:#eef2ff;border:1px solid var(--line)}
+.fb-status{margin:0;min-height:1.4em;font-size:13.5px;color:#cfe0ff}
+.fb-admin{margin-top:clamp(28px,4vw,40px);padding-top:20px;border-top:1px solid var(--line)}
+.fb-admin-h{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+.fb-admin-h b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.fb-admin-h .acts{display:flex;gap:8px;flex-wrap:wrap}
+.fb-admin-h .fb-btn{min-height:36px;font-size:13px;padding:0 14px}
+.fb-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;max-height:460px;overflow:auto}
+.fb-list li{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:6px}
+.fb-list li.done{opacity:.5}
+.fb-meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--soft);align-items:center}
+.fb-meta .kind{color:#0a1636;background:#eef2ff;border-radius:999px;padding:1px 8px}
+.fb-meta button{appearance:none;font:inherit;color:#eef2ff;background:none;border:1px solid var(--line);border-radius:4px;padding:1px 7px;cursor:pointer;margin-left:auto}
+.fb-list p{margin:0;font-size:14.5px;line-height:1.45;white-space:pre-wrap}
+.fb-empty{color:var(--soft);font-size:14px}
+.find-pills{position:fixed;top:calc(env(safe-area-inset-top,0px) + 7px);left:50%;transform:translateX(-50%);z-index:96;display:flex;gap:6px}
+.find-pills .find-pill{position:static;transform:none}
+@media (max-width:900px){
+  .find-pills{left:auto;right:var(--gutter);transform:none}
+  .fb-grid{grid-template-columns:minmax(0,1fr)}
+}
+
 /* buscador */
 .find-pill{position:fixed;top:calc(env(safe-area-inset-top,0px) + 7px);left:50%;transform:translateX(-50%);z-index:96;display:flex;align-items:center;gap:10px;
   background:var(--ink);color:var(--paper);border:1px solid rgba(241,241,239,.35);border-radius:999px;padding:6px 8px 6px 12px;
@@ -565,7 +608,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <div class="progress" aria-hidden="true"></div>
 <div class="chrome" aria-hidden="true"><span class="brand"><svg class="torch" width="16" height="16"><use href="#torch"/></svg>Tec de Monterrey · Pre-brief</span><span id="chrome-sec">Octubre 2026</span></div>
 <div class="keys" aria-hidden="true"><kbd>←</kbd><kbd>→</kbd> navegar</div>
-<button class="find-pill" type="button" id="find-open" aria-label="Buscar en el documento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="lbl">Buscar</span><kbd>/</kbd></button>
+<div class="find-pills"><button class="find-pill" type="button" id="find-open" aria-label="Buscar en el documento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="lbl">Buscar</span><kbd>/</kbd></button><button class="find-pill" type="button" id="fb-open" aria-label="Dejar un comentario"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span class="lbl">Comentar</span></button></div>
 <div class="find" id="find" role="dialog" aria-modal="true" aria-label="Buscar en el documento">
   <div class="find-box">
     <div class="find-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" id="find-q" placeholder="Buscar en el documento…" autocomplete="off" aria-label="Buscar" aria-controls="find-res"><button type="button" id="find-close">Esc</button></div>
@@ -574,10 +617,40 @@ td:not(:first-child),th:not(:first-child){text-align:right}
   </div>
 </div>
 
+<!-- COMENTARIOS DEL EQUIPO -->
+<section class="fb" id="opiniones" data-sec="Comentarios" aria-labelledby="fb-title">
+  <div class="wrap">
+    <div class="fb-grid">
+      <div>
+        <p class="fb-k">Para el equipo</p>
+        <h2 class="fb-t" id="fb-title">Dejá tus opiniones, correcciones o pedidos de datos acá.</h2>
+        <p class="fb-s" id="fb-sub">Elegí el tipo, contá qué ves y, si es sobre una parte puntual, marcá la sección. Le llega al equipo de estrategia.</p>
+      </div>
+      <form class="fb-form" id="fb-form" novalidate>
+        <fieldset class="fb-kinds" aria-label="Tipo de comentario">
+          <label><input type="radio" name="fb-kind" value="Opinión" checked><span>Opinión</span></label>
+          <label><input type="radio" name="fb-kind" value="Corrección"><span>Corrección</span></label>
+          <label><input type="radio" name="fb-kind" value="Pedido de dato"><span>Pedido de dato</span></label>
+        </fieldset>
+        <textarea id="fb-text" rows="3" maxlength="4000" placeholder="Escribí acá tu comentario…" aria-label="Comentario"></textarea>
+        <div class="fb-row">
+          <select id="fb-sec" aria-label="Sección"><option value="">Sobre todo el documento</option></select>
+          <button class="fb-btn" type="submit" id="fb-send">Enviar</button>
+        </div>
+        <p class="fb-status" id="fb-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="fb-admin" id="fb-admin" hidden>
+      <div class="fb-admin-h"><b id="fb-count">Comentarios recibidos</b><div class="acts"><button class="fb-btn ghost" type="button" id="fb-toggle">Ver</button><button class="fb-btn" type="button" id="fb-xlsx" hidden>Descargar Excel</button></div></div>
+      <ul class="fb-list" id="fb-list" hidden></ul>
+    </div>
+  </div>
+</section>
+
 <!-- PORTADA -->
 <header class="band paper hero" id="inicio" data-sec="Portada" data-drift data-stop>
   <div class="wrap">
-    <div class="hero-top"><svg class="torch" viewBox="0 0 588.56 588.56" role="img" aria-label="Logo del Tecnológico de Monterrey"><use href="#torch"/></svg><div class="eyebrow"><b>Pre-brief estratégico</b><span>Campaña institucional</span><span>Octubre 2026</span><span class="byline">by Equipo de Estrategia (Kev and minions)</span></div></div>
+    <div class="hero-top"><svg class="torch" viewBox="0 0 588.56 588.56" role="img" aria-label="Logo del Tecnológico de Monterrey"><use href="#torch"/></svg><div class="eyebrow"><b>Pre-brief estratégico</b><span>Campaña institucional</span><span>Octubre 2026</span><span class="byline">💫💫 by Equipo de Estrategia (Kev and minions) 💫💫</span></div></div>
     <h1 style="margin:0">
       <span class="hero-tec">el Tec</span>
       <span class="hero-sub" id="hero-sub">de Monterrey</span>
@@ -1815,7 +1888,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 <!-- FUENTES -->
 <footer class="band paper" data-sec="Fuentes" style="padding-block:clamp(64px,10vh,112px)">
   <div class="wrap">
-    <div class="eyebrow"><b>Fuentes y límites</b><span>by Equipo de Estrategia (Kev and minions)</span></div>
+    <div class="eyebrow"><b>Fuentes y límites</b><span>💫💫 by Equipo de Estrategia (Kev and minions) 💫💫</span></div>
     <div class="sources">
       <div>
         <h3>Marca</h3>
@@ -2067,6 +2140,116 @@ td:not(:first-child),th:not(:first-child){text-align:right}
     var tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea')return;
     if(e.key==='/'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k')){e.preventDefault();openFind();}
   },true);
+
+  /* ---------- comentarios del equipo ---------- */
+  var fbForm=document.getElementById('fb-form'),fbText=document.getElementById('fb-text'),fbSec=document.getElementById('fb-sec'),
+      fbSend=document.getElementById('fb-send'),fbStatus=document.getElementById('fb-status'),fbAdmin=document.getElementById('fb-admin'),
+      fbList=document.getElementById('fb-list'),fbCount=document.getElementById('fb-count'),fbToggle=document.getElementById('fb-toggle'),fbX=document.getElementById('fb-xlsx');
+  var seen={};
+  secs.forEach(function(el){var n=el.dataset.sec;if(!n||n==='Portada'||n==='Comentarios'||seen[n])return;seen[n]=1;var o=document.createElement('option');o.value=n;o.textContent=n;fbSec.appendChild(o);});
+  document.getElementById('fb-open').addEventListener('click',function(){
+    var cur=chromeSec.textContent;if(seen[cur])fbSec.value=cur;
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    setTimeout(function(){fbText.focus({preventScroll:true});},reduce?0:500);
+  });
+  var fbDb=null,fbUser=null,fbOffline=false,fbRows=[];
+  function fbSay(t){fbStatus.textContent=t;}
+  function offlineMode(){
+    fbOffline=true;
+    document.getElementById('fb-sub').textContent='En esta copia del archivo los comentarios no se guardan. Escribilo igual, tocá “Copiar” y pegalo en el chat del equipo.';
+    fbSend.textContent='Copiar';
+  }
+  var hasClaude=!!(window.claude&&typeof window.claude.use==='function'),fbPending=hasClaude;
+  if(!hasClaude)offlineMode();
+  if(hasClaude){
+    Promise.all([window.claude.use('db'),window.claude.use('user')]).then(function(r){
+      fbDb=r[0];fbUser=r[1];fbPending=false;
+      if(!fbDb){offlineMode();return;}
+      fbOffline=false;fbSend.textContent='Enviar';
+      document.getElementById('fb-sub').textContent='Elegí el tipo, contá qué ves y, si es sobre una parte puntual, marcá la sección. Le llega al equipo de estrategia.';
+      return fbUser?Promise.all([fbUser.isOwner(),fbUser.canEdit()]):[false,false];
+    }).then(function(r){if(r&&(r[0]||r[1]))startAdmin();}).catch(function(){});
+  }
+  function fallbackCopy(txt){
+    if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(txt);
+    return new Promise(function(ok,ko){var t=document.createElement('textarea');t.value=txt;document.body.appendChild(t);t.select();
+      try{document.execCommand('copy')?ok():ko();}catch(e){ko(e);}document.body.removeChild(t);});
+  }
+  fbForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var text=fbText.value.trim();if(!text){fbSay('Escribí algo antes de enviar.');fbText.focus();return;}
+    var kind=(fbForm.querySelector('input[name="fb-kind"]:checked')||{}).value||'Opinión',sec=fbSec.value;
+    if(fbPending){fbSay('Conectando… probá de nuevo en un segundo.');return;}
+    if(fbOffline){
+      fallbackCopy('['+kind+(sec?' · '+sec:'')+'] '+text).then(function(){fbSay('Copiado. Pegalo en el chat del equipo.');},function(){fbSay('No pude copiarlo; seleccioná el texto y copialo a mano.');});
+      return;
+    }
+    fbSend.disabled=true;fbSay('Enviando…');
+    var idP=fbUser?fbUser.id():Promise.resolve(null);
+    idP.then(function(uid){
+      var body={kind:kind,text:text,section:sec,author:uid||null,createdAt:new Date().toISOString(),status:'nuevo'};
+      var attempt=function(n){return fbDb.collection('feedback').add(body).catch(function(err){
+        if(err&&err.code==='unavailable'&&n<1)return new Promise(function(r){setTimeout(r,600+Math.random()*600);}).then(function(){return attempt(n+1);});
+        throw err;});};
+      return attempt(0);
+    }).then(function(){
+      fbText.value='';fbSay('¡Gracias! Tu comentario quedó guardado.');
+    },function(err){
+      var c=err&&err.code;
+      if(c==='invalid_argument')fbSay('No tenés permiso para comentar en este documento. Pedile a Kev acceso como Colaborador.');
+      else if(c==='quota_exceeded')fbSay('El espacio de comentarios está lleno. Avisale a Kev.');
+      else if(c==='resource_exhausted')fbSay('Muchos envíos seguidos. Esperá un momento y probá de nuevo.');
+      else fbSay('No se pudo enviar ahora. Probá de nuevo en un rato.');
+    }).then(function(){fbSend.disabled=false;});
+  });
+  function fmtDate(iso){var d=new Date(iso);return isNaN(d)?'':d.toLocaleString('es-MX',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});}
+  function renderAdmin(){
+    var ids=fbRows.map(function(r){return r.data.author;}).filter(Boolean);
+    var pending=fbRows.filter(function(r){return r.data.status!=='resuelto';}).length;
+    fbCount.textContent='Comentarios recibidos · '+fbRows.length+(pending?' ('+pending+' sin resolver)':'');
+    fbX.hidden=!fbRows.length||!fbDownloads;
+    (fbUser&&ids.length?fbUser.profiles(ids):Promise.resolve({})).then(function(ps){
+      fbList.textContent='';
+      if(!fbRows.length){var e=document.createElement('li');e.className='fb-empty';e.textContent='Todavía no hay comentarios.';fbList.appendChild(e);return;}
+      fbRows.forEach(function(r){
+        var d=r.data,li=document.createElement('li');if(d.status==='resuelto')li.className='done';
+        var meta=document.createElement('div');meta.className='fb-meta';
+        var k=document.createElement('span');k.className='kind';k.textContent=d.kind||'Opinión';meta.appendChild(k);
+        [d.section||'Todo el documento',(d.author&&ps[d.author]&&ps[d.author].name)||'Alguien del equipo',fmtDate(d.createdAt)].forEach(function(t){var s=document.createElement('span');s.textContent=t;meta.appendChild(s);});
+        var b=document.createElement('button');b.type='button';b.textContent=d.status==='resuelto'?'Reabrir':'Marcar resuelto';
+        b.addEventListener('click',function(){b.disabled=true;fbDb.doc('feedback/'+r.id).update({status:d.status==='resuelto'?'nuevo':'resuelto'}).catch(function(){}).then(function(){b.disabled=false;});});
+        meta.appendChild(b);
+        var p=document.createElement('p');p.textContent=d.text||'';
+        li.appendChild(meta);li.appendChild(p);fbList.appendChild(li);
+      });
+    });
+  }
+  var fbDownloads=null;
+  function startAdmin(){
+    fbAdmin.hidden=false;
+    window.claude.use('downloads').then(function(d){fbDownloads=d;renderAdmin();});
+    fbDb.collection('feedback').orderBy('createdAt','desc').limit(1000).onSnapshot(function(snap){
+      fbRows=snap.docs.map(function(dc){return {id:dc.id,data:dc.data()||{}};});renderAdmin();
+    },function(){fbCount.textContent='No se pudieron cargar los comentarios.';});
+  }
+  fbToggle.addEventListener('click',function(){var open=fbList.hidden;fbList.hidden=!open;fbToggle.textContent=open?'Ocultar':'Ver';});
+  function loadXLSX(){
+    if(window.XLSX)return Promise.resolve(window.XLSX);
+    return new Promise(function(ok,ko){var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+      sc.onload=function(){window.XLSX?ok(window.XLSX):ko();};sc.onerror=ko;document.head.appendChild(sc);});
+  }
+  fbX.addEventListener('click',function(){
+    if(!fbDownloads)return;fbX.disabled=true;
+    var ids=fbRows.map(function(r){return r.data.author;}).filter(Boolean);
+    Promise.all([loadXLSX(),fbUser&&ids.length?fbUser.profiles(ids):{}]).then(function(r){
+      var X=r[0],ps=r[1];
+      var rows=fbRows.map(function(x){var d=x.data;return {'Fecha':d.createdAt?new Date(d.createdAt).toLocaleString('es-MX'):'','Tipo':d.kind||'','Sección':d.section||'Todo el documento','Comentario':d.text||'','Autor':(d.author&&ps[d.author]&&ps[d.author].name)||'','Estado':d.status||'nuevo'};});
+      var ws=X.utils.json_to_sheet(rows);ws['!cols']=[{wch:18},{wch:15},{wch:32},{wch:80},{wch:24},{wch:10}];
+      var wb=X.utils.book_new();X.utils.book_append_sheet(wb,ws,'Comentarios');
+      var buf=X.write(wb,{bookType:'xlsx',type:'array'});
+      return fbDownloads.save({filename:'comentarios-prebrief-tec.xlsx',data:new Blob([buf])});
+    }).catch(function(err){if(!(err&&err.code==='declined'))fbCount.textContent='No se pudo generar el Excel. Probá de nuevo.';}).then(function(){fbX.disabled=false;});
+  });
 
   /* ---------- tooltip ---------- */
   var tip=document.getElementById('tip');
